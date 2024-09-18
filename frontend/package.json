@@ -30,6 +30,8 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "postcss": "^8.4.47",
+    "postcss-loader": "^8.1.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4"
   },
