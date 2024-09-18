@@ -1,7 +1,16 @@
 <template>
 <el-row justify="center">
-    <!-- Hero Section -->
+
     <el-col :span="24" class="hero-section">
+        <!-- Video Background -->
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="@/assets/videoplayback.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Hero Content -->
         <div class="hero-content">
             <h1 class="hero-title">Agentur für Websites</h1>
             <h2 class="hero-subtitle">die Erfolge erzielen</h2>
@@ -54,47 +63,78 @@
         </a>
     </el-col>
 
-    <!-- Carousel Section -->
-    <el-col :span="24" class="content-container">
-        <el-carousel :interval="4000" type="card" height="200px" arrow="always">
-            <el-carousel-item v-for="ref in references" :key="ref.id">
-                <div class="reference-item">
-                    <img :src="getReferenceImage(ref.image)" :alt="ref.title" class="reference-image" />
-                    <div class="reference-text">{{ ref.title }}</div>
+    <el-col :span="24" class="features">
+        <h1 class="information-title">Unser Angebot</h1>
+        <el-row justify="center" class="features-container">
+            <el-col :span="12" md="12" sm="24" class="feature-card">
+                <div class="feature-box">
+                    <el-icon>
+                        <Message />
+                    </el-icon>
+                    <h3>Kreative Lösungen für modernes Design</h3>
+                    <p>
+                        Maßgeschneiderte Design-Beratung: Innovative Konzepte, erstklassige Ergebnisse für Ihre
+                        individuellen Projekte.
+                    </p>
                 </div>
-            </el-carousel-item>
-        </el-carousel>
+            </el-col>
+            <el-col :span="12" md="12" sm="24" class="feature-card">
+                <div class="feature-box">
+                    <el-icon>
+                        <Document />
+                    </el-icon>
+                    <h3>Zuverlässig Kunden gewinnen leicht gemacht</h3>
+                    <p>
+                        Erfolgreiche Strategien für nachhaltigen Kundengewinn: Vertrauen aufbauen, Zielgruppen
+                        erreichen, langfristige Beziehungen stärken.
+                    </p>
+                </div>
+            </el-col>
+            <el-col :span="12" md="12" sm="24" class="feature-card">
+                <div class="feature-box">
+                    <el-icon>
+                        <Edit />
+                    </el-icon>
+                    <h3>Besser gefunden werden online</h3>
+                    <p>
+                        Wir erstellen Inhalte, die auffallen: Optimierte Texte, höhere Sichtbarkeit, gezielte
+                        Ansprache Ihrer Zielgruppen.
+                    </p>
+                </div>
+            </el-col>
+            <el-col :span="12" md="12" sm="24" class="feature-card">
+                <div class="feature-box">
+                    <el-icon>
+                        <Camera />
+                    </el-icon>
+                    <h3>Abmahnfallen sicher vermeiden</h3>
+                    <p>
+                        Rechtssicher handeln: Tipps und Strategien, um teure Abmahnfallen zuverlässig zu
+                        vermeiden.
+                    </p>
+                </div>
+            </el-col>
+        </el-row>
     </el-col>
+
 </el-row>
 </template>
 
 <script lang="ts">
+import {
+    Message,
+    Document,
+    Edit,
+    Camera
+} from '@element-plus/icons-vue';
+
 export default {
-    data() {
-        return {
-            references: [{
-                    id: 1,
-                    image: "bmw.jpeg",
-                    title: "BMW"
-                },
-                {
-                    id: 2,
-                    image: "face.png",
-                    title: "FACEBOOK"
-                },
-                {
-                    id: 3,
-                    image: "allianz.jpeg",
-                    title: "ALLIANZ"
-                }
-            ]
-        };
+    components: {
+        Message,
+        Document,
+        Edit,
+        Camera,
     },
-    methods: {
-        getReferenceImage(image) {
-            return require(`@/assets/${image}`);
-        }
-    }
 };
 </script>
 
@@ -102,15 +142,36 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&display=swap');
 
 .hero-section {
+    position: relative;
     padding: 100px 20px;
     text-align: center;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(300%);
 }
 
 .hero-content {
+    position: relative;
     padding: 30px 50px;
     border-radius: 16px;
     display: inline-block;
     max-width: 600px;
+    z-index: 1;
 }
 
 .hero-title {
@@ -145,9 +206,8 @@ export default {
 }
 
 .underline {
-    width: 50%;
-    height: 10px;
-    margin-top: 10px;
+    width: 70%;
+    height: 30px;
     margin-left: 0;
 }
 
@@ -297,40 +357,62 @@ export default {
     padding: 20px;
 }
 
-.reference-carousel {
-    margin-top: 40px;
-    margin-bottom: 40px;
+.button-box {
+    padding-top: 4%;
     text-align: center;
+    padding-bottom: 4%;
 }
 
-.reference-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.reference-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 8px;
+.features {
+    background-image: url('@/assets/Startseite.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(90%) contrast(110%);
+    filter: brightness(150%);
 }
 
-.reference-image:hover {
-    filter: grayscale(0%);
+.features-container {
+    padding: 40px 150px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.reference-text {
-    margin-top: 10px;
+.feature-card {
+    padding: 10px;
+}
+
+.feature-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.feature-box h3 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     font-weight: 600;
-    font-size: 16px;
-    color: #333;
+    margin: 15px 0;
 }
 
-/* Responsive Design */
+.feature-box p {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.feature-box el-icon {
+    font-size: 30px;
+    color: #409eff;
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 32px;
@@ -363,13 +445,41 @@ export default {
         font-size: 16px;
     }
 
-    .reference-item {
-        align-items: center;
+    /* Kartların tam genişlikte ve eşit boyutta olması için */
+    .feature-card {
+        width: 100%;
+        /* Kart genişliği mobilde tam ekran olur */
+        margin-bottom: 20px;
+        /* Kartlar arasında boşluk bırak */
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        /* Kartları aynı boyutta yapar */
     }
 
-    .reference-image {
-        width: 120px;
-        height: 120px;
+    /* Her kartın içeriğinin aynı yükseklikte olmasını sağla */
+    .feature-box {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        /* Kartın yüksekliği diğerleriyle eşitlenir */
+    }
+
+    .feature-box h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .feature-box p {
+        font-size: 14px;
+        margin: 10px 0;
     }
 }
 </style>

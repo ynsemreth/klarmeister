@@ -1,158 +1,147 @@
 <template>
-<el-header class="navbar">
-    <div class="navbar-left" v-show="!isMobile">
+    <el-header class="navbar">
+      <div class="navbar-left" v-show="!isMobile">
         <el-menu mode="horizontal" background-color="#fff" text-color="#333" active-text-color="#409EFF" @select="handleSelect" class="menu">
-            <el-menu-item index="1">Unser Portfolio</el-menu-item>
-            <el-menu-item index="2">So arbeiten wir</el-menu-item>
-            <el-sub-menu index="3">
-                <template #title>Kundenstimmen</template>
-                <el-menu-item index="3-1">Item 1</el-menu-item>
-                <el-menu-item index="3-2">Item 2</el-menu-item>
-            </el-sub-menu>
+          <el-menu-item index="1">Unser Portfolio</el-menu-item>
+          <el-menu-item index="2">So arbeiten wir</el-menu-item>
+          <el-sub-menu index="3">
+            <template #title>Kundenstimmen</template>
+            <el-menu-item index="3-1">Item 1</el-menu-item>
+            <el-menu-item index="3-2">Item 2</el-menu-item>
+          </el-sub-menu>
         </el-menu>
-    </div>
-
-    <div class="navbar-center">
+      </div>
+  
+      <div class="navbar-center">
         <img src="@/assets/logo.png" alt="Logo" class="logo" />
-    </div>
-
-    <div class="navbar-right" v-show="!isMobile">
+      </div>
+  
+      <div class="navbar-right" v-show="!isMobile">
         <el-menu mode="horizontal" background-color="#fff" text-color="#333" active-text-color="#409EFF" @select="handleSelect" class="menu">
-            <el-sub-menu index="4">
-                <template #title>Team & Karriere</template>
-                <el-menu-item index="4-1">Item 1</el-menu-item>
-                <el-menu-item index="4-2">Item 2</el-menu-item>
-            </el-sub-menu>
-            <el-menu-item index="5">Klarmeister</el-menu-item>
-            <el-sub-menu index="6">
-                <template #title>Weitere Links</template>
-                <el-menu-item index="6-1">Item 1</el-menu-item>
-                <el-menu-item index="6-2">Item 2</el-menu-item>
-            </el-sub-menu>
+          <el-sub-menu index="4">
+            <template #title>Team & Karriere</template>
+            <el-menu-item index="4-1">Item 1</el-menu-item>
+            <el-menu-item index="4-2">Item 2</el-menu-item>
+          </el-sub-menu>
+          <el-menu-item index="5">Klarmeister</el-menu-item>
+          <el-sub-menu index="6">
+            <template #title>Weitere Links</template>
+            <el-menu-item index="6-1">Item 1</el-menu-item>
+            <el-menu-item index="6-2">Item 2</el-menu-item>
+          </el-sub-menu>
         </el-menu>
-    </div>
-
-    <!-- Hamburger Menu for Mobile -->
-    <div class="navbar-hamburger" v-show="isMobile" @click="toggleMobileMenu">
-      <el-icon><Menu /></el-icon><!-- İkonun doğru kullanımı -->
-    </div>
-
-    <!-- Mobile Menu Dropdown -->
-    <el-drawer title="Menu" v-model:visible="drawerVisible" direction="rtl" size="80%">
+      </div>
+  
+      <!-- Hamburger Menu for Mobile -->
+      <div class="navbar-hamburger" v-show="isMobile" @click="toggleMobileMenu">
+        <el-icon><Menu /></el-icon>
+      </div>
+  
+      <!-- Mobile Menu Dropdown -->
+      <el-drawer title="Menu" v-model="drawerVisible" direction="rtl" size="80%">
         <el-menu default-active="1" class="mobile-menu" @select="handleSelect">
-            <el-menu-item index="1">Unser Portfolio</el-menu-item>
-            <el-menu-item index="2">So arbeiten wir</el-menu-item>
-            <el-sub-menu index="3">
-                <template #title>Kundenstimmen</template>
-                <el-menu-item index="3-1">Item 1</el-menu-item>
-                <el-menu-item index="3-2">Item 2</el-menu-item>
-            </el-sub-menu>
-            <el-sub-menu index="4">
-                <template #title>Team & Karriere</template>
-                <el-menu-item index="4-1">Item 1</el-menu-item>
-                <el-menu-item index="4-2">Item 2</el-menu-item>
-            </el-sub-menu>
-            <el-menu-item index="5">Klarmeister</el-menu-item>
-            <el-sub-menu index="6">
-                <template #title>Weitere Links</template>
-                <el-menu-item index="6-1">Item 1</el-menu-item>
-                <el-menu-item index="6-2">Item 2</el-menu-item>
-            </el-sub-menu>
+          <el-menu-item index="1">Unser Portfolio</el-menu-item>
+          <el-menu-item index="2">So arbeiten wir</el-menu-item>
+          <el-sub-menu index="3">
+            <template #title>Kundenstimmen</template>
+            <el-menu-item index="3-1">Item 1</el-menu-item>
+            <el-menu-item index="3-2">Item 2</el-menu-item>
+          </el-sub-menu>
+          <el-sub-menu index="4">
+            <template #title>Team & Karriere</template>
+            <el-menu-item index="4-1">Item 1</el-menu-item>
+            <el-menu-item index="4-2">Item 2</el-menu-item>
+          </el-sub-menu>
+          <el-menu-item index="5">Klarmeister</el-menu-item>
+          <el-sub-menu index="6">
+            <template #title>Weitere Links</template>
+            <el-menu-item index="6-1">Item 1</el-menu-item>
+            <el-menu-item index="6-2">Item 2</el-menu-item>
+          </el-sub-menu>
         </el-menu>
-    </el-drawer>
-</el-header>
-</template>
-
-<script lang="ts">
-import {
-    ref,
-    onMounted,
-    onUnmounted
-} from 'vue';
-import {
-    Menu
-} from '@element-plus/icons-vue'; // Menü ikonu
-
-export default {
+      </el-drawer>
+    </el-header>
+  </template>
+  
+  <script lang="ts">
+  import { ref, onMounted, onUnmounted } from 'vue';
+  import { Menu } from '@element-plus/icons-vue'; // İkonu burada kullan
+  
+  export default {
     setup() {
-        const isMobile = ref(false);
-        const drawerVisible = ref(false);
-
-        const handleSelect = (key, keyPath) => {
-            console.log(key, keyPath);
-        };
-
-        const checkMobile = () => {
-            isMobile.value = window.innerWidth <= 768;
-        };
-
-        const toggleMobileMenu = () => {
-            drawerVisible.value = !drawerVisible.value;
-        };
-
-        onMounted(() => {
-            checkMobile();
-            window.addEventListener('resize', checkMobile);
-        });
-
-        onUnmounted(() => {
-            window.removeEventListener('resize', checkMobile);
-        });
-
-        return {
-            isMobile,
-            drawerVisible,
-            handleSelect,
-            toggleMobileMenu,
-            Menu, // Menu ikonunu burada geri döndürün
-        };
-    }
-};
-</script>
-
-<style scoped>
-.navbar {
+      const isMobile = ref(false);
+      const drawerVisible = ref(false);
+  
+      const checkMobile = () => {
+        isMobile.value = window.innerWidth <= 768;
+      };
+  
+      const toggleMobileMenu = () => {
+        drawerVisible.value = !drawerVisible.value;
+      };
+  
+      onMounted(() => {
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+      });
+  
+      onUnmounted(() => {
+        window.removeEventListener('resize', checkMobile);
+      });
+  
+      return {
+        isMobile,
+        drawerVisible,
+        toggleMobileMenu,
+        Menu, // Icon'u burada döndürün
+      };
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .navbar {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
     padding: 0 10px;
-    height: 80px;
+    height: 50px;
     border-bottom: 1px solid #ddd;
-}
-
-.navbar-left,
-.navbar-right {
+  }
+  
+  .navbar-left,
+  .navbar-right {
     display: flex;
     align-items: center;
     flex: 1;
-}
-
-.navbar-center {
+  }
+  
+  .navbar-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 20px;
-}
-
-.logo {
+  }
+  
+  .logo {
     height: 45px;
-}
-
-.menu {
+  }
+  
+  .menu {
     flex-grow: 1;
     justify-content: center;
-}
-
-.el-menu-item,
-.el-sub-menu__title {
+  }
+  
+  .el-menu-item,
+  .el-sub-menu__title {
     font-family: 'Montserrat', sans-serif;
     padding: 0 15px;
-}
-
-.navbar-hamburger {
+  }
+  
+  .navbar-hamburger {
     display: none;
     font-size: 24px;
     cursor: pointer;
@@ -160,25 +149,25 @@ export default {
     right: 10px;
     top: 20px;
     z-index: 101;
-}
-
-@media (max-width: 768px) {
-
+  }
+  
+  @media (max-width: 768px) {
     .navbar-left,
     .navbar-right {
-        display: none;
+      display: none;
     }
-
+  
     .navbar-hamburger {
-        display: block;
+      display: block;
     }
-}
-
-.logo {
-    height: 35px;
-}
-
-.mobile-menu {
-    width: 100%;
-}
-</style>
+  
+    .logo {
+      height: 35px;
+    }
+  
+    .mobile-menu {
+      width: 100%;
+    }
+  }
+  </style>
+  
