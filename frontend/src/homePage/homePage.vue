@@ -3,9 +3,13 @@
     <!-- Hero Section -->
     <el-col :span="24" class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Verkaufsstarke Webseiten, die Ihre Kunden überzeugen</h1>
+            <h1 class="hero-title">
+                Verkaufsstarke Webseiten, die Ihre Kunden überzeugen
+            </h1>
             <h2 class="hero-subtitle">
-                Entfachen Sie das Potenzial Ihres Unternehmens mit einem beeindruckenden Online-Auftritt, der Ihren Umsatz steigert und Ihre Marke stärkt.
+                Entfachen Sie das Potenzial Ihres Unternehmens mit einem
+                beeindruckenden Online-Auftritt, der Ihren Umsatz steigert und Ihre
+                Marke stärkt.
             </h2>
         </div>
         <a href="#" class="custom-cta-button">
@@ -14,7 +18,7 @@
     </el-col>
 
     <!-- Overlay Video Section -->
-    <el-col :span="24" class="overlay-video-container">
+    <el-col :span="24" class="overlay-video-container" :class="{ 'normal-view': isInView }">
         <img src="@/assets/wrapper-image.png" class="mockup-image" alt="Mockup Image" />
 
         <!-- Responsive ve Şekilli Video Kapsayıcısı -->
@@ -36,11 +40,13 @@
                 <span class="highlight">Haben Sie auch die Nase voll von leeren Versprechungen?</span>
             </h2>
             <p class="information-text-content">
-                Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb von 8 Stunden oder gefühlt einem halben
-                Jahr zu erstellen für horrende Summen von 20.000 Euro oder mehr?
+                Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb
+                von 8 Stunden oder gefühlt einem halben Jahr zu erstellen für
+                horrende Summen von 20.000 Euro oder mehr?
             </p>
             <p class="information-text-content">
-                Bei uns ist das anders. Wir bieten eine transparente und zielführende Lösung, die Ihre Erwartungen übertrifft.
+                Bei uns ist das anders. Wir bieten eine transparente und zielführende
+                Lösung, die Ihre Erwartungen übertrifft.
             </p>
         </div>
         <div class="information-image">
@@ -54,85 +60,35 @@
             <span class="custom-cta-button__text">Kostenloses Erstgespräch vereinbaren</span>
         </a>
     </el-col>
-
-    <!-- Features Section -->
-    <el-col :span="24" class="features">
-        <h1 class="information-title">Unser Angebot</h1>
-        <el-row justify="center" class="features-container">
-            <!-- Feature 1 -->
-            <el-col :span="12" md="12" sm="24" class="feature-card">
-                <div class="feature-box">
-                    <el-icon>
-                        <Message />
-                    </el-icon>
-                    <h3>Kreative Lösungen für modernes Design</h3>
-                    <p>
-                        Maßgeschneiderte Design-Beratung: Innovative Konzepte, erstklassige Ergebnisse für Ihre individuellen
-                        Projekte.
-                    </p>
-                </div>
-            </el-col>
-            <!-- Feature 2 -->
-            <el-col :span="12" md="12" sm="24" class="feature-card">
-                <div class="feature-box">
-                    <el-icon>
-                        <Document />
-                    </el-icon>
-                    <h3>Zuverlässig Kunden gewinnen leicht gemacht</h3>
-                    <p>
-                        Erfolgreiche Strategien für nachhaltigen Kundengewinn: Vertrauen aufbauen, Zielgruppen erreichen,
-                        langfristige Beziehungen stärken.
-                    </p>
-                </div>
-            </el-col>
-            <!-- Feature 3 -->
-            <el-col :span="12" md="12" sm="24" class="feature-card">
-                <div class="feature-box">
-                    <el-icon>
-                        <Edit />
-                    </el-icon>
-                    <h3>Besser gefunden werden online</h3>
-                    <p>
-                        Wir erstellen Inhalte, die auffallen: Optimierte Texte, höhere Sichtbarkeit, gezielte Ansprache Ihrer
-                        Zielgruppen.
-                    </p>
-                </div>
-            </el-col>
-            <!-- Feature 4 -->
-            <el-col :span="12" md="12" sm="24" class="feature-card">
-                <div class="feature-box">
-                    <el-icon>
-                        <Camera />
-                    </el-icon>
-                    <h3>Abmahnfallen sicher vermeiden</h3>
-                    <p>
-                        Rechtssicher handeln: Tipps und Strategien, um teure Abmahnfallen zuverlässig zu vermeiden.
-                    </p>
-                </div>
-            </el-col>
-        </el-row>
-    </el-col>
 </el-row>
 </template>
 
+  
+  
 <script lang="ts">
 import {
-    Message,
-    Document,
-    Edit,
-    Camera
-} from '@element-plus/icons-vue';
+    ref,
+    onMounted
+} from 'vue';
 
 export default {
-    components: {
-        Message,
-        Document,
-        Edit,
-        Camera,
-    },
+    setup() {
+        const isInView = ref(false);
+
+        onMounted(() => {
+            setTimeout(() => {
+                isInView.value = true;
+            }, 1000);
+        });
+
+        return {
+            isInView
+        };
+    }
 };
 </script>
-
+  
+  
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&display=swap');
 
@@ -201,6 +157,7 @@ export default {
     display: block;
     position: relative;
     z-index: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 .custom-video-container {
@@ -216,6 +173,17 @@ export default {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
+    transition: transform 1s ease-in-out;
+}
+
+.overlay-video-container.normal-view .custom-video-container {
+    transform: none;
+    /* Video düz konuma gelir */
+}
+
+.overlay-video-container.normal-view .mockup-image {
+    opacity: 0;
+    /* Resim yavaşça kaybolur */
 }
 
 .custom-video {
