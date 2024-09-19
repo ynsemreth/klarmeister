@@ -1,12 +1,12 @@
 <template>
 <el-row justify="center">
-
+    <!-- Hero Section -->
     <el-col :span="24" class="hero-section">
         <!-- Video Background -->
         <div class="video-container">
             <video autoplay muted loop playsinline class="hero-video">
                 <source src="@/assets/videoplayback.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                Tarayıcınız video etiketini desteklemiyor.
             </video>
         </div>
 
@@ -20,7 +20,6 @@
         </div>
     </el-col>
 
-    <!-- Sub-Hero Section -->
     <el-col :span="24" class="sub-hero-section">
         <div class="sub-hero-content">
             <h1 class="sub-hero-title">Unsere Mission</h1>
@@ -36,6 +35,21 @@
         </div>
     </el-col>
 
+    <!-- Overlay Video Section -->
+    <el-col :span="24" class="overlay-video-container">
+      <img src="@/assets/wrapper-image.png" class="mockup-image" alt="Mockup Image" />
+
+      <!-- Responsive ve Şekilli Video Kapsayıcısı -->
+      <div class="custom-video-container">
+        <div class="custom-video">
+          <video controls muted class="custom-video-player">
+            <source src="@/assets/wrapper.mp4" type="video/mp4" />
+            Tarayıcınız video etiketini desteklemiyor.
+          </video>
+        </div>
+      </div>
+    </el-col>
+
     <!-- Information Section -->
     <el-col :span="24" class="information">
         <div class="information-content">
@@ -44,8 +58,8 @@
                 <span class="highlight">Haben Sie auch die Nase voll von leeren Versprechungen?</span>
             </h2>
             <p class="information-text-content">
-                Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb von 8 Stunden
-                oder gefühlt einem halben Jahr zu erstellen für horrende Summen von 20.000 Euro oder mehr?
+                Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb von 8 Stunden oder gefühlt einem halben
+                Jahr zu erstellen für horrende Summen von 20.000 Euro oder mehr?
             </p>
             <p class="information-text-content">
                 Bei uns ist das anders. Wir bieten eine transparente und zielführende Lösung, die Ihre Erwartungen übertrifft.
@@ -63,9 +77,11 @@
         </a>
     </el-col>
 
+    <!-- Features Section -->
     <el-col :span="24" class="features">
         <h1 class="information-title">Unser Angebot</h1>
         <el-row justify="center" class="features-container">
+            <!-- Feature 1 -->
             <el-col :span="12" md="12" sm="24" class="feature-card">
                 <div class="feature-box">
                     <el-icon>
@@ -73,11 +89,12 @@
                     </el-icon>
                     <h3>Kreative Lösungen für modernes Design</h3>
                     <p>
-                        Maßgeschneiderte Design-Beratung: Innovative Konzepte, erstklassige Ergebnisse für Ihre
-                        individuellen Projekte.
+                        Maßgeschneiderte Design-Beratung: Innovative Konzepte, erstklassige Ergebnisse für Ihre individuellen
+                        Projekte.
                     </p>
                 </div>
             </el-col>
+            <!-- Feature 2 -->
             <el-col :span="12" md="12" sm="24" class="feature-card">
                 <div class="feature-box">
                     <el-icon>
@@ -85,11 +102,12 @@
                     </el-icon>
                     <h3>Zuverlässig Kunden gewinnen leicht gemacht</h3>
                     <p>
-                        Erfolgreiche Strategien für nachhaltigen Kundengewinn: Vertrauen aufbauen, Zielgruppen
-                        erreichen, langfristige Beziehungen stärken.
+                        Erfolgreiche Strategien für nachhaltigen Kundengewinn: Vertrauen aufbauen, Zielgruppen erreichen,
+                        langfristige Beziehungen stärken.
                     </p>
                 </div>
             </el-col>
+            <!-- Feature 3 -->
             <el-col :span="12" md="12" sm="24" class="feature-card">
                 <div class="feature-box">
                     <el-icon>
@@ -97,11 +115,12 @@
                     </el-icon>
                     <h3>Besser gefunden werden online</h3>
                     <p>
-                        Wir erstellen Inhalte, die auffallen: Optimierte Texte, höhere Sichtbarkeit, gezielte
-                        Ansprache Ihrer Zielgruppen.
+                        Wir erstellen Inhalte, die auffallen: Optimierte Texte, höhere Sichtbarkeit, gezielte Ansprache Ihrer
+                        Zielgruppen.
                     </p>
                 </div>
             </el-col>
+            <!-- Feature 4 -->
             <el-col :span="12" md="12" sm="24" class="feature-card">
                 <div class="feature-box">
                     <el-icon>
@@ -109,17 +128,17 @@
                     </el-icon>
                     <h3>Abmahnfallen sicher vermeiden</h3>
                     <p>
-                        Rechtssicher handeln: Tipps und Strategien, um teure Abmahnfallen zuverlässig zu
-                        vermeiden.
+                        Rechtssicher handeln: Tipps und Strategien, um teure Abmahnfallen zuverlässig zu vermeiden.
                     </p>
                 </div>
             </el-col>
         </el-row>
     </el-col>
-
 </el-row>
 </template>
 
+  
+  
 <script lang="ts">
 import {
     Message,
@@ -155,7 +174,6 @@ export default {
     height: 100%;
     z-index: -1;
     overflow: hidden;
-
 }
 
 .hero-video {
@@ -175,7 +193,7 @@ export default {
 }
 
 .hero-title {
-    position: relative;
+  position: relative;
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
     font-weight: 700;
@@ -187,11 +205,11 @@ export default {
 
 .hero-title::after {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
     background: linear-gradient(to right, rgba(182, 245, 175, 0.9), rgba(182, 245, 175, 0));
     border-radius: 16px;
     z-index: -1;
@@ -233,6 +251,49 @@ export default {
     color: #000;
 }
 
+.overlay-video-container {
+  position: relative;
+  width: 800px;
+  margin: 50px auto;
+  z-index: 1;
+}
+
+.mockup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.custom-video-container {
+  position: absolute;
+  top: -30px;
+  left: 30%;
+  width: 55%;
+  height: auto;
+  transform: perspective(600px) rotateX(0deg) rotateY(-10deg) skewY(3deg); /* Sol üst köşe aşağıya eğildi ve paralellik sağlandı */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.custom-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px; /* Yuvarlatılmış köşeler */
+}
+
+.custom-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Video içeriğinin kapsayıcıya göre ayarlanması */
+  border-radius: 15px; /* Videonun da kenarları yuvarlanır */
+}
+
 .custom-cta-button {
     display: inline-block;
     color: rgba(0, 0, 0, 1);
@@ -263,7 +324,7 @@ export default {
     border-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Animation effect */
+/* Flash Animation */
 .custom-cta-button::before {
     content: '';
     position: absolute;
@@ -364,7 +425,7 @@ export default {
 }
 
 .features {
-    background-image: url('@/assets/Startseite.png');
+    background-image: url("@/assets/Startseite.png");
     background-size: cover;
     background-position: center;
     width: 100%;
