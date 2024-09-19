@@ -9,7 +9,6 @@ module.exports = {
         pathRewrite: { '^/api': '' },
       },
     },
-    disableHostCheck: true, // Bazı ağ problemlerini çözmek için
   },
 };
 
