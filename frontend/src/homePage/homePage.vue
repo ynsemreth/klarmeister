@@ -1,53 +1,31 @@
 <template>
-<el-row justify="center">
+<el-row justify="center" class="body">
     <!-- Hero Section -->
     <el-col :span="24" class="hero-section">
-        <!-- Video Background -->
-        <div class="video-container">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="@/assets/videoplayback.mp4" type="video/mp4" />
-                Tarayıcınız video etiketini desteklemiyor.
-            </video>
-        </div>
-
-        <!-- Hero Content -->
         <div class="hero-content">
-            <h1 class="hero-title">Agentur für Websites</h1>
-            <h2 class="hero-subtitle">die Erfolge erzielen</h2>
-            <svg class="underline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 10" preserveAspectRatio="none">
-                <path d="M0 5 Q50 10 100 5 T200 5" stroke="black" stroke-width="2" fill="transparent" />
-            </svg>
-        </div>
-    </el-col>
-
-    <el-col :span="24" class="sub-hero-section">
-        <div class="sub-hero-content">
-            <h1 class="sub-hero-title">Unsere Mission</h1>
-            <h2 class="sub-hero-text">
-                Unsere Mission ist es, Menschen und Unternehmen dabei zu unterstützen,
-                ihre Online–Präsenz zu stärken und ihre Ziele zu erreichen, indem wir klare,
-                innovative und nachhaltige Lösungen bieten.
+            <h1 class="hero-title">Verkaufsstarke Webseiten, die Ihre Kunden überzeugen</h1>
+            <h2 class="hero-subtitle">
+                Entfachen Sie das Potenzial Ihres Unternehmens mit einem beeindruckenden Online-Auftritt, der Ihren Umsatz steigert und Ihre Marke stärkt.
             </h2>
-            <!-- Custom styled button -->
-            <a href="#" class="custom-cta-button">
-                <span class="custom-cta-button__text">Jetzt Kostenloses Erstgespräch vereinbaren</span>
-            </a>
         </div>
+        <a href="#" class="custom-cta-button">
+            <span class="custom-cta-button__text">Jetzt Kostenloses Erstgespräch vereinbaren</span>
+        </a>
     </el-col>
 
     <!-- Overlay Video Section -->
     <el-col :span="24" class="overlay-video-container">
-      <img src="@/assets/wrapper-image.png" class="mockup-image" alt="Mockup Image" />
+        <img src="@/assets/wrapper-image.png" class="mockup-image" alt="Mockup Image" />
 
-      <!-- Responsive ve Şekilli Video Kapsayıcısı -->
-      <div class="custom-video-container">
-        <div class="custom-video">
-          <video controls muted class="custom-video-player">
-            <source src="@/assets/wrapper.mp4" type="video/mp4" />
-            Tarayıcınız video etiketini desteklemiyor.
-          </video>
+        <!-- Responsive ve Şekilli Video Kapsayıcısı -->
+        <div class="custom-video-container">
+            <div class="custom-video">
+                <video controls muted class="custom-video-player">
+                    <source src="@/assets/wrapper.mp4" type="video/mp4" />
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
         </div>
-      </div>
     </el-col>
 
     <!-- Information Section -->
@@ -137,8 +115,6 @@
 </el-row>
 </template>
 
-  
-  
 <script lang="ts">
 import {
     Message,
@@ -160,79 +136,46 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&display=swap');
 
-.hero-section {
-    position: relative;
+.body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, #0b3d0b, #000000);
+    /* Koyu yeşilden siyaha geçiş */
+    overflow-x: hidden;
+    /* Yatayda kaymayı önler */
+}
+
+.hero-section,
+.sub-hero-section,
+.overlay-video-container {
+    background: transparent;
     padding: 100px 20px;
     text-align: center;
-    overflow: hidden;
-}
-
-.video-container {
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(300%);
+    position: relative;
 }
 
 .hero-content {
     position: relative;
-    padding: 30px 50px;
-    border-radius: 16px;
     display: inline-block;
-    max-width: 600px;
-    z-index: 1;
+    max-width: 900px;
+    padding: 20px;
 }
 
 .hero-title {
-  position: relative;
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 700;
+    color: #ffffff;
     margin: 0;
-    color: #1a1a1a;
-    padding: 10px 20px;
-    z-index: 1;
-}
-
-.hero-title::after {
-    content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-    background: linear-gradient(to right, rgba(182, 245, 175, 0.9), rgba(182, 245, 175, 0));
-    border-radius: 16px;
-    z-index: -1;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    margin: 10px 0 0;
-    color: #ffffff;
-}
-
-.underline {
-    width: 70%;
-    height: 30px;
-    margin-left: 0;
-}
-
-.sub-hero-section {
-    padding: 100px 20px;
-    text-align: center;
-    color: black;
+    font-size: 24px;
+    font-weight: 400;
+    color: #d1d1d1;
+    margin: 20px 0 0;
 }
 
 .sub-hero-title {
@@ -240,6 +183,7 @@ export default {
     font-size: 48px;
     font-weight: 700;
     margin: 0 0 20px;
+    color: white;
 }
 
 .sub-hero-text {
@@ -248,50 +192,47 @@ export default {
     font-weight: 300;
     line-height: 1.5;
     margin-bottom: 30px;
-    color: #000;
-}
-
-.overlay-video-container {
-  position: relative;
-  width: 800px;
-  margin: 50px auto;
-  z-index: 1;
+    color: white;
 }
 
 .mockup-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 1;
+    width: 80%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .custom-video-container {
-  position: absolute;
-  top: -30px;
-  left: 30%;
-  width: 55%;
-  height: auto;
-  transform: perspective(600px) rotateX(0deg) rotateY(-10deg) skewY(3deg); /* Sol üst köşe aşağıya eğildi ve paralellik sağlandı */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+    position: absolute;
+    top: -30px;
+    left: 30%;
+    width: 55%;
+    height: auto;
+    transform: perspective(600px) rotateX(0deg) rotateY(-10deg) skewY(3deg);
+    /* Sol üst köşe aşağıya eğildi ve paralellik sağlandı */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 }
 
 .custom-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px; /* Yuvarlatılmış köşeler */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    /* Yuvarlatılmış köşeler */
 }
 
 .custom-video-player {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Video içeriğinin kapsayıcıya göre ayarlanması */
-  border-radius: 15px; /* Videonun da kenarları yuvarlanır */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Video içeriğinin kapsayıcıya göre ayarlanması */
+    border-radius: 15px;
+    /* Videonun da kenarları yuvarlanır */
 }
 
 .custom-cta-button {
