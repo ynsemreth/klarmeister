@@ -4,7 +4,7 @@ module.exports = {
     port: 5000,      // 5000 portunda çalışması için
     proxy: {
       '/api': {
-        target: 'http://217.160.138.215:8080/',
+        target: 'http://217.160.138.215:5000/',
         changeOrigin: true,
         pathRewrite: { '^/api': '' },
       },
