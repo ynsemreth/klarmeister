@@ -67,15 +67,6 @@
         </div>
     </el-col>
 
-    <el-row justify="center" class="reference-section">
-        <h2 class="reference-title">Zahlreiche Kunden Vertrauen auf Vierless</h2>
-        <el-carousel :interval="5000" arrow="always" autoplay>
-            <el-carousel-item v-for="(reference, index) in references" :key="index">
-                <img :src="reference.image" :alt="reference.name" class="reference-logo" />
-            </el-carousel-item>
-        </el-carousel>
-    </el-row>
-
     <el-col :span="24" class="new-section">
         <el-row :gutter="10">
             <el-col :span="14" class="left-section">
@@ -168,30 +159,30 @@ export default {
     components: {
         Document,
         Refresh,
-        MagicStick
+        MagicStick,
     },
     setup() {
         const isInView = ref(false);
 
         const references = ref([{
                 name: 'Sehlen Tourismus',
-                image: '@/assets/sehlen_logo.png'
+                image: '@/assets/sehlen_logo.png',
             },
             {
                 name: 'Allianz',
-                image: '@/assets/allianz.jpeg'
+                image: '@/assets/allianz.jpeg',
             },
             {
                 name: 'BMW',
-                image: '@/assets/bmw.jpeg'
+                image: '@/assets/bmw.jpeg',
             },
             {
                 name: 'Facebook',
-                image: '@/assets/face.png'
+                image: '@/assets/face.png',
             },
             {
                 name: 'Rettig & Partner',
-                image: '@/assets/rettig.png'
+                image: '@/assets/rettig.png',
             },
         ]);
 
@@ -600,36 +591,6 @@ export default {
     border-radius: 8px;
 }
 
-.reference-section {
-    padding: 50px 20px;
-    background-color: #000;
-    text-align: center;
-}
-
-.reference-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    color: #00ff88;
-    margin-bottom: 20px;
-}
-
-.el-carousel {
-    width: 100%;
-}
-
-.reference-logo {
-    width: auto;
-    height: 50px;
-    max-width: 150px;
-    margin: 0 20px;
-}
-
-.el-carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 @media (max-width: 768px) {
 
     .custom-text-container {
@@ -718,30 +679,5 @@ export default {
         margin-top: 20px;
     }
 
-    .reference-section {
-        padding: 30px 10px;
-    }
-
-    .reference-title {
-        font-size: 28px;
-    }
-
-    .reference-card {
-        padding: 5px;
-    }
-
-    .reference-image {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 8px;
-    }
-
-    .reference-content h3 {
-        font-size: 16px;
-    }
-
-    .reference-content p {
-        font-size: 12px;
-    }
 }
 </style>
