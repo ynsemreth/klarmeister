@@ -140,6 +140,72 @@
             </el-col>
         </el-row>
     </el-col>
+
+    <el-col :span="24" class="web-section">
+        <div class="web-content">
+            <h3 class="web-subtitle">DIE VIERLESS EXPERIENCE</h3>
+            <h1 class="web-title">
+                In 4 einfachen Schritten zu Ihrem neuen Online Auftritt
+            </h1>
+        </div>
+        <div class="web-card">
+            <el-card class="web-card-one">
+                <div class="number">01</div>
+
+                <div class="web-card-title">Sie haben Ihre Lage erkannt</div>
+
+                <div class="web-card-subtitle">
+                    <span>Der Sachverhalt ist klar:</span>
+                    <span>Eine neue Webseite muss her!</span>
+                    <span>Der erste Schritt ist abgehakt.</span>
+                </div>
+                <div class="web-card-icon">
+                    <el-icon>
+                        <CircleCheck />
+                    </el-icon>
+                </div>
+            </el-card>
+            <el-card class="web-card-two">
+                <div class="number">02</div>
+
+                <div class="web-card-title">Füllen Sie unser Formular aus</div>
+
+                <div class="web-card-subtitle">
+                    <span>Damit wir wissen, wer</span>
+                    <span>Sie sind und was Sie vorhaben,</span>
+                    <span>haben wir einige Fragen vorbereitet.</span>
+                </div>
+                
+                <div class="web-card-button">
+                    <el-button type="primary" class="web-card-btn">
+                        <span class="btn_label">Casestudy ansehen</span>
+                    </el-button>
+                </div>
+            </el-card>
+            <el-card class="web-card-one">
+                <div class="number">03</div>
+                  
+                <div class="web-card-title">Hören Sie sich unsere Ideen ant</div>
+
+                <div class="web-card-subtitle">
+                    <span>In einem ersten Telefonat</span>
+                    <span>besprechen wir erste Details</span>
+                    <span>und den weiteren Ablauf.</span>
+                </div>
+            </el-card>
+            <el-card class="web-card-one">
+                <div class="number">04</div>
+                 
+                <div class="web-card-title">Lehnen Sie sich entspannt zurück</div>
+
+                <div class="web-card-subtitle">
+                    <span>Profitieren Sie mit dem</span>
+                    <span>Start der Zusammenarbeit von</span>
+                    <span>der VIERLESS Experience.</span>
+                </div>
+            </el-card>
+        </div>
+    </el-col>
 </el-row>
 </template>
 
@@ -152,7 +218,8 @@ import {
 import {
     Document,
     Refresh,
-    MagicStick
+    MagicStick,
+    CircleCheck
 } from '@element-plus/icons-vue';
 
 export default {
@@ -160,6 +227,7 @@ export default {
         Document,
         Refresh,
         MagicStick,
+        CircleCheck,
     },
     setup() {
         const isInView = ref(false);
@@ -225,6 +293,12 @@ export default {
 .hero-section {
     text-align: center;
     background: linear-gradient(to bottom, #053c05, #000000);
+    position: relative;
+}
+
+.web-section {
+    text-align: center;
+    background: black;
     position: relative;
 }
 
@@ -413,7 +487,7 @@ export default {
     display: flex;
     justify-content: center;
     padding: 35px 20px;
-    background: linear-gradient(to bottom, #121640, #000000);
+    background: linear-gradient(to right, #121640, #000000);
     border-radius: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -589,6 +663,52 @@ export default {
     height: auto;
     margin-top: 20px;
     border-radius: 8px;
+}
+
+.web-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.web-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.web-subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 13px;
+    font-size: 300;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.web-card {
+    padding: 20px 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-self: center;
+}
+
+.web-card-one {
+    display: flex;
+    margin-top: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.web-card-two {
+    display: flex;
+    margin-top: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
