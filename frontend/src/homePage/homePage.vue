@@ -15,6 +15,7 @@
     </el-col>
 
     <!-- Overlay Video Section -->
+    <!-- Overlay Video Section -->
     <el-col :span="24" class="overlay-video-container" :class="{ 'normal-view': isInView }">
         <img src="@/assets/laptop.png" class="mockup-image" alt="Mockup Image" />
 
@@ -26,6 +27,22 @@
                     Tarayıcınız video etiketini desteklemiyor.
                 </video>
             </div>
+        </div>
+
+        <div class="custom-text-container">
+            <h3 class="custom-text-title">Unsere Qualität</h3>
+            <p class="custom-text-description">
+                Unsere Website besticht nicht nur durch beeindruckendes Design, sondern auch durch hervorragende Benutzerfreundlichkeit und Leistung.
+            </p>
+        </div>
+
+        <div class="sub-hero-content">
+            <h1 class="sub-hero-title">Unsere Mission</h1>
+            <h2 class="sub-hero-text">
+                Unsere Mission ist es, Menschen und Unternehmen dabei zu unterstützen,
+                ihre Online–Präsenz zu stärken und ihre Ziele zu erreichen, indem wir klare,
+                innovative und nachhaltige Lösungen bieten.
+            </h2>
         </div>
     </el-col>
 
@@ -139,10 +156,10 @@ export default {
             const videoSection = document.querySelector('.overlay-video-container');
             if (videoSection) {
                 const sectionPosition = videoSection.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.5;
+                const screenPosition = window.innerHeight / 4;
 
                 if (sectionPosition < screenPosition) {
-                    isInView.value = false; // Video düz hale gelir, resim kaybolur
+                    isInView.value = true; // Video düz hale gelir, resim kaybolur
                 } else {
                     isInView.value = false; // Video eski perspektife döner, resim geri gelir
                 }
@@ -180,7 +197,7 @@ export default {
     position: relative;
 }
 
-.overlay-video-container{
+.overlay-video-container {
     text-align: center;
     position: relative;
 }
@@ -223,39 +240,45 @@ export default {
 
 .custom-video-container {
     position: absolute;
-    top: 22%;
+    top: 20%;
     left: 18.5%;
     width: 23%;
-    height: 36%;
+    height: 27.8%;
     transform: perspective(800px) rotateX(-8deg) rotateY(8deg) skewY(-27deg);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
-    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out; /* Geçiş animasyonları */
+    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
 }
 
 .overlay-video-container.normal-view .custom-video-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) perspective(800px); 
+    transform: translate(-50%, -50%) perspective(800px);
     width: 50%;
-    height: auto; 
+    height: auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
-    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out; /* Geçiş animasyonları */
+    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+    /* Geçiş animasyonları */
 }
 
 .overlay-video-container.normal-view .mockup-image {
     opacity: 0;
-    transition: opacity 1s ease-in-out; /* Görüntünün yavaşça kaybolması için */
+    transition: opacity 1s ease-in-out;
+    /* Görüntünün yavaşça kaybolması için */
 }
 
+.overlay-video-container.normal-view .custom-text-container {
+    opacity: 0;
+    transition:  opacity 1s ease-in-out;
+}
 
 .custom-video {
     width: 100%;
@@ -271,6 +294,34 @@ export default {
     /* Video içeriğinin kapsayıcıya göre ayarlanması */
     border-radius: 15px;
     /* Videonun da kenarları yuvarlanır */
+}
+
+.custom-text-container {
+    position: absolute;
+    top: 22%; /* Video ile hizalı şekilde konumlandır */
+    left: 55%; /* Videonun yanına konumlandır */
+    width: 40%; /* Metnin genişliği */
+    padding: 20px;
+    color: white;
+    text-align: left;
+    z-index: 3; /* Diğer elemanların üstünde görünmesi için */
+}
+
+.custom-text-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.custom-text-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #d1d1d1;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .information {
