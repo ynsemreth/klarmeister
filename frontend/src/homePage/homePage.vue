@@ -369,16 +369,6 @@ export default {
     margin-bottom: 20px;
 }
 
-.content-container {
-    padding: 20px;
-}
-
-.button-box {
-    padding-top: 4%;
-    text-align: center;
-    padding-bottom: 4%;
-}
-
 .new-section {
     display: flex;
     justify-content: center;
@@ -492,7 +482,6 @@ export default {
     color: white;
 }
 
-
 @media (max-width: 768px) {
     .hero-title {
         font-size: 32px;
@@ -512,11 +501,6 @@ export default {
         text-align: center;
     }
 
-    .custom-cta-button {
-        padding: 9px 50px;
-        font-size: 16px;
-    }
-
     .information-text-title {
         font-size: 20px;
     }
@@ -525,41 +509,14 @@ export default {
         font-size: 16px;
     }
 
-    /* Kartların tam genişlikte ve eşit boyutta olması için */
-    .feature-card {
-        width: 100%;
-        /* Kart genişliği mobilde tam ekran olur */
-        margin-bottom: 20px;
-        /* Kartlar arasında boşluk bırak */
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        /* Kartları aynı boyutta yapar */
-    }
-
-    /* Her kartın içeriğinin aynı yükseklikte olmasını sağla */
-    .feature-box {
-        padding: 15px;
-        display: flex;
+    .new-section {
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
         text-align: center;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        height: 100%;
-        /* Kartın yüksekliği diğerleriyle eşitlenir */
-    }
-
-    .feature-box h3 {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-
-    .feature-box p {
-        font-size: 14px;
-        margin: 10px 0;
     }
 }
 </style>
