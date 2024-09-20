@@ -12,19 +12,16 @@
                 Marke stärkt.
             </h2>
         </div>
-        <a href="#" class="custom-cta-button">
-            <span class="custom-cta-button__text">Jetzt Kostenloses Erstgespräch vereinbaren</span>
-        </a>
     </el-col>
 
     <!-- Overlay Video Section -->
     <el-col :span="24" class="overlay-video-container" :class="{ 'normal-view': isInView }">
-        <img src="@/assets/sahne.png" class="mockup-image" alt="Mockup Image" />
+        <img src="@/assets/laptop.png" class="mockup-image" alt="Mockup Image" />
 
         <!-- Responsive ve Şekilli Video Kapsayıcısı -->
         <div class="custom-video-container">
             <div class="custom-video">
-                <video controls muted class="custom-video-player">
+                <video autoplay loop muted playsinline class="custom-video-player">
                     <source src="@/assets/wrapper.mp4" type="video/mp4" />
                     Tarayıcınız video etiketini desteklemiyor.
                 </video>
@@ -173,15 +170,17 @@ export default {
 .body {
     height: 100%;
     margin: 0;
-    background: linear-gradient(to bottom, #0b3d0b, #000000);
+    background: black;
     overflow-x: hidden;
 }
 
-.hero-section,
-.sub-hero-section,
-.overlay-video-container {
-    background: transparent;
-    padding: 100px 20px;
+.hero-section {
+    text-align: center;
+    background: linear-gradient(to bottom, #053c05, #000000);
+    position: relative;
+}
+
+.overlay-video-container{
     text-align: center;
     position: relative;
 }
@@ -194,6 +193,7 @@ export default {
 }
 
 .hero-title {
+    padding-top: 4%;
     font-family: 'Montserrat', sans-serif;
     font-size: 64px;
     font-weight: 700;
@@ -211,50 +211,57 @@ export default {
 }
 
 .mockup-image {
-    width: 80%;
+    left: 10%;
+    width: 50%;
     height: auto;
     display: block;
     position: relative;
     z-index: 1;
     transition: opacity 1s ease-in-out;
+    border-radius: 6%;
 }
 
 .custom-video-container {
     position: absolute;
-    top: 20%;
-    /* Slightly adjusted vertical position */
-    left: 20%;
-    /* Slightly adjusted horizontal position */
-    width: 35%;
-    /* Adjusted width for a tighter fit */
-    height: 43.5%;
-    /* Adjusted height to fit screen */
-    transform: perspective(500px) rotateX(3deg) rotateY(8deg) skewY(2deg);
-    /* Fine-tuned perspective */
+    top: 22%;
+    left: 18.5%;
+    width: 23%;
+    height: 36%;
+    transform: perspective(800px) rotateX(-8deg) rotateY(8deg) skewY(-27deg);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
-    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out; /* Geçiş animasyonları */
 }
 
 .overlay-video-container.normal-view .custom-video-container {
-    transform: none;
-    /* Video düz konuma gelir */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) perspective(800px); 
+    width: 50%;
+    height: auto; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out; /* Geçiş animasyonları */
 }
 
 .overlay-video-container.normal-view .mockup-image {
     opacity: 0;
-    /* Resim yavaşça kaybolur */
+    transition: opacity 1s ease-in-out; /* Görüntünün yavaşça kaybolması için */
 }
+
 
 .custom-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
-    /* Yuvarlatılmış köşeler */
+    border-radius: 10px;
 }
 
 .custom-video-player {
@@ -264,72 +271,6 @@ export default {
     /* Video içeriğinin kapsayıcıya göre ayarlanması */
     border-radius: 15px;
     /* Videonun da kenarları yuvarlanır */
-}
-
-.custom-cta-button {
-    display: inline-block;
-    color: rgba(0, 0, 0, 1);
-    background-color: rgba(162, 250, 207, 1);
-    border: 2px solid rgba(255, 255, 255, 1);
-    border-radius: 100px;
-    padding: 9px 100px;
-    font-family: 'Arial', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.custom-cta-button__text {
-    position: relative;
-    z-index: 2;
-}
-
-.custom-cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Flash Animation */
-.custom-cta-button::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 100px;
-    transition: opacity 0.3s ease, top 0.3s ease, left 0.3s ease, width 0.3s ease, height 0.3s ease;
-    opacity: 0;
-    z-index: 1;
-}
-
-.custom-cta-button:hover::before {
-    opacity: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: flash-animation 3s infinite;
-}
-
-@keyframes flash-animation {
-
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
 }
 
 .information {
