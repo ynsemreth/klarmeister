@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="big-case_image-wrapper">
-                        <img src="@/assets/sehlen_site.png" loading="lazy" width="555" height="294" alt="Sehlen Studio Site" class="big-case_featured-image" />
+                        <img src="@/assets/sehlen_site.png" loading="lazy" alt="Sehlen Studio Site" class="big-case_featured-image" />
                     </div>
 
                     <div class="big-case_meta">
@@ -84,16 +84,18 @@
                             Landingpage für Recruiting Marktführer, losgelöst von internen Blockaden.
                         </h3>
                         <div class="case_tags-collection">
-                            <div class="case_tags is-big-case">
-                                <div class="case_tag">
-                                    <div class="case_tag-text">Design System</div>
-                                </div>
-                                <div class="case_tag">
-                                    <div class="case_tag-text">Figma to Webflow</div>
-                                </div>
-                                <div class="case_tag">
-                                    <div class="case_tag-text">Dynamic Lotties</div>
-                                </div>
+                            <div class="case_tag">
+                                <el-icon><Document /></el-icon>
+                                <div class="case_tag-text">Design System</div>
+                            </div>
+                            
+                            <div class="case_tag">
+                                <el-icon><Refresh /></el-icon>
+                                <div class="case_tag-text">Figma to Webflow</div>
+                            </div>
+                            <div class="case_tag">
+                                <el-icon><MagicStick /></el-icon>
+                                <div class="case_tag-text">Dynamic Lotties</div>
                             </div>
                         </div>
 
@@ -138,8 +140,14 @@ import {
     onMounted,
     onUnmounted
 } from 'vue';
+import { Document, Refresh, MagicStick } from '@element-plus/icons-vue';
 
 export default {
+    components:{
+        Document,
+        Refresh,
+        MagicStick
+    },
     setup() {
         const isInView = ref(false);
 
@@ -372,9 +380,18 @@ export default {
 .new-section {
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
-    background-color: #d13056;
-    border-radius: 10px;
+    padding: 35px 20px;
+    background: linear-gradient(to bottom, #121640, #000000);
+    border-radius: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    border: 3px solid transparent;
+    transition: border-color 0.8s ease, background-color 0.8s ease;
+}
+
+.new-section:hover {
+    border-color: #fff;
 }
 
 .left-section {
@@ -386,17 +403,15 @@ export default {
 
 .right-section {
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
 }
 
 .big-case_logo-wrapper {
-    text-align: left;
     margin-bottom: 15px;
 }
 
 .big-case_logo {
-    width: 150px;
+    width: 50px;
     height: auto;
 }
 
@@ -405,7 +420,7 @@ export default {
 }
 
 .big-case_featured-image {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 10px;
 }
@@ -417,6 +432,7 @@ export default {
 .big-case_title {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
+    width: 80%;
     font-weight: 600;
     color: white;
     margin-bottom: 15px;
@@ -424,27 +440,59 @@ export default {
 
 .case_tags-collection {
     display: flex;
-    justify-content: flex-start;
-    gap: 10px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px; 
     margin-bottom: 20px;
+    width: 70%;
 }
 
 .case_tag {
     display: flex;
     align-items: center;
-    background-color: white;
-    color: #d13056;
-    padding: 5px 10px;
-    border-radius: 20px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    width: 80%;
 }
 
+.case_tag:hover {
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: white;
+    border-color: white; 
+}
+
+.case_tag .el-icon {
+    margin-right: 8px; 
+}
+
+.case_tag-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    font-weight: 200;
+    color: white;
+}
 .btn_wrapper {
-    background-color: white;
-    color: #d13056;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
     font-weight: 600;
     text-transform: uppercase;
+}
+
+.btn_wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: white;
+    border-color: white; 
 }
 
 .right-section .big-case_right {
