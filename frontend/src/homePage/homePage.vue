@@ -15,7 +15,6 @@
     </el-col>
 
     <!-- Overlay Video Section -->
-    <!-- Overlay Video Section -->
     <el-col :span="24" class="overlay-video-container" :class="{ 'normal-view': isInView }">
         <img src="@/assets/laptop.png" class="mockup-image" alt="Mockup Image" />
 
@@ -68,76 +67,68 @@
         </div>
     </el-col>
 
-    <!-- Additional Section - Inspired by the Screenshot -->
     <el-col :span="24" class="new-section">
-        <el-card shadow="hover" class="card-container">
-            <el-row :gutter="10">
-                <!-- Tek Kartta Birleştirilmiş Case Study -->
-                <el-col :span="24" class="case-study-section">
-                    <el-card shadow="hover" class="big-case_card">
-                        <!-- Sol Logo ve Görsel -->
-                        <div class="big-case_left">
-                            <div class="big-case_logo-wrapper">
-                                <img src="@/assets/sehlen_logo.png" loading="lazy" alt="Sehlen Studios" class="big-case_logo" />
-                            </div>
-                            <img src="@/assets/sehlen_site.png" loading="lazy" width="555" height="294" alt="Sehlen Studio Site" class="big-case_featured-image" />
-                        </div>
+        <el-row :gutter="10">
+            <el-col :span="14" class="left-section">
+                <div class="big-case_left">
+                    <div class="big-case_logo-wrapper">
+                        <img src="@/assets/sehlen_logo.png" loading="lazy" alt="Sehlen Studios" class="big-case_logo" />
+                    </div>
 
-                        <!-- Sağ Kısım (Video ve Metinler) -->
-                        <div class="big-case_right">
-                            <!-- Video Alanı -->
-                            <div class="big-case_right-video">
-                                <video controls muted class="custom-card-player">
-                                    <source src="@/assets/sehlen_video.mp4" type="video/mp4" />
-                                    Tarayıcınız video etiketini desteklemiyor.
-                                </video>
-                            </div>
+                    <div class="big-case_image-wrapper">
+                        <img src="@/assets/sehlen_site.png" loading="lazy" width="555" height="294" alt="Sehlen Studio Site" class="big-case_featured-image" />
+                    </div>
 
-                            <!-- Sağ Taraf Metin ve Detaylar -->
-                            <div class="big-case_right-text">
-                                <h3 class="big-case_right-title">Nicolas Karges</h3>
-                                <div class="big-case_right-text-details">
-                                    <span class="big-case_right-description is-first">Geschäftsführer</span>
-                                    <span class="big-case_right-description">Sehlen Studios GmbH</span>
+                    <div class="big-case_meta">
+                        <h3 class="big-case_title">
+                            Landingpage für Recruiting Marktführer, losgelöst von internen Blockaden.
+                        </h3>
+                        <div class="case_tags-collection">
+                            <div class="case_tags is-big-case">
+                                <div class="case_tag">
+                                    <div class="case_tag-text">Design System</div>
+                                </div>
+                                <div class="case_tag">
+                                    <div class="case_tag-text">Figma to Webflow</div>
+                                </div>
+                                <div class="case_tag">
+                                    <div class="case_tag-text">Dynamic Lotties</div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Başlık ve Etiketler -->
-                        <div class="big-case_meta">
-                            <h3 class="big-case_title">
-                                Entwicklung einer neuen Agentur Webseite inkl. Automationen & Karriere Bereich
-                            </h3>
-                            <div class="case_tags-collection">
-                                <div class="case_tags is-big-case">
-                                    <div class="case_tag">
-                                        <div class="case_tag-text">Automations</div>
-                                    </div>
-                                    <div class="case_tag">
-                                        <div class="case_tag-text">Design System</div>
-                                    </div>
-                                    <div class="case_tag">
-                                        <div class="case_tag-text">Figma to WordPress</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Buton -->
-                            <div class="big-case_actions">
-                                <div class="big-case_actions-open">
-                                    <a href="http://217.138.160.215:8450/home" class="btn w-inline-block">
-                                        <el-button type="primary" class="btn_wrapper">
-                                            <span class="btn_label">Casestudy ansehen</span>
-                                        </el-button>
-                                    </a>
-                                </div>
+                        <div class="big-case_actions">
+                            <div class="big-case_actions-open">
+                                <el-button type="primary" class="btn_wrapper">
+                                    <span class="btn_label">Casestudy ansehen</span>
+                                </el-button>
                             </div>
                         </div>
-                    </el-card>
-                </el-col>
-            </el-row>
-        </el-card>
+                    </div>
+                </div>
+            </el-col>
+
+            <el-col :span="10" class="right-section">
+                <div class="big-case_right">
+                    <div class="big-case_right-video">
+                        <video controls muted class="custom-card-player">
+                            <source src="@/assets/sehlen_video.mp4" type="video/mp4" />
+                            Tarayıcınız video etiketini desteklemiyor.
+                        </video>
+                    </div>
+
+                    <div class="big-case_right-text">
+                        <h3 class="big-case_right-title">Gian-Marco Blum</h3>
+                        <div class="big-case_right-text-details">
+                            <span class="big-case_right-description is-first">Geschäftsführer</span>
+                            <span class="big-case_right-description">Candidate Flow GmbH</span>
+                        </div>
+                    </div>
+                </div>
+            </el-col>
+        </el-row>
     </el-col>
+
 </el-row>
 </template>
 
@@ -156,12 +147,12 @@ export default {
             const videoSection = document.querySelector('.overlay-video-container');
             if (videoSection) {
                 const sectionPosition = videoSection.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 4;
+                const screenPosition = window.innerHeight / 5;
 
                 if (sectionPosition < screenPosition) {
-                    isInView.value = true; // Video düz hale gelir, resim kaybolur
+                    isInView.value = true;
                 } else {
-                    isInView.value = false; // Video eski perspektife döner, resim geri gelir
+                    isInView.value = false;
                 }
             }
         };
@@ -266,18 +257,16 @@ export default {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
-    /* Geçiş animasyonları */
 }
 
 .overlay-video-container.normal-view .mockup-image {
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    /* Görüntünün yavaşça kaybolması için */
 }
 
 .overlay-video-container.normal-view .custom-text-container {
     opacity: 0;
-    transition:  opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .custom-video {
@@ -291,20 +280,18 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Video içeriğinin kapsayıcıya göre ayarlanması */
     border-radius: 15px;
-    /* Videonun da kenarları yuvarlanır */
 }
 
 .custom-text-container {
     position: absolute;
-    top: 22%; /* Video ile hizalı şekilde konumlandır */
-    left: 55%; /* Videonun yanına konumlandır */
-    width: 40%; /* Metnin genişliği */
+    top: 22%;
+    left: 55%;
+    width: 40%;
     padding: 20px;
     color: white;
     text-align: left;
-    z-index: 3; /* Diğer elemanların üstünde görünmesi için */
+    z-index: 3;
 }
 
 .custom-text-title {
@@ -325,8 +312,9 @@ export default {
 }
 
 .information {
-    background-color: #e8e9ea;
-    padding: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -334,6 +322,7 @@ export default {
 }
 
 .information-content {
+    color: #fff;
     max-width: 60%;
 }
 
@@ -356,6 +345,7 @@ export default {
 .information-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
+    color: #fff;
     text-align: center;
     font-weight: 700;
 }
@@ -363,8 +353,9 @@ export default {
 .information-text-title {
     font-family: 'Helvetica', sans-serif;
     font-size: 24px;
+    color: #fff;
     font-weight: 400;
-    background: rgba(182, 245, 175, 0.5);
+    background: linear-gradient(to right, #135b13, #000000);
     padding: 10px 20px;
     border-radius: 10px;
 }
@@ -372,9 +363,9 @@ export default {
 .information-text-content {
     font-family: 'Helvetica', sans-serif;
     font-size: 18px;
+    color: #fff;
     font-weight: 400;
     line-height: 1.6;
-    color: #000;
     margin-bottom: 20px;
 }
 
@@ -392,63 +383,58 @@ export default {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    background-color: #d13056;
+    border-radius: 10px;
 }
 
-.case-study-section {
+.left-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    gap: 20px;
+    justify-content: flex-start;
+    padding-right: 20px;
 }
 
-.big-case_left {
+.right-section {
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
-
-.big-case_right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
 }
 
 .big-case_logo-wrapper {
+    text-align: left;
     margin-bottom: 15px;
 }
 
 .big-case_logo {
-    width: 100px;
+    width: 150px;
     height: auto;
+}
+
+.big-case_image-wrapper {
+    margin-bottom: 15px;
 }
 
 .big-case_featured-image {
     width: 100%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .big-case_meta {
-    text-align: center;
+    text-align: left;
 }
 
 .big-case_title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
+    color: white;
     margin-bottom: 15px;
 }
 
 .case_tags-collection {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -456,71 +442,56 @@ export default {
 .case_tag {
     display: flex;
     align-items: center;
-    gap: 5px;
-}
-
-.case_tag-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.big-case_actions {
-    margin-top: 20px;
+    background-color: white;
+    color: #d13056;
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 
 .btn_wrapper {
-    display: inline-block;
+    background-color: white;
+    color: #d13056;
     padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #007bff;
     border-radius: 30px;
-    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.card-container {
+.right-section .big-case_right {
     display: flex;
-    justify-content: center;
-    background: linear-gradient(to right, #330867, #D13256);
-    border-radius: 20px;
-    padding: 30px;
-}
-
-.custom-card-player {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.big-case_right-text {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.big-case_right-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.big-case_right-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #666;
-    margin-bottom: 5px;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .big-case_right-video {
     width: 100%;
-    margin-top: 20px;
-    border-radius: 15px;
-    overflow: hidden;
+    margin-bottom: 20px;
 }
+
+.custom-card-player {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.big-case_right-text {
+    text-align: right;
+    color: white;
+}
+
+.big-case_right-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.big-case_right-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+}
+
 
 @media (max-width: 768px) {
     .hero-title {
