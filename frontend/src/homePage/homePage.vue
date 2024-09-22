@@ -151,9 +151,7 @@
         <div class="web-card">
             <el-card class="web-card-one">
                 <div class="number">01</div>
-
                 <div class="web-card-title">Sie haben Ihre Lage erkannt</div>
-
                 <div class="web-card-subtitle">
                     <span>Der Sachverhalt ist klar:</span>
                     <span>Eine neue Webseite muss her!</span>
@@ -165,39 +163,35 @@
                     </el-icon>
                 </div>
             </el-card>
-            <el-card class="web-card-two">
+
+            <el-card class="web-card-two" :class="{ 'active-card': currentStep === 2 }">
                 <div class="number">02</div>
-
                 <div class="web-card-title">Füllen Sie unser Formular aus</div>
-
                 <div class="web-card-subtitle">
                     <span>Damit wir wissen, wer</span>
                     <span>Sie sind und was Sie vorhaben,</span>
                     <span>haben wir einige Fragen vorbereitet.</span>
                 </div>
-                
                 <div class="web-card-button">
                     <el-button type="primary" class="web-card-btn">
-                        <span class="btn_label">Casestudy ansehen</span>
+                        <span class="btn_label">Jetzt anfragen</span>
                     </el-button>
                 </div>
             </el-card>
+
             <el-card class="web-card-one">
                 <div class="number">03</div>
-                  
-                <div class="web-card-title">Hören Sie sich unsere Ideen ant</div>
-
+                <div class="web-card-title">Hören Sie sich unsere Ideen an</div>
                 <div class="web-card-subtitle">
                     <span>In einem ersten Telefonat</span>
                     <span>besprechen wir erste Details</span>
                     <span>und den weiteren Ablauf.</span>
                 </div>
             </el-card>
+
             <el-card class="web-card-one">
                 <div class="number">04</div>
-                 
                 <div class="web-card-title">Lehnen Sie sich entspannt zurück</div>
-
                 <div class="web-card-subtitle">
                     <span>Profitieren Sie mit dem</span>
                     <span>Start der Zusammenarbeit von</span>
@@ -205,6 +199,28 @@
                 </div>
             </el-card>
         </div>
+    </el-col>
+
+    <el-col :span="24" class="faq-section">
+        <div class="faq-header">
+            <h3 class="faq-subtitle">Finden Sie Antworten</h3>
+            <h1 class="faq-title">Noch Fragen zu uns?</h1>
+        </div>
+
+        <el-collapse accordion class="faq-collapse">
+            <el-collapse-item title="Was kostet eine Webseite von VIERLESS?" name="1">
+                <p>Die Kosten hängen von den individuellen Anforderungen ab. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.</p>
+            </el-collapse-item>
+            <el-collapse-item title="Wie läuft eine Zusammenarbeit mit VIERLESS ab?" name="2">
+                <p>Wir führen Sie Schritt für Schritt durch den gesamten Prozess, angefangen bei einem ersten Beratungsgespräch bis zur finalen Veröffentlichung Ihrer Webseite.</p>
+            </el-collapse-item>
+            <el-collapse-item title="Wie unterscheidet sich VIERLESS zu anderen Dienstleistern?" name="3">
+                <p>Unsere Lösungen sind maßgeschneidert, transparent und auf Qualität fokussiert. Keine versteckten Kosten, keine falschen Versprechen.</p>
+            </el-collapse-item>
+            <el-collapse-item title="Wieviel Zeit muss ich für eine Zusammenarbeit mit VIERLESS einplanen?" name="4">
+                <p>Die Projektdauer hängt von der Komplexität ab. Die meisten Projekte sind innerhalb von wenigen Wochen abgeschlossen.</p>
+            </el-collapse-item>
+        </el-collapse>
     </el-col>
 </el-row>
 </template>
@@ -231,7 +247,6 @@ export default {
     },
     setup() {
         const isInView = ref(false);
-
         const references = ref([{
                 name: 'Sehlen Tourismus',
                 image: '@/assets/sehlen_logo.png',
@@ -288,6 +303,7 @@ export default {
     margin: 0;
     background: black;
     overflow-x: hidden;
+    cursor: url('@/assets/cursor.png'), auto;
 }
 
 .hero-section {
@@ -688,27 +704,136 @@ export default {
 }
 
 .web-card {
-    padding: 20px 100px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
-    align-self: center;
+    padding: 0 250px;
+}
+
+.web-card-icon {
+    margin-top: 20px;
+
 }
 
 .web-card-one {
     display: flex;
-    margin-top: 10%;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: row;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    background-color: #000;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
 .web-card-two {
-    display: flex;
-    margin-top: 10%;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #23573f, #193427);
+    color: green;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.web-card-title {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.web-card-subtitle {
+    font-size: 0.75rem;
+    color: #d1d1d1;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.web-card .number {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.web-card-title {
+    padding-top: 3%;
+    text-align: left;
+}
+
+.web-card-subtitle {
+    padding-top: 3%;
+    text-align: left;
+}
+
+.web-section {
+    background-color: #000;
+    padding: 50px 0;
+}
+
+.web-card-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.web-card-button .web-card-btn {
+    background-color: #0def95;
+    border: transparent;
+    color: black;
+}
+
+.faq-section {
+  background-color: #000;
+  padding: 50px 20px;
+  color: white;
+  text-align: center;
+}
+
+.faq-header {
+  margin-bottom: 20px;
+}
+
+.faq-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.faq-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.faq-collapse {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.el-collapse-item__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: black;
+  background-color: black;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.el-collapse-item__content {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #d1d1d1;
+  background-color: #000;
+  padding: 15px;
+}
+
+.el-collapse-item.is-active .el-collapse-item__header {
+  background-color: #005c5c;
+  color: #fff;
 }
 
 @media (max-width: 768px) {

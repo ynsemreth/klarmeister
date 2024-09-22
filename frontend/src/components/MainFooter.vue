@@ -53,6 +53,7 @@ export default {
   padding: 40px 60px;
   background-color: #000000;
   color: #c9c9c9;
+  cursor: url('@/assets/cursor.png'), auto;
 }
 
 .footer-section {
