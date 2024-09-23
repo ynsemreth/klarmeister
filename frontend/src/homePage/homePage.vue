@@ -141,6 +141,22 @@
         </el-row>
     </el-col>
 
+    <el-col :span="24" class="our_services">
+        <div class="services_title-group">
+            <h1 class="services-title"> Transformieren Sie Ihre langweilige <br>
+                Webseite zu einer unvergleichbaren <br>
+                Online Präsenz mit Premium Charakter</h1>
+
+            <div class="services-subtitle">
+                <h3>Eine neue, moderne Webseite bekommen <br>
+                    Sie mittlerweile günstig an jeder Ecke.<br>
+                    Deshalb liegt unser Fokus zu 100% auf <br>
+                    einzigartigem Service und Premiumqualität.</h3>
+                <el-button class="btn-services">Jetzt Angebot einholen  <el-icon><Right /></el-icon> </el-button>
+            </div>
+        </div>
+    </el-col>
+
     <el-col :span="24" class="web-section">
         <div class="web-content">
             <h3 class="web-subtitle">DIE VIERLESS EXPERIENCE</h3>
@@ -299,6 +315,15 @@ export default {
 .overlay-video-container {
     text-align: center;
     position: relative;
+}
+
+.our_services {
+    position: relative;
+    background: black;
+    text-align: left;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .hero-content {
@@ -762,62 +787,96 @@ export default {
 }
 
 .faq-section {
-  background-color: #000; /* Arka plan siyah */
-  padding: 50px 20px;
-  color: white; /* Genel yazı rengi beyaz */
-  text-align: center;
-  border-radius: 20px; /* Kenarları yuvarlat */
+    background-color: #000;
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
 }
 
 .faq-header {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .faq-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .faq-subtitle {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 13px;
-  color: green;
-  margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: green;
+    margin-bottom: 10px;
 }
 
 .faq-collapse {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #000; /* Sıkıştırılmış alanın arka planı siyah */
-  background: #000;
-  border-radius: 10px; /* Kenarları yuvarlat */
-  border: 1px solid #333; /* Daha belirgin bir sınır */
-  padding: 15px; /* İç boşluk ekleme */
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #000;
+    background: #000;
+    border-radius: 10px;
+    border: 1px solid #333;
+    padding: 15px;
 }
 
 .el-collapse-item__title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  color: white; /* Başlık rengi beyaz */
-  background-color: #333; /* Arka plan koyu gri */
-  border-radius: 10px;
-  padding: 15px;
-  cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
 }
 
 .el-collapse-item__content {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  color: #d1d1d1; /* İçerik rengi açık gri */
-  background-color: #000; /* İçerik arka planı siyah */
-  padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #d1d1d1;
+    background-color: #000;
+    padding: 15px;
 }
 
 .el-collapse-item.is-active .el-collapse-item__header {
-  background-color: #193427;
-  color: #fff;
+    background-color: #193427;
+    color: #fff;
+}
+
+.services_title-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+.services-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    flex: 1;
+    color: #d1d1d1;
+}
+
+.services-subtitle {
+    flex: 1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: #d1d1d1;
+}
+
+.btn-services{
+    background-color: #0def95;
+    border: transparent;
+    color: black;
+}
+
+.btn-services:hover{
+    background-color: #0def95;
+    border: transparent;
+    color: black;
+    border: 1px solid #fff;
 }
 
 @media (max-width: 768px) {
