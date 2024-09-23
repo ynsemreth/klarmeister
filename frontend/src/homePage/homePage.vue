@@ -152,7 +152,51 @@
                     Sie mittlerweile günstig an jeder Ecke.<br>
                     Deshalb liegt unser Fokus zu 100% auf <br>
                     einzigartigem Service und Premiumqualität.</h3>
-                <el-button class="btn-services">Jetzt Angebot einholen  <el-icon><Right /></el-icon> </el-button>
+                <el-button class="btn-services">Jetzt Angebot einholen <el-icon>
+                        <Right />
+                    </el-icon>
+                </el-button>
+            </div>
+        </div>
+        <div class="services-card">
+            <el-card class="card1">
+                <h3 class="service-card-title">WebDesign</h3>
+                <div class="text">Exzellente Designideen, für digitale Erlebnisse, die Ihre Kunden begeistern.</div>
+                <div class="img-wrapper">
+                    <img src="@/assets/3er-Quiz-bild.png" alt="webdesign">
+                </div>
+            </el-card>
+            <el-card class="card2">
+                <h3 class="service-card-title">Webentwicklung</h3>
+                <div class="text">Zielgerichteter Fokus auf die Technik, die Ihre neue Webseite wirklich benötigt.</div>
+                <ul class="card-li">
+                    <li>
+                        <el-icon><Key /></el-icon>WebFlow
+                    </li>
+                    <li>
+                        <el-icon><SwitchFilled /></el-icon> WordPress
+                    </li>
+                    <li>
+                        <el-icon><Paperclip /></el-icon> Integrationen & API
+                    </li>
+                    <li>
+                        <el-icon><Platform /></el-icon> Business Automationen
+                    </li>
+                </ul>
+            </el-card>
+            <div class="card-list">
+                <el-card>
+                    <h3 class="service-card-title">SEO & SEA</h3>
+                    <div class="text">Organische Suchmaschinenoptimierung <br>
+                        oder bezahlte Google Ads verhelfen <br>
+                        Ihnen zu mehr Sichtbarkeit und Anfragen.</div>
+                </el-card>
+                <el-card>
+                    <h3 class="service-card-title">Branded Content Creation</h3>
+                    <div class="text">Neue Texte, Fotos und Videos <br>
+                        garantieren Ihnen sofort mehr Vertrauen <br>
+                        und Zuspruch Ihrer Zielgruppe.</div>
+                </el-card>
             </div>
         </div>
     </el-col>
@@ -161,7 +205,7 @@
         <div class="web-content">
             <h3 class="web-subtitle">DIE VIERLESS EXPERIENCE</h3>
             <h1 class="web-title">
-                In 4 einfachen Schritten zu Ihrem neuen Online Auftritt
+                In 4 einfachen Schritten <br> zu Ihrem neuen Online Auftritt
             </h1>
         </div>
         <div class="web-card">
@@ -323,7 +367,8 @@ export default {
     text-align: left;
     justify-content: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-content {
@@ -849,7 +894,7 @@ export default {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-
+    padding-left: 7%;
 }
 
 .services-title {
@@ -866,17 +911,121 @@ export default {
     color: #d1d1d1;
 }
 
-.btn-services{
+.btn-services {
     background-color: #0def95;
-    border: transparent;
+    border: none;
     color: black;
 }
 
-.btn-services:hover{
+.btn-services:hover {
     background-color: #0def95;
-    border: transparent;
-    color: black;
     border: 1px solid #fff;
+    color: black;
+}
+
+.services-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card1,
+.card2 {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(to bottom, #212121, #111111);
+    color: white;
+    border-radius: 8px;
+    border: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card1 .service-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.card2 .service-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.services-card .text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    color: #d4d4d4;
+}
+
+.card1 .img-wrapper {
+    margin-top: 20px;
+    padding: 5px; 
+    position: relative; 
+    left: -0px;
+}
+
+.card1 .img-wrapper .img {
+    width: 50%; 
+    height: auto; 
+}
+
+.card2 .card-li {
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    color: #ffffff;
+    padding-left: 0;
+}
+
+.card2 .card-li li {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: flex; 
+    align-items: center; 
+    margin: 5px 0; 
+}
+
+.card2 .card-li li el-icon {
+    margin-right: 8px;
+}
+
+.card-list {
+    display: flex; /* Flexbox ile düzenleme */
+    flex-direction: column; /* Dikey hizalama */
+    gap: 18px; /* Kartlar arasındaki boşluk */
+}
+
+.card-list .el-card {
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(to bottom, #212121, #111111);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-list .service-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.card-list .text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    color: #d4d4d4;
 }
 
 @media (max-width: 768px) {
