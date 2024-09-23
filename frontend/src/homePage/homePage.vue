@@ -383,6 +383,7 @@ export default {
 
 .body {
     height: 100%;
+    max-width: 100%;
     margin: 0;
     background: black;
     overflow-x: hidden;
@@ -556,6 +557,7 @@ export default {
     background-color: #000;
     color: #fff;
     padding: 100px;
+    max-width: 1500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
