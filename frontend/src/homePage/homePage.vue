@@ -168,7 +168,7 @@
                 <h3 class="service-card-title">WebDesign</h3>
                 <div class="text">Exzellente Designideen, für digitale Erlebnisse, die Ihre Kunden begeistern.</div>
                 <div class="img-wrapper">
-                    <img src="@/assets/3er-Quiz-bild.png" alt="webdesign">
+                    <img src="@/assets/figma.png" alt="webdesign">
                 </div>
             </el-card>
             <el-card class="card2">
@@ -327,6 +327,36 @@
             </el-collapse-item>
         </el-collapse>
     </el-col>
+
+    <el-col :span="24">
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" class="facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" class="tiktok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="youtube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </el-col>
+
+    <el-col :span="24" class="banner-section">
+        <div class="banner-link">
+            <h3>Jetzt anfragen</h3>
+            <div class="banner-text">
+                Lust auf ein Projekt<br>mit VIERLESS?
+            </div>
+            <el-button class="banner-button">Termin vereinbaren</el-button>
+        </div>
+    </el-col>
 </el-row>
 </template>
 
@@ -409,12 +439,21 @@ export default {
 
 .our_services {
     position: relative;
-    background: black;
     text-align: left;
-    justify-content: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.banner-section{
+    position: relative;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .hero-content {
@@ -834,9 +873,11 @@ export default {
     font-family: 'Montserrat', sans-serif;
     flex-direction: row;
     width: 100%;
-    background-color: #000;
+    background: linear-gradient(to bottom, #212121, #111111);
     color: white;
-    border-radius: 10px;
+    border-radius: 16px;
+    box-shadow: 5px 4px 12px rgb(255, 254, 254);
+    border: 5px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
@@ -846,7 +887,8 @@ export default {
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(to bottom, #23573f, #193427);
     color: green;
-    border-radius: 10px;
+    border-radius: 16px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
@@ -933,51 +975,52 @@ export default {
 }
 
 .faq-collapse .el-collapse-item {
-    background-color: #222; 
+    background-color: #222;
     border-radius: 5px;
-    margin-bottom: 10px; /* Her bir item arasında boşluk */
-    overflow: hidden; /* Yuvarlama ile oluşan boşlukları kapatır */
+    margin-bottom: 10px;
+    /* Her bir item arasında boşluk */
+    overflow: hidden;
+    /* Yuvarlama ile oluşan boşlukları kapatır */
 }
 
 .el-collapse-item__header {
     padding: 10px 15px;
-    border-radius: 5px; 
-    background-color: #222; 
-    color: #fff; 
-    transition: background-color 0.3s ease; 
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
 .el-collapse-item.is-active .el-collapse-item__header {
-    background-color: #193427; 
-    color: #fff; 
+    background-color: #193427;
+    color: #fff;
 }
 
 .el-collapse-item__content {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: #d1d1d1;
-    background-color: #000; 
+    background-color: #000;
     padding: 15px;
     border: 2px solid black;
-    margin: 0; 
+    margin: 0;
 }
 
 .services_title-group {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    padding-left: 7%;
+    padding-left: 0;
+    justify-content: center;
 }
 
 .services-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    flex: 1;
     color: #d1d1d1;
 }
 
 .services-subtitle {
-    flex: 1;
     font-family: 'Courier New', Courier, monospace;
     font-size: 13px;
     color: #d1d1d1;
@@ -1008,10 +1051,15 @@ export default {
     height: 320px;
     background: linear-gradient(to bottom, #212121, #111111);
     color: white;
-    border-radius: 8px;
-    border: 5px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 16px;
+    box-shadow: 5px 4px 12px rgb(255, 254, 254);
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: left;
 }
 
 .card1 .service-card-title {
@@ -1037,14 +1085,14 @@ export default {
 
 .card1 .img-wrapper {
     margin-top: 20px;
-    padding: 5px;
     position: relative;
     left: -0px;
 }
 
-.card1 .img-wrapper .img {
-    width: 50%;
+.card1 .img-wrapper img {
+    width: 150%;
     height: auto;
+    border-radius: 10px;
 }
 
 .card2 .card-li {
@@ -1072,16 +1120,16 @@ export default {
 .card-list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 47px;
 }
 
 .card-list .el-card {
-    width: 300px;
+    width: 320px;
     height: 150px;
     background: linear-gradient(to bottom, #212121, #111111);
+    border-radius: 16px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
     color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -1099,6 +1147,87 @@ export default {
     font-weight: 100;
     color: #d4d4d4;
 }
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-media a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, #212121, #111111);
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+.social-media a.facebook:hover {
+    color: #3b5998;
+}
+
+.social-media a.instagram:hover {
+    color: #E1306C;
+}
+
+.social-media a.linkedin:hover {
+    color: #0077B5;
+}
+
+.social-media a.tiktok:hover {
+    color: #69C9D0;
+}
+
+.social-media a.youtube:hover {
+    color: #FF0000;
+}
+
+.banner-link {
+    background: linear-gradient(to right, #2a5844, #122119); 
+    padding: 40px 270px;
+    border-radius: 8px;
+}
+
+.banner-link h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: lightgreen;
+    margin-bottom: 10px;
+}
+
+.banner-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+
+.banner-button {
+    background-color: #0def95;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.banner-button:hover{
+    background-color: #0def95;
+    border: 1px solid #fff;
+    color: black;
+}
+
 
 @media (max-width: 768px) {
 
