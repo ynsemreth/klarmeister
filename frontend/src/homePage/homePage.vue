@@ -207,7 +207,7 @@
             <h1 class="faq-title">Noch Fragen zu uns?</h1>
         </div>
 
-        <el-collapse accordion class="faq-collapse">
+        <el-collapse background-color="black" text-color="white" accordion class="faq-collapse">
             <el-collapse-item title="Was kostet eine Webseite von VIERLESS?" name="1">
                 <p>Die Kosten hängen von den individuellen Anforderungen ab. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.</p>
             </el-collapse-item>
@@ -247,27 +247,6 @@ export default {
     },
     setup() {
         const isInView = ref(false);
-        const references = ref([{
-                name: 'Sehlen Tourismus',
-                image: '@/assets/sehlen_logo.png',
-            },
-            {
-                name: 'Allianz',
-                image: '@/assets/allianz.jpeg',
-            },
-            {
-                name: 'BMW',
-                image: '@/assets/bmw.jpeg',
-            },
-            {
-                name: 'Facebook',
-                image: '@/assets/face.png',
-            },
-            {
-                name: 'Rettig & Partner',
-                image: '@/assets/rettig.png',
-            },
-        ]);
 
         const handleScroll = () => {
             const videoSection = document.querySelector('.overlay-video-container');
@@ -289,13 +268,12 @@ export default {
 
         return {
             isInView,
-            references,
         };
     },
 };
 </script>
 
-<style scoped>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&display=swap');
 
 .body {
@@ -784,10 +762,11 @@ export default {
 }
 
 .faq-section {
-  background-color: #000;
+  background-color: #000; /* Arka plan siyah */
   padding: 50px 20px;
-  color: white;
+  color: white; /* Genel yazı rengi beyaz */
   text-align: center;
+  border-radius: 20px; /* Kenarları yuvarlat */
 }
 
 .faq-header {
@@ -811,13 +790,18 @@ export default {
 .faq-collapse {
   max-width: 800px;
   margin: 0 auto;
+  background-color: #000; /* Sıkıştırılmış alanın arka planı siyah */
+  background: #000;
+  border-radius: 10px; /* Kenarları yuvarlat */
+  border: 1px solid #333; /* Daha belirgin bir sınır */
+  padding: 15px; /* İç boşluk ekleme */
 }
 
 .el-collapse-item__title {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-  color: black;
-  background-color: black;
+  color: white; /* Başlık rengi beyaz */
+  background-color: #333; /* Arka plan koyu gri */
   border-radius: 10px;
   padding: 15px;
   cursor: pointer;
@@ -826,13 +810,13 @@ export default {
 .el-collapse-item__content {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  color: #d1d1d1;
-  background-color: #000;
+  color: #d1d1d1; /* İçerik rengi açık gri */
+  background-color: #000; /* İçerik arka planı siyah */
   padding: 15px;
 }
 
 .el-collapse-item.is-active .el-collapse-item__header {
-  background-color: #005c5c;
+  background-color: #193427;
   color: #fff;
 }
 
