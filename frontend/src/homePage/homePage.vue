@@ -3,6 +3,7 @@
     <!-- Hero Section -->
     <el-col :span="24" class="hero-section">
         <div class="hero-content">
+            <h3 class="hero-h3">IHR EXTERNES WEBDESIGN TEAM</h3>
             <h1 class="hero-title">
                 Verkaufsstarke Webseiten, die Ihre Kunden überzeugen
             </h1>
@@ -141,6 +142,10 @@
         </el-row>
     </el-col>
 
+    <el-col :span="24">
+        <div class="line"></div>
+    </el-col>
+
     <el-col :span="24" class="our_services">
         <div class="services_title-group">
             <h1 class="services-title"> Transformieren Sie Ihre langweilige <br>
@@ -171,16 +176,24 @@
                 <div class="text">Zielgerichteter Fokus auf die Technik, die Ihre neue Webseite wirklich benötigt.</div>
                 <ul class="card-li">
                     <li>
-                        <el-icon><Key /></el-icon>WebFlow
+                        <el-icon>
+                            <Key />
+                        </el-icon>WebFlow
                     </li>
                     <li>
-                        <el-icon><SwitchFilled /></el-icon> WordPress
+                        <el-icon>
+                            <SwitchFilled />
+                        </el-icon> WordPress
                     </li>
                     <li>
-                        <el-icon><Paperclip /></el-icon> Integrationen & API
+                        <el-icon>
+                            <Paperclip />
+                        </el-icon> Integrationen & API
                     </li>
                     <li>
-                        <el-icon><Platform /></el-icon> Business Automationen
+                        <el-icon>
+                            <Platform />
+                        </el-icon> Business Automationen
                     </li>
                 </ul>
             </el-card>
@@ -378,8 +391,16 @@ export default {
     padding: 20px;
 }
 
+.line {
+    width: 70%; 
+    height: 2px; 
+    background-color: #333;
+    margin: 40px auto; 
+    
+}
+
+
 .hero-title {
-    padding-top: 4%;
     font-family: 'Montserrat', sans-serif;
     font-size: 64px;
     font-weight: 700;
@@ -394,6 +415,13 @@ export default {
     font-weight: 400;
     color: #d1d1d1;
     margin: 20px 0 0;
+}
+
+.hero-h3{
+    flex: 1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: rgb(54, 189, 54);
 }
 
 .mockup-image {
@@ -420,6 +448,8 @@ export default {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .overlay-video-container.normal-view .custom-video-container {
@@ -435,6 +465,8 @@ export default {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .overlay-video-container.normal-view .mockup-image {
@@ -502,6 +534,7 @@ export default {
 .information-content {
     color: #fff;
     max-width: 60%;
+    padding-left: 3%;
 }
 
 .information-image {
@@ -529,7 +562,7 @@ export default {
 }
 
 .information-text-title {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     color: #fff;
     font-weight: 400;
@@ -539,11 +572,11 @@ export default {
 }
 
 .information-text-content {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
     color: #fff;
-    font-weight: 400;
-    line-height: 1.6;
+    font-weight: 1000;
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
@@ -965,14 +998,14 @@ export default {
 
 .card1 .img-wrapper {
     margin-top: 20px;
-    padding: 5px; 
-    position: relative; 
+    padding: 5px;
+    position: relative;
     left: -0px;
 }
 
 .card1 .img-wrapper .img {
-    width: 50%; 
-    height: auto; 
+    width: 50%;
+    height: auto;
 }
 
 .card2 .card-li {
@@ -988,9 +1021,9 @@ export default {
     border-bottom: 1px solid #ffffff;
     padding-bottom: 5px;
     margin-bottom: 5px;
-    display: flex; 
-    align-items: center; 
-    margin: 5px 0; 
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
 }
 
 .card2 .card-li li el-icon {
@@ -998,9 +1031,9 @@ export default {
 }
 
 .card-list {
-    display: flex; /* Flexbox ile düzenleme */
-    flex-direction: column; /* Dikey hizalama */
-    gap: 18px; /* Kartlar arasındaki boşluk */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .card-list .el-card {
