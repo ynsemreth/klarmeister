@@ -280,18 +280,50 @@
             <h1 class="faq-title">Noch Fragen zu uns?</h1>
         </div>
 
-        <el-collapse background-color="black" text-color="white" accordion class="faq-collapse">
-            <el-collapse-item title="Was kostet eine Webseite von VIERLESS?" name="1">
-                <p>Die Kosten hängen von den individuellen Anforderungen ab. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.</p>
+        <el-collapse class="faq-collapse" accordion>
+            <el-collapse-item name="1">
+                <template #title>
+                    Was kostet eine Webseite von VIERLESS?
+                    <el-icon class="header-icon">
+                        <info-filled />
+                    </el-icon>
+                </template>
+                <div>
+                    Die Kosten hängen von den individuellen Anforderungen ab. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.
+                </div>
             </el-collapse-item>
-            <el-collapse-item title="Wie läuft eine Zusammenarbeit mit VIERLESS ab?" name="2">
-                <p>Wir führen Sie Schritt für Schritt durch den gesamten Prozess, angefangen bei einem ersten Beratungsgespräch bis zur finalen Veröffentlichung Ihrer Webseite.</p>
+            <el-collapse-item name="2">
+                <template #title>
+                    Wie läuft eine Zusammenarbeit mit VIERLESS ab?
+                    <el-icon class="header-icon">
+                        <info-filled />
+                    </el-icon>
+                </template>
+                <div>
+                    Wir führen Sie Schritt für Schritt durch den gesamten Prozess, angefangen bei einem ersten Beratungsgespräch bis zur finalen Veröffentlichung Ihrer Webseite.
+                </div>
             </el-collapse-item>
-            <el-collapse-item title="Wie unterscheidet sich VIERLESS zu anderen Dienstleistern?" name="3">
-                <p>Unsere Lösungen sind maßgeschneidert, transparent und auf Qualität fokussiert. Keine versteckten Kosten, keine falschen Versprechen.</p>
+            <el-collapse-item name="3">
+                <template #title>
+                    Wie unterscheidet sich VIERLESS zu anderen Dienstleistern?
+                    <el-icon class="header-icon">
+                        <info-filled />
+                    </el-icon>
+                </template>
+                <div>
+                    Unsere Lösungen sind maßgeschneidert, transparent und auf Qualität fokussiert. Keine versteckten Kosten, keine falschen Versprechen.
+                </div>
             </el-collapse-item>
-            <el-collapse-item title="Wieviel Zeit muss ich für eine Zusammenarbeit mit VIERLESS einplanen?" name="4">
-                <p>Die Projektdauer hängt von der Komplexität ab. Die meisten Projekte sind innerhalb von wenigen Wochen abgeschlossen.</p>
+            <el-collapse-item name="4">
+                <template #title>
+                    Wieviel Zeit muss ich für eine Zusammenarbeit mit VIERLESS einplanen?
+                    <el-icon class="header-icon">
+                        <info-filled />
+                    </el-icon>
+                </template>
+                <div>
+                    Die Projektdauer hängt von der Komplexität ab. Die meisten Projekte sind innerhalb von wenigen Wochen abgeschlossen.
+                </div>
             </el-collapse-item>
         </el-collapse>
     </el-col>
@@ -392,13 +424,12 @@ export default {
 }
 
 .line {
-    width: 70%; 
-    height: 2px; 
+    width: 70%;
+    height: 2px;
     background-color: #333;
-    margin: 40px auto; 
-    
-}
+    margin: 40px auto;
 
+}
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
@@ -417,7 +448,7 @@ export default {
     margin: 20px 0 0;
 }
 
-.hero-h3{
+.hero-h3 {
     flex: 1;
     font-family: 'Courier New', Courier, monospace;
     font-size: 13px;
@@ -894,33 +925,39 @@ export default {
     max-width: 800px;
     margin: 0 auto;
     background-color: #000;
-    background: #000;
     border-radius: 10px;
     border: 1px solid #333;
     padding: 15px;
 }
 
-.el-collapse-item__title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: white;
-    background-color: #333;
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
+.faq-collapse .el-collapse-item {
+    background-color: #222; 
+    border-radius: 5px;
+    margin-bottom: 10px; /* Her bir item arasında boşluk */
+    overflow: hidden; /* Yuvarlama ile oluşan boşlukları kapatır */
+}
+
+.el-collapse-item__header {
+    padding: 10px 15px;
+    border-radius: 5px; 
+    background-color: #222; 
+    color: #fff; 
+    transition: background-color 0.3s ease; 
+}
+
+.el-collapse-item.is-active .el-collapse-item__header {
+    background-color: #193427; 
+    color: #fff; 
 }
 
 .el-collapse-item__content {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: #d1d1d1;
-    background-color: #000;
+    background-color: #000; 
     padding: 15px;
-}
-
-.el-collapse-item.is-active .el-collapse-item__header {
-    background-color: #193427;
-    color: #fff;
+    border: 2px solid black;
+    margin: 0; 
 }
 
 .services_title-group {
