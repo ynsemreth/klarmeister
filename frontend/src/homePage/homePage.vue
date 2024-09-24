@@ -508,7 +508,9 @@ export default {
 
 .hero-button img {
     max-width: 50px;
-    height: 50px;
+    min-width: 50px;
+    max-height: 50px;
+    min-height: 50px;
     background: transparent;
     display: block;
     margin-left: 10px;

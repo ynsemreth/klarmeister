@@ -99,7 +99,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* Main Navigation Bar */
 .navbar {
   font-family: 'Montserrat', sans-serif;
@@ -110,6 +110,7 @@ export default {
   height: 50px;
   border-bottom: 1px solid #ddd;
   cursor: url('@/assets/cursor.png'), auto;
+  background-color: white;
 }
 
 .navbar-left,
