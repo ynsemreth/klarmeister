@@ -21,6 +21,6 @@ export default {
 body {
     margin: 0;
     height: auto;
-    background-color: black;
+    background: linear-gradient(to bottom, #053c05, #000000);
 }
 </style>

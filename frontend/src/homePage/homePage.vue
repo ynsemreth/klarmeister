@@ -488,6 +488,20 @@ export default {
     border-radius: 5px;
 }
 
+@keyframes flash {
+
+    0%,
+    100% {
+        background-color: #0def95;
+        box-shadow: none;
+    }
+
+    50% {
+        background-color: #0abf7e;
+        box-shadow: 0 0 15px rgba(13, 239, 149, 0.5), 0 0 30px rgba(13, 239, 149, 0.3);
+    }
+}
+
 .hero-button-btn {
     background-color: #0def95;
     border: none;
@@ -495,11 +509,13 @@ export default {
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    animation: flash 1.5s infinite;
+    transition: background-color 0.3s;
 }
 
 .hero-button-btn:hover {
+    animation: none;
     background-color: #0def95;
-    border: none;
     color: black;
     padding: 10px 20px;
     display: flex;
@@ -532,12 +548,24 @@ export default {
     line-height: 1.2;
 }
 
+@keyframes slide-up {
+    from {
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
 .hero-subtitle {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 400;
     color: #d1d1d1;
     margin: 20px 0 0;
+    animation: slide-up 3s ease forwards; 
 }
 
 .hero-h3 {
@@ -988,6 +1016,7 @@ export default {
     background-color: #0def95;
     border: transparent;
     color: black;
+    animation: flash 1.5s infinite;
 }
 
 .faq-section {
@@ -1079,13 +1108,14 @@ export default {
 
 .btn-services {
     background-color: #0def95;
-    border: none;
+    border: transparent;
+    animation: flash 1.5s infinite;
     color: black;
 }
 
 .btn-services:hover {
     background-color: #0def95;
-    border: 1px solid #fff;
+    border: transparent;
     color: black;
 }
 
@@ -1269,13 +1299,14 @@ export default {
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: 1px solid #000;
+    border:transparent;
     transition: background-color 0.3s ease, color 0.3s ease;
+    animation: flash 1.5s infinite;
 }
 
 .banner-button:hover {
     background-color: #0def95;
-    border: 1px solid #fff;
+    border: transparent;
     color: black;
 }
 
