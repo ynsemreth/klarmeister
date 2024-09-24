@@ -46,28 +46,6 @@
         </div>
     </el-col>
 
-    <!-- Information Section -->
-    <el-col :span="24" class="information">
-        <div class="information-content">
-            <h1 class="information-title">Schnauze voll von Luftpumpen</h1>
-            <h2 class="information-text-title">
-                <span class="highlight">Haben Sie auch die Nase voll von leeren Versprechungen?</span>
-            </h2>
-            <p class="information-text-content">
-                Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb
-                von 8 Stunden oder gefühlt einem halben Jahr zu erstellen für
-                horrende Summen von 20.000 Euro oder mehr?
-            </p>
-            <p class="information-text-content">
-                Bei uns ist das anders. Wir bieten eine transparente und zielführende
-                Lösung, die Ihre Erwartungen übertrifft.
-            </p>
-        </div>
-        <div class="information-image">
-            <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
-        </div>
-    </el-col>
-
     <el-col :span="24" class="new-section">
         <el-row :gutter="10">
             <el-col :span="14" class="left-section">
@@ -140,6 +118,32 @@
                 </div>
             </el-col>
         </el-row>
+    </el-col>
+
+    <el-col :span="24">
+        <div class="line"></div>
+    </el-col>
+
+    <!-- Information Section -->
+    <el-col :span="24" class="information">
+        <div class="information-content">
+            <h1 class="information-title">Schnauze voll von Luftpumpen</h1>
+            <h2 class="information-text-title">
+                <span class="highlight">Haben Sie auch die Nase voll von leeren Versprechungen?</span>
+            </h2>
+            <p class="information-text-content">
+                Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb
+                von 8 Stunden oder gefühlt einem halben Jahr zu erstellen für
+                horrende Summen von 20.000 Euro oder mehr?
+            </p>
+            <p class="information-text-content">
+                Bei uns ist das anders. Wir bieten eine transparente und zielführende
+                Lösung, die Ihre Erwartungen übertrifft.
+            </p>
+        </div>
+        <div class="information-image">
+            <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
+        </div>
     </el-col>
 
     <el-col :span="24">
@@ -442,7 +446,7 @@ export default {
     text-align: left;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 10 auto;
     max-width: 1200px;
 }
 
@@ -467,8 +471,7 @@ export default {
     width: 70%;
     height: 2px;
     background-color: #333;
-    margin: 40px auto;
-
+    margin: 2px auto;
 }
 
 .hero-title {
