@@ -53,7 +53,7 @@
         </div>
     </el-col>
 
-    <el-col style="text-align: center; font-size: 20px; font-family: 'Courier New', Courier, monospace;
+    <el-col style="text-align: center; font-size: 20px; font-family: 'Poppins', Courier, monospace;
     color: rgb(54, 189, 54);">
         <h3>REFERENZ</h3>
     </el-col>
@@ -542,7 +542,7 @@ export default {
 
 .hero-h3 {
     flex: 1;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', Courier, monospace;
     font-size: 13px;
     color: rgb(54, 189, 54);
 }
@@ -696,7 +696,7 @@ export default {
 }
 
 .information-text-content {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', Courier, monospace;
     font-size: 18px;
     color: #fff;
     font-weight: 300;
@@ -899,7 +899,7 @@ export default {
 }
 
 .web-subtitle {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', Courier, monospace;
     text-align: center;
     font-size: 13px;
     font-size: 300;
@@ -1010,7 +1010,7 @@ export default {
 }
 
 .faq-subtitle {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', Courier, monospace;
     font-size: 13px;
     color: green;
     margin-bottom: 10px;
@@ -1072,7 +1072,7 @@ export default {
 }
 
 .services-subtitle {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', Courier, monospace;
     font-size: 13px;
     color: #d1d1d1;
 }
