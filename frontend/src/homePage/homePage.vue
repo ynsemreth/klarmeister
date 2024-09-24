@@ -12,6 +12,13 @@
                 beeindruckenden Online-Auftritt, der Ihren Umsatz steigert und Ihre
                 Marke stärkt.
             </h2>
+            <div class="hero-button">
+                <el-button class="hero-button-btn">Jetzt Angebot einholen <el-icon>
+                        <Right />
+                    </el-icon>
+                </el-button>
+                <img src="@/assets/garanti.png" alt="garanti">
+            </div>
         </div>
     </el-col>
 
@@ -241,7 +248,7 @@
                 </div>
             </el-card>
 
-            <el-card class="web-card-two" :class="{ 'active-card': currentStep === 2 }">
+            <el-card class="web-card-two active-card">
                 <div class="number">02</div>
                 <div class="web-card-title">Füllen Sie unser Formular aus</div>
                 <div class="web-card-subtitle">
@@ -450,7 +457,7 @@ export default {
     max-width: 1200px;
 }
 
-.banner-section{
+.banner-section {
     position: relative;
     text-align: center;
     display: flex;
@@ -466,6 +473,42 @@ export default {
     max-width: 900px;
     padding: 20px;
 }
+
+.hero-button {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hero-button-btn {
+    background-color: #0def95;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-button-btn:hover{
+    background-color: #0def95;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-button img {
+    max-width: 50px; 
+    height: 50px;
+    background: transparent; 
+    display: block; 
+    margin-left: 10px;
+}
+
 
 .line {
     width: 70%;
@@ -598,7 +641,7 @@ export default {
 .information {
     background-color: #000;
     color: #fff;
-    padding: 100px;
+    padding: 120px;
     max-width: 1500px;
     display: flex;
     justify-content: space-between;
@@ -609,18 +652,18 @@ export default {
 .information-content {
     color: #fff;
     max-width: 60%;
-    padding-left: 3%;
+    padding-left: 5%;
 }
 
 .information-image {
     max-width: 35%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
 .information-image .info-image {
-    max-width: 100%;
-    border-radius: 10px;
+    max-width: 80%;
     transition: transform 0.3s ease;
 }
 
@@ -630,17 +673,17 @@ export default {
 
 .information-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 40px;
     color: #fff;
-    text-align: center;
+    text-align: left;
     font-weight: 700;
 }
 
 .information-text-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
-    font-weight: 400;
+    font-weight: 100;
     background: linear-gradient(to right, #135b13, #000000);
     padding: 10px 20px;
     border-radius: 10px;
@@ -650,9 +693,8 @@ export default {
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
     color: #fff;
-    font-weight: 1000;
+    font-weight: 300;
     line-height: 1.8;
-    margin-bottom: 20px;
 }
 
 .new-section {
@@ -981,9 +1023,7 @@ export default {
     background-color: #222;
     border-radius: 5px;
     margin-bottom: 10px;
-    /* Her bir item arasında boşluk */
     overflow: hidden;
-    /* Yuvarlama ile oluşan boşlukları kapatır */
 }
 
 .el-collapse-item__header {
@@ -1010,6 +1050,8 @@ export default {
 }
 
 .services_title-group {
+    padding-top: 3%;
+    padding-bottom: 3%;
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -1194,7 +1236,7 @@ export default {
 }
 
 .banner-link {
-    background: linear-gradient(to right, #2a5844, #122119); 
+    background: linear-gradient(to right, #2a5844, #122119);
     padding: 40px 270px;
     border-radius: 8px;
 }
@@ -1225,12 +1267,11 @@ export default {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.banner-button:hover{
+.banner-button:hover {
     background-color: #0def95;
     border: 1px solid #fff;
     color: black;
 }
-
 
 @media (max-width: 768px) {
 
@@ -1238,7 +1279,6 @@ export default {
         display: none;
     }
 
-    /* Diğer görseller ve videoları düzenlemek için */
     .overlay-video-container {
         display: flex;
         flex-direction: column;
@@ -1269,7 +1309,6 @@ export default {
         height: auto;
     }
 
-    /* Information Section mobil ayarı */
     .information {
         flex-direction: column;
         padding: 50px;
@@ -1286,7 +1325,6 @@ export default {
         margin-top: 20px;
     }
 
-    /* New Section mobil ayarı */
     .new-section {
         flex-direction: column;
         padding: 20px;
