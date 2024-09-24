@@ -53,6 +53,11 @@
         </div>
     </el-col>
 
+    <el-col style="text-align: center; font-size: 20px; font-family: 'Courier New', Courier, monospace;
+    color: rgb(54, 189, 54);">
+        <h3>REFERENZ</h3>
+    </el-col>
+
     <el-col :span="24" class="new-section">
         <el-row :gutter="10">
             <el-col :span="14" class="left-section">
@@ -476,7 +481,7 @@ export default {
 
 .hero-button {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     background-color: black;
     padding: 10px;
@@ -492,7 +497,7 @@ export default {
     align-items: center;
 }
 
-.hero-button-btn:hover{
+.hero-button-btn:hover {
     background-color: #0def95;
     border: none;
     color: black;
@@ -502,13 +507,12 @@ export default {
 }
 
 .hero-button img {
-    max-width: 50px; 
+    max-width: 50px;
     height: 50px;
-    background: transparent; 
-    display: block; 
+    background: transparent;
+    display: block;
     margin-left: 10px;
 }
-
 
 .line {
     width: 70%;
