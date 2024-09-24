@@ -1,126 +1,102 @@
 <template>
   <footer class="footer">
-    <div class="footer-section">
-      <h3>Unternehmen</h3>
-      <ul>
-        <li><a href="#">Startseite</a></li>
-        <li><a href="#">Leistungen</a></li>
-        <li><a href="#">Über Uns</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3>Rechtliches</h3>
-      <ul>
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">AGB</a></li>
-      </ul>
-    </div>
-    <div class="footer-section contact-section">
-      <h3>Kontakt</h3>
-      <div class="divider-horizontal"></div>
-      <ul>
-        <li class="text">
-          <el-icon><PhoneFilled /></el-icon> 08856 / 92 94 - 0
-        </li>
-        <li class="text">
-          <el-icon><Location /></el-icon> 82377 Penzberg
-        </li>
-        <li class="text">
-          <el-icon><Message /></el-icon> info@ib-herzog.de
-        </li>
-      </ul>
-    </div>
+    <el-row>
+      <el-col :span="6" class="footer-col">
+        <ul>
+          <h3>Referenzen</h3>
+          <li><a href="#">Referenz 1</a></li>
+          <li><a href="#">Referenz 2</a></li>
+          <li><a href="#">Referenz 3</a></li>
+        </ul>
+      </el-col>
+
+      <el-col :span="6" class="footer-col">
+        <ul>
+          <h3>Ressourcen</h3>
+          <li><a href="#">Ressource 1</a></li>
+          <li><a href="#">Ressource 2</a></li>
+          <li><a href="#">Ressource 3</a></li>
+        </ul>
+      </el-col>
+
+      <el-col :span="6" class="footer-col">
+        <ul>
+          <h3>Lösungen</h3>
+          <li><a href="#">Lösung 1</a></li>
+          <li><a href="#">Lösung 2</a></li>
+          <li><a href="#">Lösung 3</a></li>
+        </ul>
+      </el-col>
+
+      <el-col :span="6" class="footer-col">
+        <ul>
+          <h3>KLARMEISTER</h3>
+          <li><a href="#">Über Klarmeister</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </el-col>
+    </el-row>
   </footer>
 </template>
 
-<script>
-import { PhoneFilled, Message, Location } from '@element-plus/icons-vue';
-
-export default {
-  components: {
-    PhoneFilled,
-    Message,
-    Location,
-  },
-};
-</script>
-
-<style scoped>
+<style>
 .footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 60px;
-  background-color: #000000;
-  color: #c9c9c9;
-  cursor: url('@/assets/cursor.png'), auto;
+    background-color: black;
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.footer-section {
-  flex: 1;
-  padding: 0 20px;
+.footer-col {
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
 
-.footer-section h3 {
-  color: #c9c9c9;
-  font-size: 21px;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  line-height: 30px;
-  margin-bottom: 20px;
+ul {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+ul h3 {
+    color: #f4f4f4;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 5px;
+    text-transform: uppercase;
 }
 
-.footer-section ul li {
-  margin-bottom: 15px; /* Liste elemanları arasındaki boşluk artırıldı */
+ul li {
+    margin-bottom: 10px; 
 }
 
-.footer-section ul li a {
-  color: #c9c9c9;
-  font-size: 15px;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  line-height: 20px;
-  text-decoration: none;
+ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-weight: 300;
 }
 
-.divider-horizontal {
-  width: 60px;
-  height: 3px;
-  background-color: #242424;
-  border-radius: 2px;
-  margin-bottom: 20px;
+ul li a:hover {
+    color: #ffffff;
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
 }
 
-.contact-section {
-  flex: 1;
-  padding-left: 100px; 
-}
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.contact-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    .footer-col {
+        margin-bottom: 20px;
+    }
 }
-
-.contact-section .text {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  color: #c9c9c9;
-  font-size: 17px;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  line-height: 23px;
-}
-
-.contact-section .text el-icon {
-  margin-right: 10px;
-}
-
 </style>
