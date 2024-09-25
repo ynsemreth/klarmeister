@@ -25,7 +25,6 @@
     <!-- Overlay Video Section -->
     <el-col :span="24" class="overlay-video-container" :class="{ 'normal-view': isInView }">
         <img src="@/assets/laptop.png" class="mockup-image" alt="Mockup Image" />
-
         <!-- Responsive ve Şekilli Video Kapsayıcısı -->
         <div class="custom-video-container">
             <div class="custom-video">
@@ -238,7 +237,7 @@
             </h1>
         </div>
         <div class="web-card">
-            <el-card class="web-card-one">
+            <el-card class="web-card-one" plain @mouseenter="openDialogOne">
                 <div class="number">01</div>
                 <div class="web-card-title">Sie haben Ihre Lage erkannt</div>
                 <div class="web-card-subtitle">
@@ -253,7 +252,7 @@
                 </div>
             </el-card>
 
-            <el-card class="web-card-two active-card">
+            <el-card class="web-card-two active-card" plain @mouseenter="openDialogTwo">
                 <div class="number">02</div>
                 <div class="web-card-title">Füllen Sie unser Formular aus</div>
                 <div class="web-card-subtitle">
@@ -268,7 +267,7 @@
                 </div>
             </el-card>
 
-            <el-card class="web-card-one">
+            <el-card class="web-card-one" plain @mouseenter="openDialogThree">
                 <div class="number">03</div>
                 <div class="web-card-title">Hören Sie sich unsere Ideen an</div>
                 <div class="web-card-subtitle">
@@ -278,7 +277,7 @@
                 </div>
             </el-card>
 
-            <el-card class="web-card-one">
+            <el-card class="web-card-one" plain @mouseenter="openDialogFour">
                 <div class="number">04</div>
                 <div class="web-card-title">Lehnen Sie sich entspannt zurück</div>
                 <div class="web-card-subtitle">
@@ -373,14 +372,20 @@
             <el-button class="banner-button">Termin vereinbaren</el-button>
         </div>
     </el-col>
+
+    <el-row>
+        <card-one-dialog v-model="dialogCardOneVisible" @close="handleOneClose" />
+        <card-two-dialog v-model="dialogCardTwoVisible" @close="handleTwoClose"/>
+        <card-three-dialog v-model="dialogCardThreeVisible" @close="handleThreeClose" />
+        <card-four-dialog v-model="dialogCardFourVisible" @close="handleFourClose" />
+    </el-row>
+
 </el-row>
 </template>
 
 <script lang="ts">
 import {
-    ref,
-    onMounted,
-    onUnmounted
+    defineComponent
 } from 'vue';
 import {
     Document,
@@ -388,40 +393,94 @@ import {
     MagicStick,
     CircleCheck
 } from '@element-plus/icons-vue';
+import CardOneDialog from "@/components/CardOneDialog.vue";
+import CardTwoDialog from "@/components/CardTwoDialog.vue";
+import CardThreeDialog from "@/components/CardThreeDialog.vue";
+import CardFourDialog from "@/components/CardFourDialog.vue";
 
-export default {
+export default defineComponent({
+    name: "HomePage",
     components: {
+        CardOneDialog,
+        CardTwoDialog,
+        CardThreeDialog,
+        CardFourDialog,
         Document,
         Refresh,
         MagicStick,
         CircleCheck,
     },
-    setup() {
-        const isInView = ref(false);
-
-        const handleScroll = () => {
+    data() {
+        return {
+            isInView: false,
+            dialogCardOneVisible: false,
+            dialogCardTwoVisible: false,
+            dialogCardThreeVisible: false,
+            dialogCardFourVisible: false,
+            hasOpenedCardOne: false,
+            hasOpenedCardTwo: false,
+            hasOpenedCardThree: false,
+            hasOpenedCardFour: false,
+        };
+    },
+    methods: {
+        openDialogOne() {
+            if (!this.hasOpenedCardOne) {
+                this.dialogCardOneVisible = true;
+                this.hasOpenedCardOne = true;
+            }
+        },
+        openDialogTwo() {
+            if (!this.hasOpenedCardTwo) {
+                this.dialogCardTwoVisible = true;
+                this.hasOpenedCardTwo = true;
+            }
+        },
+        openDialogThree() {
+            if (!this.hasOpenedCardThree) {
+                this.dialogCardThreeVisible = true;
+                this.hasOpenedCardThree = true;
+            }
+        },
+        openDialogFour() {
+            if (!this.hasOpenedCardFour) {
+                this.dialogCardFourVisible = true;
+                this.hasOpenedCardFour = true;
+            }
+        },
+        handleOneClose(){
+            this.dialogCardOneVisible = false,
+            this.hasOpenedCardOne = false
+        },
+        handleTwoClose() {
+            this.dialogCardTwoVisible = false;
+            this.hasOpenedCardTwo = false;
+        },
+        handleThreeClose() {
+            this.dialogCardThreeVisible = false;
+            this.hasOpenedCardThree = false;
+        },
+        handleFourClose() {
+            this.dialogCardFourVisible = false;
+            this.hasOpenedCardFour = false;
+        },
+        handleScroll() {
             const videoSection = document.querySelector('.overlay-video-container');
             if (videoSection) {
                 const sectionPosition = videoSection.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 5;
 
-                isInView.value = sectionPosition < screenPosition;
+                this.isInView = sectionPosition < screenPosition;
             }
-        };
-
-        onMounted(() => {
-            window.addEventListener('scroll', handleScroll);
-        });
-
-        onUnmounted(() => {
-            window.removeEventListener('scroll', handleScroll);
-        });
-
-        return {
-            isInView,
-        };
+        }
     },
-};
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+});
 </script>
 
 <style>
@@ -550,12 +609,13 @@ export default {
 
 @keyframes slide-up {
     from {
-        transform: translateY(20px); 
-        opacity: 0; 
+        transform: translateY(20px);
+        opacity: 0;
     }
+
     to {
-        transform: translateY(0); 
-        opacity: 1; 
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -565,7 +625,7 @@ export default {
     font-weight: 400;
     color: #d1d1d1;
     margin: 20px 0 0;
-    animation: slide-up 3s ease forwards; 
+    animation: slide-up 3s ease forwards;
 }
 
 .hero-h3 {
@@ -1299,7 +1359,7 @@ export default {
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 4px;
-    border:transparent;
+    border: transparent;
     transition: background-color 0.3s ease, color 0.3s ease;
     animation: flash 1.5s infinite;
 }
