@@ -1,8 +1,5 @@
 <template>
   <div class="navbar">
-    <div class="logo">
-      <img src="@/assets/logo.png" alt="Logo" />
-    </div>
     <nav class="nav-links">
       <a href="#portfolio">Unser Portfolio</a>
       <a href="#how-we-work">So arbeiten wir</a>

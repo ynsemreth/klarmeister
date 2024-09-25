@@ -38,13 +38,11 @@ export default defineComponent({
     const videoPlayer = ref<HTMLVideoElement | null>(null);
 
     const handleClose = () => {
-      // Video durdurma
       if (videoPlayer.value) {
         videoPlayer.value.pause();
-        videoPlayer.value.currentTime = 0; // Videoyu başa sar
+        videoPlayer.value.currentTime = 0; 
       }
-      // Dialog modelValue'yi güncelle
-      emit('update:modelValue', false); // this yerine emit kullanıldı
+      emit('update:modelValue', false); 
     };
 
     return {
