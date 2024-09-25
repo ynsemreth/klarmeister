@@ -1,72 +1,81 @@
 <template>
-  <el-dialog
-    :model-value="modelValue"
-    title="Card One Dialog"
-    width="800px"
-    :close-on-click-modal="true"
-    :show-close="false"
-    @close="handleClose"
-  >
+<el-dialog :model-value="modelValue" width="800px" :close-on-click-modal="true" :show-close="false" @close="handleClose" 
+style="background: linear-gradient(to bottom, #212121, #111111); border-radius: 16px; border: 5px solid rgba(255, 255, 255, 0.1);">
     <div class="dialog-content">
-      <h2>Bu, Birincil Kartın İçeriğidir</h2>
-      <p>
-        Bu alanda kartla ilgili daha fazla bilgi verebilirsiniz. 
-        Buraya açıklamalar, resimler veya başka içerikler ekleyebilirsiniz.
-      </p>
-      <div class="video-container">
-        <video ref="videoPlayer" controls muted autoplay class="video-player">
-          <source src="@/assets/video.mp4" type="video/mp4" />
-          Tarayıcınız video etiketini desteklemiyor.
-        </video>
-      </div>
+        <h2>Bu, Birincil Kartın İçeriğidir</h2>
+        <p>
+            Bu alanda kartla ilgili daha fazla bilgi verebilirsiniz.
+            Buraya açıklamalar, resimler veya başka içerikler ekleyebilirsiniz.
+        </p>
+        <div class="video-container">
+            <video ref="videoPlayer" controls muted autoplay class="video-player">
+                <source src="@/assets/video.mp4" type="video/mp4" />
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+        </div>
     </div>
-  </el-dialog>
+</el-dialog>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import {
+    defineComponent,
+    ref
+} from 'vue';
 
 export default defineComponent({
-  name: 'CardOneDialog',
-  props: {
-    modelValue: {
-      type: Boolean,
-      required: true,
+    name: 'CardOneDialog',
+    props: {
+        modelValue: {
+            type: Boolean,
+            required: true,
+        },
     },
-  },
-  setup(props, { emit }) {
-    const videoPlayer = ref<HTMLVideoElement | null>(null);
+    setup(props, {
+        emit
+    }) {
+        const videoPlayer = ref < HTMLVideoElement | null > (null);
 
-    const handleClose = () => {
-      if (videoPlayer.value) {
-        videoPlayer.value.pause();
-        videoPlayer.value.currentTime = 0; 
-      }
-      emit('update:modelValue', false); 
-    };
+        const handleClose = () => {
+            if (videoPlayer.value) {
+                videoPlayer.value.pause();
+                videoPlayer.value.currentTime = 0;
+            }
+            emit('update:modelValue', false);
+        };
 
-    return {
-      videoPlayer,
-      handleClose,
-    };
-  },
+        return {
+            videoPlayer,
+            handleClose,
+        };
+    },
 });
 </script>
 
-<style scoped>
+<style>
+
 .dialog-content {
-  max-height: 1200px;
-  overflow-y: auto;
-  padding: 20px;
+    max-height: 1200px;
+    overflow-y: auto;
+    padding: 20px;
+    color: rgb(255, 255, 255, 0.9);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
+
 .dialog-content h2 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255, 0.9);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
+
 .video-container {
-  margin-top: 20px;
+    margin-top: 20px;
 }
+
 .video-player {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 </style>

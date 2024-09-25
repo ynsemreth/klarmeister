@@ -379,7 +379,6 @@
         <card-three-dialog v-model="dialogCardThreeVisible" @close="handleThreeClose" />
         <card-four-dialog v-model="dialogCardFourVisible" @close="handleFourClose" />
     </el-row>
-
 </el-row>
 </template>
 
