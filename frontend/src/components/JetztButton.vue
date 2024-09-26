@@ -96,8 +96,8 @@ export default defineComponent({
 .form-benefits {
     list-style: none;
     background: linear-gradient(to right, #152a20, #193a2c);
-    padding: 10px;
-    border-radius: 10px;
+    padding: 1px;
+    border-radius: 5px;
     margin: 20px 0 10px 0;
     display: flex;
     justify-content: center;
