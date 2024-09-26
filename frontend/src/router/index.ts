@@ -15,6 +15,9 @@ import KundensTimmen from "@/components/navbar/KundensTimmen.vue";
 import TeamKarriere from "@/components/navbar/TeamKarriere.vue";
 import KlarMeister from "@/components/navbar/KlarMeister.vue";
 
+// Button
+import JetztButton from "@/components/JetztButton.vue";
+
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes: [
@@ -71,6 +74,12 @@ const router = createRouter({
             name:'KlarmeIster',
             component:KlarMeister,
             meta: {linkText: ' KlarMeister'}
+        },
+        {
+            path:'/anfrage',
+            name:'JetztButton',
+            component:JetztButton,
+            meta: {linkText: ' JetztButton'}
         }
     ]
 });

@@ -13,10 +13,14 @@
                 Marke stärkt.
             </h2>
             <div class="hero-button">
-                <el-button class="hero-button-btn">Jetzt Angebot einholen <el-icon>
-                        <Right />
-                    </el-icon>
-                </el-button>
+                <router-link to="/anfrage">
+                    <el-button class="hero-button-btn">
+                        Jetzt Angebot einholen
+                        <el-icon>
+                            <Right />
+                        </el-icon>
+                    </el-button>
+                </router-link>
                 <img src="@/assets/garanti.png" alt="garanti">
             </div>
         </div>
@@ -172,10 +176,12 @@
                     Sie mittlerweile günstig an jeder Ecke.<br>
                     Deshalb liegt unser Fokus zu 100% auf <br>
                     einzigartigem Service und Premiumqualität.</h3>
-                <el-button class="btn-services">Jetzt Angebot einholen <el-icon>
-                        <Right />
-                    </el-icon>
-                </el-button>
+                <router-link to="/anfrage">
+                    <el-button class="btn-services">Jetzt Angebot einholen <el-icon>
+                            <Right />
+                        </el-icon>
+                    </el-button>
+                </router-link>
             </div>
         </div>
         <div class="services-card">
@@ -261,9 +267,11 @@
                     <span>haben wir einige Fragen vorbereitet.</span>
                 </div>
                 <div class="web-card-button">
-                    <el-button type="primary" class="web-card-btn">
-                        <span class="btn_label">Jetzt anfragen</span>
-                    </el-button>
+                    <router-link to="/anfragen">
+                        <el-button type="primary" class="web-card-btn">
+                            <span class="btn_label">Jetzt anfragen</span>
+                        </el-button>
+                    </router-link>
                 </div>
             </el-card>
 
@@ -369,13 +377,13 @@
             <div class="banner-text">
                 Lust auf ein Projekt<br>mit VIERLESS?
             </div>
-            <el-button class="banner-button">Termin vereinbaren</el-button>
+            <router-link to="/anfrage"><el-button class="banner-button">Termin vereinbaren</el-button></router-link>
         </div>
     </el-col>
 
     <el-row>
         <card-one-dialog v-model="dialogCardOneVisible" @close="handleOneClose" />
-        <card-two-dialog v-model="dialogCardTwoVisible" @close="handleTwoClose"/>
+        <card-two-dialog v-model="dialogCardTwoVisible" @close="handleTwoClose" />
         <card-three-dialog v-model="dialogCardThreeVisible" @close="handleThreeClose" />
         <card-four-dialog v-model="dialogCardFourVisible" @close="handleFourClose" />
     </el-row>
@@ -396,7 +404,6 @@ import CardOneDialog from "@/components/cards/CardOneDialog.vue";
 import CardTwoDialog from "@/components/cards/CardTwoDialog.vue";
 import CardThreeDialog from "@/components/cards/CardThreeDialog.vue";
 import CardFourDialog from "@/components/cards/CardFourDialog.vue";
-
 
 export default defineComponent({
     name: "HomePage",
@@ -448,9 +455,9 @@ export default defineComponent({
                 this.hasOpenedCardFour = true;
             }
         },
-        handleOneClose(){
+        handleOneClose() {
             this.dialogCardOneVisible = false,
-            this.hasOpenedCardOne = false
+                this.hasOpenedCardOne = false
         },
         handleTwoClose() {
             this.dialogCardTwoVisible = false;
@@ -795,7 +802,7 @@ export default defineComponent({
     display: flex;
     justify-content: center;
     padding: 35px 20px;
-    background: linear-gradient(to right, #121640, #000000);
+    background: linear-gradient(to right, #053c05, #000000);
     border-radius: 30px;
     max-width: 1200px;
     margin: 0 auto;
