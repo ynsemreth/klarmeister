@@ -31,9 +31,9 @@
       <el-col :span="6" class="footer-col">
         <ul>
           <h3>KLARMEISTER</h3>
-          <li><a href="#">Über Klarmeister</a></li>
-          <li><a href="#">Kontakt</a></li>
-          <li><a href="#">Impressum</a></li>
+          <li><router-link to="/über">Über Klarmeister</router-link></li>
+          <li><router-link to="/kontakt">Kontakt</router-link></li>
+          <li><router-link to="/impressum">Impressum</router-link></li>
         </ul>
       </el-col>
     </el-row>

@@ -392,10 +392,11 @@ import {
     MagicStick,
     CircleCheck
 } from '@element-plus/icons-vue';
-import CardOneDialog from "@/components/CardOneDialog.vue";
-import CardTwoDialog from "@/components/CardTwoDialog.vue";
-import CardThreeDialog from "@/components/CardThreeDialog.vue";
-import CardFourDialog from "@/components/CardFourDialog.vue";
+import CardOneDialog from "@/components/cards/CardOneDialog.vue";
+import CardTwoDialog from "@/components/cards/CardTwoDialog.vue";
+import CardThreeDialog from "@/components/cards/CardThreeDialog.vue";
+import CardFourDialog from "@/components/cards/CardFourDialog.vue";
+
 
 export default defineComponent({
     name: "HomePage",
