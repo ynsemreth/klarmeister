@@ -1,6 +1,7 @@
 <template>
 <el-col :span="24" style="background-color: black;">
-    <el-card class="request-form">
+    <!-- İlk Form -->
+    <el-card v-if="currentStep === 1" class="request-form">
         <ul class="form-benefits">
             <li>
                 <el-icon>
@@ -27,7 +28,7 @@
         <div class="web">
             <h3 class="web-text">WebSite (Optional)</h3>
             <el-input v-model="webSite" placeholder="www.klarmeister.de">
-                <template #prepend>Http://</template>
+                <template #prepend>http://</template>
             </el-input>
         </div>
         <div class="web">
@@ -37,25 +38,117 @@
 
         <div class="line"></div>
 
-        <router-link to="/">
-            <el-button class="btn_wrapper">
-                <span class="btn_label">
-                    <el-icon>
-                        <Back />
-                    </el-icon> Zurück
-                </span>
-            </el-button>
-        </router-link>
+        <el-button class="btn_wrapper" @click="nextStep">
+            <span class="btn_label"> Weiter </span>
+        </el-button>
+    </el-card>
 
-        <router-link to="/klarmeister">
-            <el-button class="btn_wrapper">
-                <span class="btn_label"> Weiter </span>
-            </el-button>
-        </router-link>
+    <!-- İkinci Form -->
+    <el-card v-if="currentStep === 2" class="request-form">
+        <ul class="form-benefits">
+            <li>
+                <el-icon>
+                    <Check />
+                </el-icon>
+                Antwort in 24 Std.
+            </li>
+            <li>
+                <el-icon>
+                    <Check />
+                </el-icon>
+                100% unverbindlich
+            </li>
+            <li>
+                <el-icon>
+                    <Check />
+                </el-icon>
+                Erste Preisauskunft
+            </li>
+        </ul>
+        <div class="ask-form">
+            <h3 class="text">Um welches Projekt geht es?</h3>
+        </div>
+        <div class="web">
+            <h3 class="web-text">WebSite (Optional)</h3>
+            <el-input v-model="webSite" placeholder="www.klarmeister.de">
+                <template #prepend>http://</template>
+            </el-input>
+        </div>
+        <div class="web">
+            <h3 class="web-text">Unternehmen</h3>
+            <el-input v-model="unternehmen" placeholder="Abdullah Aydın" clearable />
+        </div>
+
+        <div class="line"></div>
+
+        <el-button class="btn_wrapper" @click="returnStep">
+            <span class="btn_label">
+                <el-icon>
+                    <Back />
+                </el-icon> Zurück
+            </span>
+        </el-button>
+
+        <el-button class="btn_wrapper" @click="nextStep">
+            <span class="btn_label"> Weiter </span>
+        </el-button>
+    </el-card>
+
+    <!-- Üçüncü Form -->
+    <el-card v-if="currentStep === 3" class="request-form">
+        <ul class="form-benefits">
+            <li>
+                <el-icon>
+                    <Check />
+                </el-icon>
+                Antwort in 24 Std.
+            </li>
+            <li>
+                <el-icon>
+                    <Check />
+                </el-icon>
+                100% unverbindlich
+            </li>
+            <li>
+                <el-icon>
+                    <Check />
+                </el-icon>
+                Erste Preisauskunft
+            </li>
+        </ul>
+        <div class="ask-form">
+            <h3 class="text">Um welches Projekt geht es?</h3>
+        </div>
+        <div class="web">
+            <h3 class="web-text">WebSite (Optional)</h3>
+            <el-input v-model="webSite" placeholder="www.klarmeister.de">
+                <template #prepend>http://</template>
+            </el-input>
+        </div>
+        <div class="web">
+            <h3 class="web-text">Unternehmen</h3>
+            <el-input v-model="unternehmen" placeholder="Abdullah Aydın" clearable />
+        </div>
+
+        <div class="line"></div>
+
+        <el-button class="btn_wrapper" @click="returnStep">
+            <span class="btn_label">
+                <el-icon>
+                    <Back />
+                </el-icon> Zurück
+            </span>
+        </el-button>
+
+        <el-button class="btn_wrapper" @click="submitForms">
+            <span class="btn_label"> Absenden </span>
+        </el-button>
     </el-card>
 </el-col>
 </template>
 
+    
+    
 <script lang="ts">
 import {
     defineComponent,
@@ -67,10 +160,32 @@ export default defineComponent({
     setup() {
         const webSite = ref('');
         const unternehmen = ref('');
+        const currentStep = ref(1);
+
+        const nextStep = () => {
+            if (currentStep.value < 3) {
+                currentStep.value++;
+            }
+        };
+
+        const returnStep = () => {
+            if (currentStep.value > 1) {
+                currentStep.value--;
+            }
+        };
+
+        const submitForms = () => {
+            // Tüm formların verilerini buraya toplayabilirsiniz
+            console.log('Formlar veritabanına kaydedildi');
+        };
 
         return {
             webSite,
-            unternehmen
+            unternehmen,
+            currentStep,
+            nextStep,
+            returnStep,
+            submitForms,
         };
     },
 });
