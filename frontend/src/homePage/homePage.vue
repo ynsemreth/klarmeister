@@ -1,6 +1,6 @@
 <template>
+<AppNavbar />
 <el-row justify="center" class="body">
-    <!-- Hero Section -->
     <el-col :span="24" class="hero-section">
         <div class="hero-content">
             <h3 class="hero-h3">IHR EXTERNES WEBDESIGN TEAM</h3>
@@ -55,9 +55,9 @@
             </h2>
         </div>
     </el-col>
-
-    <el-col style="text-align: center; font-size: 20px; font-family: 'Poppins', Courier, monospace;
-    color: rgb(54, 189, 54);">
+    
+    <el-col style="text-align: center; font-size: 13px; font-family: 'Poppins', Courier, monospace;
+    color: rgb(54, 189, 54); margin-bottom: 3%;">
         <h3>REFERENZ</h3>
     </el-col>
 
@@ -251,11 +251,6 @@
                     <span>Eine neue Webseite muss her!</span>
                     <span>Der erste Schritt ist abgehakt.</span>
                 </div>
-                <div class="web-card-icon">
-                    <el-icon>
-                        <CircleCheck />
-                    </el-icon>
-                </div>
             </el-card>
 
             <el-card class="web-card-two active-card" plain @mouseenter="openDialogTwo">
@@ -265,13 +260,6 @@
                     <span>Damit wir wissen, wer</span>
                     <span>Sie sind und was Sie vorhaben,</span>
                     <span>haben wir einige Fragen vorbereitet.</span>
-                </div>
-                <div class="web-card-button">
-                    <router-link to="/anfragen">
-                        <el-button type="primary" class="web-card-btn">
-                            <span class="btn_label">Jetzt anfragen</span>
-                        </el-button>
-                    </router-link>
                 </div>
             </el-card>
 
@@ -299,7 +287,7 @@
 
     <el-col :span="24" class="faq-section">
         <div class="faq-header">
-            <h3 class="faq-subtitle">Finden Sie Antworten</h3>
+            <h3 class="faq-subtitle">FINDEN SIE ANTWORTEN</h3>
             <h1 class="faq-title">Noch Fragen zu uns?</h1>
         </div>
 
@@ -388,6 +376,7 @@
         <card-four-dialog v-model="dialogCardFourVisible" @close="handleFourClose" />
     </el-row>
 </el-row>
+<MainFooter />
 </template>
 
 <script lang="ts">
@@ -398,12 +387,13 @@ import {
     Document,
     Refresh,
     MagicStick,
-    CircleCheck
 } from '@element-plus/icons-vue';
 import CardOneDialog from "@/components/cards/CardOneDialog.vue";
 import CardTwoDialog from "@/components/cards/CardTwoDialog.vue";
 import CardThreeDialog from "@/components/cards/CardThreeDialog.vue";
 import CardFourDialog from "@/components/cards/CardFourDialog.vue";
+import AppNavbar from '@/components/AppNavbar.vue';
+import MainFooter from '@/components/MainFooter.vue';
 
 export default defineComponent({
     name: "HomePage",
@@ -415,7 +405,8 @@ export default defineComponent({
         Document,
         Refresh,
         MagicStick,
-        CircleCheck,
+        AppNavbar,
+        MainFooter
     },
     data() {
         return {
@@ -499,7 +490,6 @@ export default defineComponent({
     margin: 0;
     background: black;
     overflow-x: hidden;
-    cursor: url('@/assets/cursor.png'), auto;
 }
 
 .hero-section {
@@ -655,12 +645,11 @@ export default defineComponent({
 
 .custom-video-container {
     position: absolute;
-    top: 20%;
+    top: 23%;
     left: 18.5%;
     width: 23%;
     height: 27.8%;
     transform: perspective(800px) rotateX(-8deg) rotateY(8deg) skewY(-27deg);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
@@ -677,7 +666,6 @@ export default defineComponent({
     transform: translate(-50%, -50%) perspective(800px);
     width: 50%;
     height: auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
@@ -778,6 +766,7 @@ export default defineComponent({
     color: #fff;
     text-align: left;
     font-weight: 700;
+    padding-bottom: 5%;
 }
 
 .information-text-title {
@@ -796,6 +785,7 @@ export default defineComponent({
     color: #fff;
     font-weight: 300;
     line-height: 1.8;
+    padding-top: 5%;
 }
 
 .new-section {
@@ -995,10 +985,9 @@ export default defineComponent({
 
 .web-subtitle {
     font-family: 'Poppins', Courier, monospace;
-    text-align: center;
     font-size: 13px;
-    font-size: 300;
-    color: green;
+    color: rgb(54, 189, 54);
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -1007,14 +996,11 @@ export default defineComponent({
     justify-content: space-between;
     gap: 20px;
     padding: 0 250px;
-}
-
-.web-card-icon {
-    margin-top: 20px;
-
+    margin-top: 5%;
 }
 
 .web-card-one {
+    padding-top: 5%;
     display: flex;
     font-family: 'Montserrat', sans-serif;
     flex-direction: row;
@@ -1029,6 +1015,7 @@ export default defineComponent({
 }
 
 .web-card-two {
+    padding-top: 5%;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(to bottom, #23573f, #193427);
@@ -1074,18 +1061,6 @@ export default defineComponent({
     padding: 50px 0;
 }
 
-.web-card-button {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.web-card-button .web-card-btn {
-    background-color: #0def95;
-    border: transparent;
-    color: black;
-    animation: flash 1.5s infinite;
-}
-
 .faq-section {
     background-color: #000;
     padding: 50px 20px;
@@ -1105,10 +1080,11 @@ export default defineComponent({
     color: #ffffff;
 }
 
+
 .faq-subtitle {
     font-family: 'Poppins', Courier, monospace;
     font-size: 13px;
-    color: green;
+    color: rgb(54, 189, 54);
     margin-bottom: 10px;
 }
 
@@ -1178,6 +1154,7 @@ export default defineComponent({
     border: transparent;
     animation: flash 1.5s infinite;
     color: black;
+    margin-top: 5%;
 }
 
 .btn-services:hover {

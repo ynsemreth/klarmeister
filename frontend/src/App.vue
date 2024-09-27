@@ -1,26 +1,24 @@
 <template>
-<AppNavbar />
 <router-view />
-<MainFooter />
 </template>
 
 <script lang="ts">
-import AppNavbar from '@/components/AppNavbar.vue';
-import MainFooter from '@/components/MainFooter.vue';
-
 export default {
     name: "App",
-    components: {
-        AppNavbar,
-        MainFooter,
-    },
+    components: {},
 };
 </script>
 
 <style lang="scss">
-body {
+* {
     margin: 0;
+    padding: 0;
+}
+
+#app {
     height: auto;
     background: linear-gradient(to bottom, #053c05, #000000);
+    margin: 0;
 }
 </style>
+

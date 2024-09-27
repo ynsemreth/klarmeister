@@ -3,19 +3,10 @@
     <nav class="nav-links">
         <a href="/">Home</a>
         <a>
-            <router-link to="portfolio">Unser Portfolio</router-link>
+            <router-link to="leistungen">Leistungen</router-link>
         </a>
         <a>
-            <router-link to="arbeiten">So arbeiten wir</router-link>
-        </a>
-        <a>
-            <router-link to="kundenstimmen">Kundenstimmen</router-link>
-        </a>
-        <a>
-            <router-link to="team">Team & Karriere</router-link>
-        </a>
-        <a>
-            <router-link to="klarmeister">Klarmeister</router-link>
+            <router-link to="uberuns">Über Uns</router-link>
         </a>
     </nav>
 </div>

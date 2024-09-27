@@ -9,11 +9,8 @@ import KlarUber from "@/components/footer/KlarUber.vue";
 import KlarKontakt from "@/components/footer/KlarKontakt.vue";
 
 //Navbar
-import UnserPortfolio from "@/components/navbar/UnserPortfolio.vue";
-import SoArbeiten from "@/components/navbar/SoArbeiten.vue";
-import KundensTimmen from "@/components/navbar/KundensTimmen.vue";
-import TeamKarriere from "@/components/navbar/TeamKarriere.vue";
-import KlarMeister from "@/components/navbar/KlarMeister.vue";
+import NavLeistungen from "@/components/navbar/NavLeistungen.vue";
+import NavUberUns from "@/components/navbar/NavUberUns.vue";
 
 // Button
 import JetztButton from "@/components/JetztButton.vue";
@@ -28,16 +25,28 @@ const router = createRouter({
             meta: {linkText:'Anasayfa'}
         },
         {
+            path:'/uberuns',
+            name:'UberUns',
+            component:NavUberUns,
+            meta: {linkText: ' NavUberUns'}
+        },
+        {
+            path:'/leistungen',
+            name:'leistungen',
+            component:NavLeistungen,
+            meta: {linkText: 'Leistungen'}
+        },
+        {
+            path:'/anfrage',
+            name:'JetztButton',
+            component:JetztButton,
+            meta: {linkText: ' JetztButton'}
+        },
+        {
             path: '/impressum',
             name: 'Impressum',
             component: KlarImpressum,
             meta: {linkText:'Impressum'},
-        },
-        {
-            path:'/über',
-            name:'Über Klarmeister',
-            component:KlarUber,
-            meta: {linkText: 'Über'}
         },
         {
             path:'/kontakt',
@@ -46,41 +55,11 @@ const router = createRouter({
             meta: {linkText: ' Kontakt'}
         },
         {
-            path:'/portfolio',
-            name:'Portfolio',
-            component:UnserPortfolio,
-            meta: {linkText: ' Unser Portfolio'}
+            path:'/über',
+            name:'Über Klarmeister',
+            component:KlarUber,
+            meta: {linkText: 'Über'}
         },
-        {
-            path:'/arbeiten',
-            name:'Arbeiten',
-            component:SoArbeiten,
-            meta: {linkText: ' SoArbeiten'}
-        },
-        {
-            path:'/kundenstimmen',
-            name:'KundensTimmen',
-            component:KundensTimmen,
-            meta: {linkText: ' KundensTimmen'}
-        },
-        {
-            path:'/team',
-            name:'TeamKarriere',
-            component:TeamKarriere,
-            meta: {linkText: ' TeamKarriere'}
-        },
-        {
-            path:'/klarmeister',
-            name:'KlarmeIster',
-            component:KlarMeister,
-            meta: {linkText: ' KlarMeister'}
-        },
-        {
-            path:'/anfrage',
-            name:'JetztButton',
-            component:JetztButton,
-            meta: {linkText: ' JetztButton'}
-        }
     ]
 });
 
