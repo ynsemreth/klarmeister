@@ -243,22 +243,21 @@ export default {
 
 @media (max-width: 768px) {
     .services_title-group {
-        flex-direction: row;
-        align-items: center;
-        padding-left: 50px; 
-        padding-right: 30px;
+        flex-direction: column;
     }
 
     .services-title {
-        font-size: 10px;
+        font-size: 20px;
         text-align: left;
         margin: 0; 
+        padding-left: 40px;
     }
 
     .services-subtitle {
         text-align: left;
-        font-size:5px;
+        font-size:10px;
         margin: 0; 
+        padding-left: 40px;
     }
 
     .btn-services {

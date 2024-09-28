@@ -1,6 +1,6 @@
 <template>
 <AppNavbar />
-<el-row justify="center" class="body" :gutter="0">
+<el-row justify="center" class="body" style="overflow-x: hidden;">
     <HeroSection />
     <ReferansSection />
     <InformationSection />

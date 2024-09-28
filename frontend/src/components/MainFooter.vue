@@ -1,43 +1,49 @@
 <template>
-  <footer class="footer">
+<footer class="footer">
     <el-row>
-      <el-col :span="6" class="footer-col">
-        <ul>
-          <h3>Referenzen</h3>
-          <li><a href="#">Referenz 1</a></li>
-          <li><a href="#">Referenz 2</a></li>
-          <li><a href="#">Referenz 3</a></li>
-        </ul>
-      </el-col>
+        <el-col :span="6" class="footer-col">
+            <ul>
+                <h3>Referenzen</h3>
+                <li><a href="#">Referenz 1</a></li>
+                <li><a href="#">Referenz 2</a></li>
+                <li><a href="#">Referenz 3</a></li>
+            </ul>
+        </el-col>
 
-      <el-col :span="6" class="footer-col">
-        <ul>
-          <h3>Ressourcen</h3>
-          <li><a href="#">Ressource 1</a></li>
-          <li><a href="#">Ressource 2</a></li>
-          <li><a href="#">Ressource 3</a></li>
-        </ul>
-      </el-col>
+        <el-col :span="6" class="footer-col">
+            <ul>
+                <h3>Ressourcen</h3>
+                <li><a href="#">Ressource 1</a></li>
+                <li><a href="#">Ressource 2</a></li>
+                <li><a href="#">Ressource 3</a></li>
+            </ul>
+        </el-col>
 
-      <el-col :span="6" class="footer-col">
-        <ul>
-          <h3>Lösungen</h3>
-          <li><a href="#">Lösung 1</a></li>
-          <li><a href="#">Lösung 2</a></li>
-          <li><a href="#">Lösung 3</a></li>
-        </ul>
-      </el-col>
+        <el-col :span="6" class="footer-col">
+            <ul>
+                <h3>Lösungen</h3>
+                <li><a href="#">Lösung 1</a></li>
+                <li><a href="#">Lösung 2</a></li>
+                <li><a href="#">Lösung 3</a></li>
+            </ul>
+        </el-col>
 
-      <el-col :span="6" class="footer-col">
-        <ul>
-          <h3>KLARMEISTER</h3>
-          <li><router-link to="/über">Über Klarmeister</router-link></li>
-          <li><router-link to="/kontakt">Kontakt</router-link></li>
-          <li><router-link to="/impressum">Impressum</router-link></li>
-        </ul>
-      </el-col>
+        <el-col :span="6" class="footer-col">
+            <ul>
+                <h3>KLARMEISTER</h3>
+                <li>
+                    <router-link to="/über">Über Klarmeister</router-link>
+                </li>
+                <li>
+                    <router-link to="/kontakt">Kontakt</router-link>
+                </li>
+                <li>
+                    <router-link to="/impressum">Impressum</router-link>
+                </li>
+            </ul>
+        </el-col>
     </el-row>
-  </footer>
+</footer>
 </template>
 
 <style>
@@ -60,6 +66,7 @@
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 ul h3 {
@@ -72,7 +79,7 @@ ul h3 {
 }
 
 ul li {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 ul li a {
@@ -88,21 +95,24 @@ ul li a:hover {
     transition: color 0.3s ease-in-out;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .footer {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .footer-col {
+        width: 100%;
         margin-bottom: 20px;
-        width: 100%; 
-        padding: 0 10px; 
+    }
+
+    ul {
+        width: 100%;
     }
 
     ul h3 {
-        font-size: 16px; 
+        font-size: 16px;
         margin-bottom: 10px;
         border-bottom: 1px solid #f4f4f4;
         padding-bottom: 5px;
@@ -112,5 +122,4 @@ ul li a:hover {
         font-size: 12px;
     }
 }
-
 </style>

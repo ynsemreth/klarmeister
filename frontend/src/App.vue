@@ -26,6 +26,7 @@ html, body {
     background: linear-gradient(to bottom, #053c05, #000000);
     margin: 0 auto;
     width: 100%;
+    overflow-x: hidden;
 }
 
 @media (max-width: 768px) {

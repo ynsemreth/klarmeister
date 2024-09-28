@@ -204,9 +204,9 @@ export default {
     height: 32%;
     transform: perspective(800px) rotateX(-8deg) rotateY(8deg) skewY(-27deg);
     border-radius: 10px;
-    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
+    overflow-x: hidden;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -220,7 +220,6 @@ export default {
     width: 50%;
     height: auto;
     border-radius: 10px;
-    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
