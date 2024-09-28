@@ -1,6 +1,9 @@
 <template>
 <div class="navbar">
-    <nav class="nav-links">
+    <el-icon class="menu-icon" @click="toggleMenu">
+        <Menu />
+    </el-icon>
+    <nav class="nav-links" :class="{ 'active': isMenuOpen }">
         <a href="/">Home</a>
         <a>
             <router-link to="leistungen">Leistungen</router-link>
@@ -13,9 +16,29 @@
 </template>
 
 <script lang="ts">
-export default {
+import {
+    Menu
+} from '@element-plus/icons-vue';
+import {
+    defineComponent
+} from 'vue';
+
+export default defineComponent({
     name: 'AppNavbar',
-};
+    components: {
+        Menu,
+    },
+    data() {
+        return {
+            isMenuOpen: false,
+        };
+    },
+    methods: {
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+    },
+});
 </script>
 
 <style>
@@ -30,10 +53,6 @@ export default {
     margin: 0;
     position: relative;
     z-index: 10;
-}
-
-.logo img {
-    height: 50px;
 }
 
 .nav-links {
@@ -63,5 +82,50 @@ export default {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+        z-index: 20;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        overflow: hidden;
+        top: 60px;
+        right: 0;
+    }
+
+    .nav-links.active {
+        max-height: 220px;
+        max-width: 100px;
+        right: 0;
+    }
+
+    .nav-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 100px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        margin: 0;
+        font-size: 10px;
+        right: 0;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
 }
 </style>
