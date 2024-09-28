@@ -20,5 +20,11 @@ npm run build
 npm run lint
 ```
 
+### Server Password
+
+    217.160.138.215
+
+    cvEW8wvTVQ
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
