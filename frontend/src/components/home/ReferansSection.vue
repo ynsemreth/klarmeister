@@ -299,7 +299,7 @@ export default {
     border-radius: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .new-section {
         flex-direction: column;
     }

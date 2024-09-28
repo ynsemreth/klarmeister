@@ -88,7 +88,7 @@ ul li a:hover {
     transition: color 0.3s ease-in-out;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .footer {
         flex-direction: column;
         align-items: center;
@@ -97,6 +97,20 @@ ul li a:hover {
 
     .footer-col {
         margin-bottom: 20px;
+        width: 100%; 
+        padding: 0 10px; 
+    }
+
+    ul h3 {
+        font-size: 16px; 
+        margin-bottom: 10px;
+        border-bottom: 1px solid #f4f4f4;
+        padding-bottom: 5px;
+    }
+
+    ul li {
+        font-size: 12px;
     }
 }
+
 </style>

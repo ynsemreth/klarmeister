@@ -126,21 +126,23 @@ export default {
     margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .faq-title {
-        font-size: 24px;
+        font-size: 22px;
+        padding: 0 10px;
     }
 
     .faq-subtitle {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .el-collapse-item__content {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .faq-section {
-        padding: 30px 10px; 
+        padding: 20px 10px;
     }
 }
+
 </style>

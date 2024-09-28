@@ -132,12 +132,14 @@ export default {
     text-align: center;
     background: black;
     position: relative;
+    padding: 50px 0;
 }
 
 .web-content {
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .web-title {
@@ -157,43 +159,39 @@ export default {
 
 .web-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 0 250px;
-    margin-top: 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 100px;
 }
 
-.web-card-one {
-    padding-top: 5%;
-    display: flex;
+.web-card-one,
+.web-card-two {
+    flex: 1;
     font-family: 'Montserrat', sans-serif;
-    flex-direction: row;
-    width: 100%;
+    max-width: calc(50% - 10px);
     background: linear-gradient(to bottom, #212121, #111111);
     color: white;
     border-radius: 16px;
     border: 5px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     transition: all 0.3s ease-in-out;
+    padding: 20px;
+
 }
 
 .web-card-two {
-    padding-top: 5%;
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(to bottom, #23573f, #193427);
     color: green;
-    border-radius: 16px;
-    border: 5px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    transition: all 0.3s ease-in-out;
 }
 
 .web-card-title {
-    margin-top: 20px;
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+    margin-top: 20px;
 }
 
 .web-card-subtitle {
@@ -201,49 +199,26 @@ export default {
     color: #d1d1d1;
     line-height: 1.5;
     margin-top: 20px;
+    text-align: left;
 }
 
 .web-card .number {
-    display: flex;
-    flex-direction: column;
     text-align: left;
 }
 
-.web-card-title {
-    padding-top: 3%;
-    text-align: left;
-}
-
-.web-card-subtitle {
-    padding-top: 3%;
-    text-align: left;
-}
-
-.web-section {
-    background-color: #000;
-    padding: 50px 0;
-}
-
-@media (min-width: 768px) {
-    .web-section {
-        text-align: center;
-        background: black;
-        position: relative;
-        padding: 20px;
-        align-items: center;
-    }
-
+@media (max-width: 1024px) {
     .web-card {
-        flex-direction: row;
-        justify-content: column;
-        padding: 0;
-        padding-left: 0%;
+        flex-direction: column;
         align-items: center;
+        padding: 0;
     }
 
     .web-card-one,
     .web-card-two {
-        width: calc(50% - 10px);
+        width: 80%;
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 }
+
 </style>

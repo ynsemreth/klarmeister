@@ -213,7 +213,7 @@ export default {
 .card-list {
     display: flex;
     flex-direction: column;
-    gap: 47px;
+    gap: 20px;
 }
 
 .card-list .el-card {
@@ -249,9 +249,11 @@ export default {
 
     .services-title {
         font-size: 24px;
+        text-align: center;
     }
 
     .services-subtitle {
+        text-align: center;
         font-size: 12px;
     }
 

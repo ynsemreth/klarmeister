@@ -134,19 +134,19 @@ export default {
 
 @media (max-width: 768px) {
     .information-title {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .information-text-title {
-        font-size: 9px;
+        font-size: 15px;
     }
 
     .information-text-content {
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .information-image {
-        max-width: 80%;
+        max-width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
