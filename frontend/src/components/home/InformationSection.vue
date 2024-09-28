@@ -133,6 +133,18 @@ export default {
 }
 
 @media (max-width: 768px) {
+    .information {
+        padding: 60px 20px;
+    }
+
+    .information-content {
+        color: #fff;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 10px;
+    }
+
     .information-title {
         font-size: 20px;
     }
@@ -146,10 +158,11 @@ export default {
     }
 
     .information-image {
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
     }
 }
 </style>

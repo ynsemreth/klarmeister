@@ -19,7 +19,6 @@ export default {
 html, body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
 }
 
 #app {
@@ -27,6 +26,12 @@ html, body {
     background: linear-gradient(to bottom, #053c05, #000000);
     margin: 0 auto;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
 }
 
 </style>

@@ -81,8 +81,7 @@ export default {
     },
 };
 </script>
-  
-  
+
 <style>
 .hero-section {
     text-align: center;
@@ -206,8 +205,11 @@ export default {
     transform: perspective(800px) rotateX(-8deg) rotateY(8deg) skewY(-27deg);
     border-radius: 10px;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .overlay-video-container.normal-view .custom-video-container {
@@ -217,6 +219,13 @@ export default {
     transform: translate(-50%, -50%) perspective(800px);
     width: 50%;
     height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .overlay-video-container.normal-view .mockup-image {
@@ -273,22 +282,22 @@ export default {
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
         margin: 10px 0;
-        display: none;
     }
 
     .hero-button-btn {
         padding: 8px 16px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .mockup-image {
-        display: none;
+        opacity: 0;
+        transition: none;
     }
 
     .custom-video-container {

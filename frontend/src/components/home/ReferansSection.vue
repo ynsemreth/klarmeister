@@ -78,8 +78,6 @@
 </el-col>
 </template>
 
-  
-  
 <script>
 import {
     Document,
@@ -113,8 +111,7 @@ export default {
     }
 };
 </script>
-  
-  
+
 <style>
 .new-section {
     display: flex;
@@ -307,6 +304,16 @@ export default {
     .left-section {
         width: 100%;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .big-case_left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .right-section {
@@ -326,15 +333,15 @@ export default {
     }
 
     .btn_wrapper {
-        padding: 5px 10px; 
-        font-size: 12px; 
+        padding: 5px 10px;
+        font-size: 12px;
     }
 
     .box-card {
-        display: flex; 
-        justify-content: center; 
+        display: flex;
+        justify-content: center;
         align-items: center;
-        width: 100%; 
+        width: 100%;
     }
 }
 </style>
