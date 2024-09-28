@@ -13,6 +13,7 @@
     "buffer": "^6.0.3",
     "core-js": "^3.8.3",
     "element-plus": "^2.8.1",
+    "emailjs-com": "^3.2.0",
     "leaflet": "^1.9.4",
     "path-browserify": "^1.0.1",
     "serve": "^14.2.3",

@@ -26,13 +26,13 @@
     </div>
     <div class="web">
         <h3 class="web-text">WebSite (Optional)</h3>
-        <el-input v-model="webSite" placeholder="www.klarmeister.de">
+        <el-input v-model="form.webSite" placeholder="www.klarmeister.de">
             <template #prepend>http://</template>
         </el-input>
     </div>
     <div class="web">
         <h3 class="web-text">Unternehmen</h3>
-        <el-input v-model="unternehmen" placeholder="Abdullah Aydın" clearable />
+        <el-input v-model="form.unternehmen" placeholder="Abdullah Aydın" clearable />
     </div>
 
     <div class="line"></div>
@@ -126,26 +126,26 @@
     <div class="form-3-row">
         <div class="web">
             <h3 class="web-text">Vorname</h3>
-            <el-input class="input-vorname" v-model="vorname" placeholder="Vorname" clearable />
+            <el-input class="input-vorname" v-model="form.vorname" placeholder="Vorname" clearable />
         </div>
         <div class="web">
             <h3 class="web-text">Nachname</h3>
-            <el-input class="input-nachname" v-model="nachname" placeholder="Nachname" clearable />
+            <el-input class="input-nachname" v-model="form.nachname" placeholder="Nachname" clearable />
         </div>
     </div>
 
     <div class="form-3-row">
         <div class="web">
             <h3 class="web-text">E-Mail</h3>
-            <el-input class="input-email" v-model="email" placeholder="E-Mail" clearable />
+            <el-input class="input-email" v-model="form.email" placeholder="E-Mail" clearable />
         </div>
         <div class="web">
             <h3 class="web-text">Telefon</h3>
-            <el-input class="input-telefon" v-model="telefon" placeholder="+49" clearable />
+            <el-input class="input-telefon" v-model="form.phone" placeholder="+49" clearable />
         </div>
     </div>
 
-    <el-checkbox v-model="datenschutz" class="form-3-check">
+    <el-checkbox v-model="form.datenschutz" class="form-3-check">
         Ich bin mit den Hinweisen zum Datenschutz <br>
         einverstanden & stimme der Verarbeitung <br>
         meiner Daten zur Beantwortung und Verarbeitung <br>
@@ -177,23 +177,71 @@ import {
 } from 'vue';
 import AppNavbar from '@/components/AppNavbar.vue';
 import MainFooter from '@/components/MainFooter.vue';
+import emailjs from 'emailjs-com';
+import {
+    Check,
+    Back
+} from '@element-plus/icons-vue';
+import {
+    ElMessage
+} from 'element-plus';
 
 export default defineComponent({
     name: 'JetztButton',
     components: {
         AppNavbar,
-        MainFooter
+        MainFooter,
+        Check,
+        Back
+    },
+    data() {
+        return {
+            form: {
+                webSite: '',
+                unternehmen: '',
+                vorname: '',
+                nachname: '',
+                email: '',
+                phone: '',
+                datenschutz: false,
+            }
+        };
+    },
+    methods: {
+        sendEmail() {
+            const serviceID = "service_n6aemke";
+            const templateID = "template_y8uha2n";
+            const userID = "dDqIsYTiSFr5XH3uA";
+
+            emailjs.send(serviceID, templateID, this.form, userID)
+                .then(() => {
+                    ElMessage({
+                        message: 'Ihr Angebot wurde übermittelt.',
+                        type: 'success',
+                    });
+                    this.resetForm();
+                    this.$router.push('/');
+                })
+                .catch((error) => {
+                    ElMessage.error('Beim Senden der E-Mail ist ein Fehler aufgetreten: ' + error.text);
+                });
+
+        },
+        resetForm() {
+            this.form.webSite = '';
+            this.form.unternehmen = '';
+            this.form.vorname = '';
+            this.form.nachname = '';
+            this.form.email = '';
+            this.form.phone = '';
+            this.form.datenschutz = false;
+        },
+        submitForms() {
+            this.sendEmail();
+        }
     },
     setup() {
-        const webSite = ref('');
-        const unternehmen = ref('');
-        const vorname = ref('');
-        const nachname = ref('');
-        const email = ref('');
-        const telefon = ref('');
-        const datenschutz = ref(false);
         const currentStep = ref(1);
-        const selectedOption = ref('');
 
         const nextStep = () => {
             if (currentStep.value < 3) {
@@ -207,35 +255,10 @@ export default defineComponent({
             }
         };
 
-        const submitForms = () => {
-            const formData = {
-                webSite: webSite.value,
-                unternehmen: unternehmen.value,
-                vorname: vorname.value,
-                nachname: nachname.value,
-                email: email.value,
-                telefon: telefon.value,
-                datenschutz: datenschutz.value,
-                zeitdruck: selectedOption.value,
-            };
-
-            localStorage.setItem('formData', JSON.stringify(formData));
-
-        };
-
         return {
-            webSite,
-            unternehmen,
-            currentStep,
             nextStep,
             returnStep,
-            vorname,
-            nachname,
-            email,
-            telefon,
-            datenschutz,
-            submitForms,
-            selectedOption,
+            currentStep
         };
     },
 });
@@ -336,18 +359,15 @@ export default defineComponent({
 .radio-group {
     display: flex;
     flex-direction: column;
-    /* Radyo butonlarını alt alta hizalar */
     margin-top: 10px;
 }
 
 .radio-group .el-radio {
     margin-bottom: 10px;
-    /* Radyo butonları arasında boşluk */
 }
 
 .el-radio__input {
     margin-right: 40px;
-    /* Radyo butonunun yanındaki boşluk */
 }
 
 .form-3-row {
