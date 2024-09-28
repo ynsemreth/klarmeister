@@ -78,8 +78,8 @@
     </div>
 
     <div class="radio-group">
-        <el-radio label="amBestenGestern">Am besten schon gestern</el-radio>
-        <el-radio label="keinZeitdruck">Kein Zeitdruck</el-radio>
+        <el-checkbox v-model="form.amBestenGestern">Am besten schon gestern</el-checkbox>
+        <el-checkbox v-model="form.keinZeitdruck">Kein Zeitdruck</el-checkbox>
     </div>
 
     <div class="line"></div>
@@ -203,6 +203,8 @@ export default defineComponent({
                 nachname: '',
                 email: '',
                 phone: '',
+                amBestenGestern: false,
+                keinZeitdruck: false,
                 datenschutz: false,
             }
         };
@@ -233,6 +235,8 @@ export default defineComponent({
             this.form.vorname = '';
             this.form.nachname = '';
             this.form.email = '';
+            this.form.amBestenGestern = false;
+            this.form.keinZeitdruck = false;
             this.form.phone = '';
             this.form.datenschutz = false;
         },
@@ -373,8 +377,8 @@ export default defineComponent({
 .form-3-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
     gap: 20px;
+    max-width: 400px;
 }
 
 .input-vorname,
@@ -382,6 +386,8 @@ export default defineComponent({
 .input-email,
 .input-telefon {
     border-radius: 8px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .form-3-check {
