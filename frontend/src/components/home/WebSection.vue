@@ -219,6 +219,11 @@ export default {
         max-width: 100%;
         margin-bottom: 20px;
     }
+
+    .web-content{
+        max-width: 80%;
+        margin-left: 10%;
+    }
 }
 
 </style>

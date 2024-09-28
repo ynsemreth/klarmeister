@@ -398,7 +398,8 @@ export default defineComponent({
 @media (max-width: 768px) {
     .request-form {
         padding: 20px;
-        margin: 20px auto;
+        margin: 10px auto;
+        max-width: 80%;
     }
 
     .form-benefits {
@@ -407,13 +408,18 @@ export default defineComponent({
     }
 
     .form-benefits li {
-        font-size: 12px;
+        font-size: 10px;
         margin: 5px 0;
     }
 
     .web {
         max-width: 100%;
-        margin-top: 15px;
+        margin-top: 10px;
+    }
+
+    .el-input .el-input__inner {
+        font-size: 12px;
+        padding: 8px;
     }
 
     .btn_wrapper {
@@ -433,8 +439,8 @@ export default defineComponent({
     }
 
     .form-3-check {
-        padding-top: 5%;
-        padding-bottom: 5%;
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
 }
 </style>

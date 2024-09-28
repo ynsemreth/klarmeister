@@ -3,33 +3,6 @@
     <el-row>
         <el-col :span="6" class="footer-col">
             <ul>
-                <h3>Referenzen</h3>
-                <li><a href="#">Referenz 1</a></li>
-                <li><a href="#">Referenz 2</a></li>
-                <li><a href="#">Referenz 3</a></li>
-            </ul>
-        </el-col>
-
-        <el-col :span="6" class="footer-col">
-            <ul>
-                <h3>Ressourcen</h3>
-                <li><a href="#">Ressource 1</a></li>
-                <li><a href="#">Ressource 2</a></li>
-                <li><a href="#">Ressource 3</a></li>
-            </ul>
-        </el-col>
-
-        <el-col :span="6" class="footer-col">
-            <ul>
-                <h3>Lösungen</h3>
-                <li><a href="#">Lösung 1</a></li>
-                <li><a href="#">Lösung 2</a></li>
-                <li><a href="#">Lösung 3</a></li>
-            </ul>
-        </el-col>
-
-        <el-col :span="6" class="footer-col">
-            <ul>
                 <h3>KLARMEISTER</h3>
                 <li>
                     <router-link to="/über">Über Klarmeister</router-link>
@@ -41,6 +14,17 @@
                     <router-link to="/impressum">Impressum</router-link>
                 </li>
             </ul>
+        </el-col>
+
+        <el-col :span="6" class="footer-col">
+            <div class="footer-img">
+                <img src="@/assets/garanti.png" alt="garanti" />
+            </div>
+        </el-col>
+    </el-row>
+    <el-row class="footer-bottom">
+        <el-col :span="24">
+            <h1>© 2024 Klarmeister. Alle Rechte vorbehalten.</h1>
         </el-col>
     </el-row>
 </footer>
@@ -54,13 +38,15 @@
     font-size: 14px;
     padding: 40px 20px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .footer-col {
-    padding: 0 20px;
     margin-bottom: 20px;
+    display: flex;
 }
 
 ul {
@@ -95,20 +81,37 @@ ul li a:hover {
     transition: color 0.3s ease-in-out;
 }
 
+.footer-img {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.footer-img img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+}
+
+.footer-bottom h1 {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
     }
 
     .footer-col {
         width: 100%;
         margin-bottom: 20px;
-    }
-
-    ul {
-        width: 100%;
+        justify-content: center;
     }
 
     ul h3 {
@@ -120,6 +123,18 @@ ul li a:hover {
 
     ul li {
         font-size: 12px;
+    }
+
+    .footer-img {
+        margin-top: 15px;
+    }
+
+    .footer-img img {
+        width: 80px;
+    }
+
+    .footer-bottom h1 {
+        font-size: 10px;
     }
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-<el-dialog :model-value="modelValue" width="800px" :close-on-click-modal="true" :show-close="false" @close="handleClose" 
-style="background: linear-gradient(to bottom, #212121, #111111); border-radius: 16px; border: 5px solid rgba(255, 255, 255, 0.1);">
+<el-dialog :model-value="modelValue" width="800px" :close-on-click-modal="true" :show-close="false" @close="handleClose" style="background: linear-gradient(to bottom, #212121, #111111); border-radius: 16px; border: 5px solid rgba(255, 255, 255, 0.1);">
     <div class="dialog-content">
         <h2>Bu, Birincil Kartın İçeriğidir</h2>
         <p>
@@ -17,6 +16,10 @@ style="background: linear-gradient(to bottom, #212121, #111111); border-radius: 
 </el-dialog>
 </template>
 
+    
+      
+      
+    
 <script lang="ts">
 import {
     defineComponent,
@@ -51,21 +54,22 @@ export default defineComponent({
     },
 });
 </script>
-
+      
+      
+    
 <style>
-
 .dialog-content {
     max-height: 1200px;
     overflow-y: auto;
     padding: 20px;
-    color: rgb(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
 
 .dialog-content h2 {
     margin-bottom: 20px;
-    color: rgb(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -77,5 +81,32 @@ export default defineComponent({
 .video-player {
     width: 100%;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    .el-dialog {
+        width: 80% !important;
+    }
+
+    .dialog-content {
+        padding: 10px;
+    }
+
+    .video-container {
+        margin-top: 10px;
+    }
+
+    .video-player {
+        width: 100%;
+        height: auto;
+    }
+
+    .dialog-content h2 {
+        font-size: 18px;
+    }
+
+    .dialog-content p {
+        font-size: 14px;
+    }
 }
 </style>

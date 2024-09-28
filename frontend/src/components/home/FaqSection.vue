@@ -126,7 +126,7 @@ export default {
     margin: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .faq-title {
         font-size: 22px;
         padding: 0 10px;
@@ -137,12 +137,32 @@ export default {
     }
 
     .el-collapse-item__content {
-        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2px;
+        color: #d1d1d1;
+        background-color: #000;
+        padding: 15px;
+        border: 2px solid black;
+        margin: 0;
+    }
+
+    .faq-collapse .el-collapse-item {
+        background-color: #222;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 4px;
+    }
+
+    .el-collapse-item__header {
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #222;
+        color: #fff;
+        transition: background-color 0.3s ease;
     }
 
     .faq-section {
-        padding: 20px 10px;
+        padding: 20px 40px;
     }
 }
-
 </style>

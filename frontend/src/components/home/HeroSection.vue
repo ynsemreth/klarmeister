@@ -39,7 +39,8 @@
         <div class="custom-text-container">
             <h3 class="custom-text-title">Unsere Qualität</h3>
             <p class="custom-text-description">
-                Unsere Website besticht nicht nur durch beeindruckendes Design, sondern auch durch hervorragende Benutzerfreundlichkeit und Leistung.
+                Unsere Website besticht nicht nur durch beeindruckendes Design, <br>
+                sondern auch durch hervorragende Benutzerfreundlichkeit und Leistung.
             </p>
         </div>
     </el-col>
@@ -282,11 +283,11 @@ export default {
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 10px;
         margin: 10px 0;
     }
 
@@ -304,9 +305,13 @@ export default {
     }
 
     .custom-text-container {
-        max-width: 50px;
-        padding-right: 0;
-        padding-left: 1px;
+        top: 22%;
+        left: 55%;
+        width: 40%;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        z-index: 3;
         align-items: center;
     }
 
@@ -327,5 +332,4 @@ export default {
         line-height: 1.6;
     }
 }
-
 </style>

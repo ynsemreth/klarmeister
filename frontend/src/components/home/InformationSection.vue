@@ -134,7 +134,7 @@ export default {
 
 @media (max-width: 768px) {
     .information {
-        padding: 60px 20px;
+        padding: 60px 60px;
     }
 
     .information-content {

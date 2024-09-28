@@ -145,25 +145,34 @@ export default {
 
 .big-case_logo-wrapper {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    /* Logoyu ortalamak için */
 }
 
 .big-case_logo {
-    width: 50px;
+    width: 60px;
+    /* Gerekirse boyutunu ayarlayabilirsiniz */
     height: auto;
 }
 
 .big-case_image-wrapper {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    /* Resmi ortalamak için */
 }
 
 .big-case_featured-image {
-    width: 80%;
+    width: 90%;
+    /* Resmi büyütmek için ayarlandı */
     height: auto;
     border-radius: 10px;
 }
 
 .big-case_meta {
-    text-align: left;
+    text-align: center;
+    /* Meta kısmını ortalamak için */
 }
 
 .big-case_title {
@@ -296,45 +305,75 @@ export default {
     border-radius: 8px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .new-section {
-        flex-direction: column;
-    }
-
-    .left-section {
-        width: 100%;
-        margin-bottom: 20px;
         display: flex;
         justify-content: center;
-        align-items: center;
-    }
-
-    .big-case_left {
-        display: flex;
+        background: linear-gradient(to right, #053c05, #000000);
+        border-radius: 30px;
+        max-width: 400px;
+        border: 3px solid transparent;
+        transition: border-color 0.8s ease, background-color 0.8s ease;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 20px;
     }
 
-    .right-section {
-        display: none;
+    .big-case_logo-wrapper {
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-left: 70%;
+    }
+
+    .big-case_logo {
+        width: 100px;
+        height: auto;
+    }
+
+    .big-case_image-wrapper {
+        justify-content: center;
+        margin-bottom: 10px;
+
+    }
+
+    .big-case_featured-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 70%;
     }
 
     .big-case_title {
-        font-size: 20px;
-    }
-
-    .big-case_right-title {
-        font-size: 16px;
-    }
-
-    .custom-card-player {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
         width: 100%;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
+        margin-left: 35%;
+    }
+
+    .case_tags-collection {
+        margin: 0 auto;
+        gap: 5px;
+        margin-left: 60%;
+        max-width: 100px;
+        max-height: 40px;
     }
 
     .btn_wrapper {
         padding: 5px 10px;
-        font-size: 12px;
+        font-size: 8px;
+        margin-top: 10px;
+        margin-left: 56%;
+    }
+
+    .big-case_right-title {
+        display: none;
+    }
+
+    .custom-card-player {
+        width: 100%;
     }
 
     .box-card {

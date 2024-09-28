@@ -131,19 +131,8 @@ export default {
 }
 
 @media (max-width: 768px) {
-    .banner-section {
-        position: relative;
-        text-align: center;
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        max-width: 500px;
-    }
-
     .banner-link {
-        padding: 20px 10px;
+        padding: 20px 100px;
     }
 
     .banner-link h3 {
