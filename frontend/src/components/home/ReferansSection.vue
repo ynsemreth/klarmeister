@@ -146,33 +146,28 @@ export default {
 .big-case_logo-wrapper {
     margin-bottom: 15px;
     display: flex;
-    justify-content: center;
-    /* Logoyu ortalamak için */
+    justify-content: left;
 }
 
 .big-case_logo {
     width: 60px;
-    /* Gerekirse boyutunu ayarlayabilirsiniz */
     height: auto;
 }
 
 .big-case_image-wrapper {
     margin-bottom: 15px;
     display: flex;
-    justify-content: center;
-    /* Resmi ortalamak için */
+    justify-content: left;
 }
 
 .big-case_featured-image {
     width: 90%;
-    /* Resmi büyütmek için ayarlandı */
     height: auto;
     border-radius: 10px;
 }
 
 .big-case_meta {
-    text-align: center;
-    /* Meta kısmını ortalamak için */
+    text-align: left;
 }
 
 .big-case_title {
