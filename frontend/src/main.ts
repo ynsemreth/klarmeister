@@ -10,7 +10,7 @@ import { createI18n } from 'vue-i18n';
 import router from "@/router";
 
 const i18n = createI18n({
-    locale: 'tr',
+    locale: 'de',
 });
 
 const app = createApp(App);
