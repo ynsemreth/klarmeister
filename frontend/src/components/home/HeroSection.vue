@@ -67,11 +67,14 @@ export default {
             const videoSection = document.querySelector('.overlay-video-container');
             if (videoSection) {
                 const sectionPosition = videoSection.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 5;
+                const screenPosition = window.innerHeight / (this.isMobile() ? 1.5 : 5); 
 
                 this.isInView = sectionPosition < screenPosition;
             }
         },
+        isMobile() {
+        return window.innerWidth <= 768; // Mobil kontrolü
+    },
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
