@@ -1,6 +1,6 @@
 <template>
 <AppNavbar />
-<el-row justify="center" class="body">
+<el-row justify="center" class="body" :gutter="0">
     <HeroSection />
     <ReferansSection />
     <InformationSection />
@@ -44,13 +44,16 @@ export default defineComponent({
 </script>
 
 <style>
-
 .body {
     height: 100%;
     max-width: 100%;
     margin: 0;
+    padding: 0;
     background: black;
     overflow-x: hidden;
 }
 
+.el-row {
+    padding: 0;
+}
 </style>

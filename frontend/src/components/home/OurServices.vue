@@ -240,4 +240,23 @@ export default {
     font-weight: 100;
     color: #d4d4d4;
 }
+
+@media (max-width: 768px) {
+    .services_title-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-title {
+        font-size: 24px;
+    }
+
+    .services-subtitle {
+        font-size: 12px;
+    }
+
+    .btn-services {
+        width: 100%;
+    }
+}
 </style>

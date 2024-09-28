@@ -46,7 +46,6 @@
 </el-row>
 </template>
 
-  
 <script>
 import {
     Right
@@ -55,7 +54,7 @@ import {
 export default {
     name: 'HomeSection',
     components: {
-        Right,
+        Right
     },
     data() {
         return {
@@ -75,6 +74,7 @@ export default {
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
+        this.handleScroll();
     },
     beforeUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
@@ -199,10 +199,10 @@ export default {
 
 .custom-video-container {
     position: absolute;
-    top: 23%;
+    top: 26%;
     left: 18.5%;
     width: 23%;
-    height: 27.8%;
+    height: 32%;
     transform: perspective(800px) rotateX(-8deg) rotateY(8deg) skewY(-27deg);
     border-radius: 10px;
     overflow: hidden;
@@ -269,5 +269,39 @@ export default {
     color: #d1d1d1;
     margin: 0;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        margin: 10px 0;
+        display: none;
+    }
+
+    .hero-button-btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .mockup-image {
+        display: none;
+    }
+
+    .custom-video-container {
+        top: 20%;
+        left: 50%;
+        width: 100%;
+        height: auto;
+        transform: translate(-50%, 0);
+        transition: none;
+    }
+
+    .custom-text-container {
+        display: none;
+    }
 }
 </style>

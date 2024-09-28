@@ -52,7 +52,7 @@
             </div>
         </el-col>
 
-        <el-col :span="10" class="right-section">
+        <el-col :span="10" v-if="!isMobile" class="right-section">
             <div class="big-case_right">
                 <div class="big-case_right-content">
                     <video controls muted class="custom-card-player">
@@ -92,7 +92,24 @@ export default {
     components: {
         Document,
         Refresh,
-        MagicStick
+        MagicStick,
+    },
+    data() {
+        return {
+            isMobile: false,
+        };
+    },
+    mounted() {
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkMobile);
+    },
+    methods: {
+        checkMobile() {
+            this.isMobile = window.innerWidth <= 768;
+        }
     }
 };
 </script>
@@ -110,6 +127,7 @@ export default {
     margin-bottom: 5%;
     border: 3px solid transparent;
     transition: border-color 0.8s ease, background-color 0.8s ease;
+    flex-direction: row;
 }
 
 .new-section:hover {
@@ -279,5 +297,44 @@ export default {
     height: auto;
     margin-top: 20px;
     border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .new-section {
+        flex-direction: column;
+    }
+
+    .left-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .right-section {
+        display: none;
+    }
+
+    .big-case_title {
+        font-size: 20px;
+    }
+
+    .big-case_right-title {
+        font-size: 16px;
+    }
+
+    .custom-card-player {
+        width: 100%;
+    }
+
+    .btn_wrapper {
+        padding: 5px 10px; 
+        font-size: 12px; 
+    }
+
+    .box-card {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        width: 100%; 
+    }
 }
 </style>

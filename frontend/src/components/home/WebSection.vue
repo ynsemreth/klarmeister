@@ -223,4 +223,27 @@ export default {
     background-color: #000;
     padding: 50px 0;
 }
+
+@media (min-width: 768px) {
+    .web-section {
+        text-align: center;
+        background: black;
+        position: relative;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .web-card {
+        flex-direction: row;
+        justify-content: column;
+        padding: 0;
+        padding-left: 0%;
+        align-items: center;
+    }
+
+    .web-card-one,
+    .web-card-two {
+        width: calc(50% - 10px);
+    }
+}
 </style>

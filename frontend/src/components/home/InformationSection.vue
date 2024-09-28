@@ -4,7 +4,7 @@
 </el-col>
 
 <el-col :span="24" class="information">
-    <div class="information-content">
+    <div class="information-content" :class="{ 'mobile': isMobile }">
         <h1 class="information-title">Schnauze voll von Luftpumpen</h1>
         <h2 class="information-text-title">
             <span class="highlight">Haben Sie auch die Nase voll von leeren Versprechungen?</span>
@@ -19,6 +19,12 @@
             Lösung, die Ihre Erwartungen übertrifft.
         </p>
     </div>
+    <div class="information-image" v-if="!isMobile">
+        <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
+    </div>
+</el-col>
+
+<el-col :span="24" v-if="isMobile">
     <div class="information-image">
         <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
     </div>
@@ -32,6 +38,23 @@
 <script>
 export default {
     name: 'InformationSection',
+    data() {
+        return {
+            isMobile: false,
+        };
+    },
+    mounted() {
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkMobile);
+    },
+    methods: {
+        checkMobile() {
+            this.isMobile = window.innerWidth <= 768;
+        },
+    },
 };
 </script>
 
@@ -51,6 +74,11 @@ export default {
     color: #fff;
     max-width: 60%;
     padding-left: 5%;
+}
+
+.information-content.mobile {
+    max-width: 100%;
+    padding-left: 0;
 }
 
 .information-image {
@@ -102,5 +130,26 @@ export default {
     height: 2px;
     background-color: #333;
     margin: 2px auto;
+}
+
+@media (max-width: 768px) {
+    .information-title {
+        font-size: 15px;
+    }
+
+    .information-text-title {
+        font-size: 9px;
+    }
+
+    .information-text-content {
+        font-size: 8px;
+    }
+
+    .information-image {
+        max-width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>

@@ -129,4 +129,24 @@ export default {
     border: transparent;
     color: black;
 }
+
+@media (max-width: 768px) {
+    .banner-link {
+        padding: 20px 10px;
+    }
+
+    .banner-link h3 {
+        font-size: 12px;
+    }
+
+    .banner-text {
+        font-size: 20px;
+    }
+
+    .social-media a {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+}
 </style>
