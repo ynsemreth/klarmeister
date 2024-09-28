@@ -207,6 +207,7 @@ export default {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     overflow-x: hidden;
+    overflow-y: hidden;
     transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -295,21 +296,36 @@ export default {
     }
 
     .mockup-image {
-        opacity: 0;
-        transition: none;
+        max-width: 300px;
     }
 
     .custom-video-container {
-        top: 20%;
-        left: 50%;
-        width: 100%;
-        height: auto;
-        transform: translate(-50%, 0);
-        transition: none;
+        position: absolute;
     }
 
     .custom-text-container {
-        display: none;
+        max-width: 50px;
+        padding-right: 0;
+        padding-left: 1px;
+        align-items: center;
+    }
+
+    .custom-text-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    .custom-text-description {
+        font-family: 'Poppins', sans-serif;
+        font-size: 6px;
+        font-weight: 100;
+        color: #d1d1d1;
+        margin: 0;
+        line-height: 1.6;
     }
 }
+
 </style>

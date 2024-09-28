@@ -394,4 +394,47 @@ export default defineComponent({
     padding-top: 10%;
     padding-bottom: 10%;
 }
+
+@media (max-width: 768px) {
+    .request-form {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .form-benefits {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .form-benefits li {
+        font-size: 12px;
+        margin: 5px 0;
+    }
+
+    .web {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    .btn_wrapper {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .form-3-row {
+        flex-direction: column;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .line {
+        height: 1px;
+        margin: 10px auto;
+    }
+
+    .form-3-check {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+}
 </style>
