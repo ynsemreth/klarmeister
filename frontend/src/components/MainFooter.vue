@@ -4,15 +4,12 @@
         <el-col :span="6" class="footer-col">
             <ul>
                 <h3>KLARMEISTER</h3>
-                <li>
-                    <router-link to="/über">Über Klarmeister</router-link>
-                </li>
-                <li>
-                    <router-link to="/kontakt">Kontakt</router-link>
-                </li>
-                <li>
-                    <router-link to="/impressum">Impressum</router-link>
-                </li>
+                <a>
+                    <router-link to="leistungen">Datenschutz</router-link>
+                </a>
+                <a>
+                    <router-link to="uberuns">Impressum</router-link>
+                </a>
             </ul>
         </el-col>
 

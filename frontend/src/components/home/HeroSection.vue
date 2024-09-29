@@ -286,11 +286,11 @@ export default {
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 20px;
+        font-size: 40px;
     }
 
     .hero-subtitle {
-        font-size: 10px;
+        font-size: 20px;
         margin: 10px 0;
     }
 

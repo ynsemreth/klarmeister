@@ -6,10 +6,10 @@
     <nav class="nav-links" :class="{ 'active': isMenuOpen }">
         <a href="/">Home</a>
         <a>
-            <router-link to="leistungen">Leistungen</router-link>
+            <router-link to="leistungen">Datenschutz</router-link>
         </a>
         <a>
-            <router-link to="uberuns">Über Uns</router-link>
+            <router-link to="uberuns">Impressum</router-link>
         </a>
     </nav>
 </div>

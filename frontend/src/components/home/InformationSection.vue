@@ -158,11 +158,7 @@ export default {
     }
 
     .information-image {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 10px;
+        display: none;
     }
 }
 </style>

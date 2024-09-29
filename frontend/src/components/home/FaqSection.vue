@@ -41,7 +41,7 @@
         </el-collapse-item>
         <el-collapse-item name="4">
             <template #title>
-                Wieviel Zeit muss ich für eine Zusammenarbeit mit VIERLESS einplanen?
+                Zeit muss ich für eine Zusammenarbeit mit VIERLESS einplanen?
                 <el-icon class="header-icon">
                     <info-filled />
                 </el-icon>
@@ -62,7 +62,7 @@ export default {
 
 <style scoped>
 .faq-section {
-    background-color: #000;
+    background-color: black;
     padding: 50px 20px;
     color: white;
     text-align: center;
@@ -90,7 +90,7 @@ export default {
 .faq-collapse {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #000;
+    background-color: #000000;
     border-radius: 10px;
     border: 1px solid #333;
     padding: 15px;
@@ -126,43 +126,30 @@ export default {
     margin: 0;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .faq-title {
-        font-size: 22px;
-        padding: 0 10px;
+        font-size: 20px;
     }
 
     .faq-subtitle {
-        font-size: 10px;
-    }
-
-    .el-collapse-item__content {
-        font-family: 'Poppins', sans-serif;
-        font-size: 2px;
-        color: #d1d1d1;
-        background-color: #000;
-        padding: 15px;
-        border: 2px solid black;
-        margin: 0;
-    }
-
-    .faq-collapse .el-collapse-item {
-        background-color: #222;
-        border-radius: 5px;
-        overflow: hidden;
-        font-size: 4px;
+        font-size: 12px;
     }
 
     .el-collapse-item__header {
-        padding: 10px 15px;
-        border-radius: 5px;
-        background-color: #222;
-        color: #fff;
-        transition: background-color 0.3s ease;
+        font-size: 14px;
     }
 
-    .faq-section {
-        padding: 20px 40px;
+    .faq-collapse .el-collapse-item {
+        padding: 8px;
+    }
+
+    .faq-collapse {
+        padding: 10px;
+    }
+
+    .el-collapse-item__content {
+        font-size: 10px;
     }
 }
 </style>
