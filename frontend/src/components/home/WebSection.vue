@@ -16,7 +16,6 @@
                 <span>Bereiche Ihrer Strategie verstärkt werden müssen.</span>
                 <span>Egal ob es um die Gewinnung neuer Kunden oder Mitarbeiter</span>
                 <span>geht – wir schaffen Klarheit über Ihre Bedürfnisse und richten die Strategie danach aus.</span>
-
             </div>
         </el-card>
 
@@ -28,19 +27,17 @@
                 <span>leistungsstarkes Tool zur Kundengewinnung um.</span>
                 <span>Mit modernem Design und zielgerichteter Funktionalität</span>
                 <span>schaffen wir eine Plattform, die Ihre Zielgruppe effektiv anspricht und überzeugt.</span>
-
             </div>
         </el-card>
 
         <el-card class="web-card-one" plain @mouseenter="openDialogThree">
             <div class="number">03</div>
-            <div class="web-card-title">Verkaufspsych  -ologisches Video erstellen:</div>
+            <div class="web-card-title">Verkaufspsychologisches Video erstellen:</div>
             <div class="web-card-subtitle">
                 <span>Wir entwickeln ein verkaufspsychologisches Video, das Ihre Botschaft klar und überzeugend vermittelt.</span>
                 <span>Dieses Video dient nicht nur als Werbemittel,</span>
                 <span>sondern hilft auch dabei, potenziellen Kunden oder neuen Mitarbeitern ein tiefes Verständnis Ihrer Firma</span>
                 <span>und deren Werte zu geben.</span>
-
             </div>
         </el-card>
 
@@ -54,7 +51,6 @@
                 <span>direkt für Sie um.</span>
                 <span>Wir verkaufen Ihnen nicht einfach nur eine Theorie –</span>
                 <span>wir liefern messbare Ergebnisse, und das schnell.</span>
-
             </div>
         </el-card>
     </div>
@@ -68,6 +64,8 @@
 </el-row>
 </template>
 
+    
+    
 <script>
 import CardOneDialog from "@/components/cards/CardOneDialog.vue";
 import CardTwoDialog from "@/components/cards/CardTwoDialog.vue";
@@ -137,14 +135,14 @@ export default {
     },
 };
 </script>
-
+    
+    
 <style scoped>
 .web-section {
     text-align: center;
     background: black;
     position: relative;
     padding: 50px 0;
-    margin-top: 0
 }
 
 .web-content {
@@ -183,7 +181,6 @@ export default {
 .web-card-two {
     flex: 1;
     font-family: 'Montserrat', sans-serif;
-    max-width: calc(50% - 10px);
     background: linear-gradient(to bottom, #212121, #111111);
     color: white;
     border-radius: 16px;
@@ -191,7 +188,11 @@ export default {
     text-align: center;
     transition: all 0.3s ease-in-out;
     padding: 20px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; 
+    width: 300px;
 }
 
 .web-card-two {
@@ -200,17 +201,17 @@ export default {
 }
 
 .web-card-title {
-    font-size: 1.4rem; 
+    font-size: 1rem; 
     font-weight: bold;
     color: white;
     margin-top: 20px;
-    text-align: center; 
+    text-align: left; 
     max-width: 250px;
     margin-left: 10px;
     margin-right: 10px;
     line-height: 1.4;
+    flex-grow: 1; 
 }
-
 
 .web-card-subtitle {
     font-size: 0.75rem;
@@ -218,6 +219,7 @@ export default {
     line-height: 1.5;
     margin-top: 20px;
     text-align: left;
+    flex-grow: 1; 
 }
 
 .web-card .number {
