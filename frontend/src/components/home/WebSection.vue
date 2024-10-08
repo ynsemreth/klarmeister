@@ -1,49 +1,60 @@
 <template>
 <el-col :span="24" class="web-section">
     <div class="web-content">
-        <h3 class="web-subtitle">DIE VIERLESS EXPERIENCE</h3>
+        <h3 class="web-subtitle">DIE KLARMEISTER EXPERIENCE</h3>
         <h1 class="web-title">
-            In 4 einfachen Schritten <br /> zu Ihrem neuen Online Auftritt
+            In 4 Schritten zur Neukunden - und <br /> Mitarbeitergewinnung auf Knopfdruck:
         </h1>
     </div>
     <div class="web-card">
         <el-card class="web-card-one" plain @mouseenter="openDialogOne">
             <div class="number">01</div>
-            <div class="web-card-title">Sie haben Ihre Lage erkannt</div>
+            <div class="web-card-title">Klarheit schaffen:</div>
             <div class="web-card-subtitle">
-                <span>Der Sachverhalt ist klar:</span>
-                <span>Eine neue Webseite muss her!</span>
-                <span>Der erste Schritt ist abgehakt.</span>
+                <span>Zunächst analysieren wir die Situation Ihres Unternehmens.</span>
+                <span>Wir identifizieren Ihre Ziele, Ihre Zielgruppe und welche</span>
+                <span>Bereiche Ihrer Strategie verstärkt werden müssen.</span>
+                <span>Egal ob es um die Gewinnung neuer Kunden oder Mitarbeiter</span>
+                <span>geht – wir schaffen Klarheit über Ihre Bedürfnisse und richten die Strategie danach aus.</span>
+
             </div>
         </el-card>
 
         <el-card class="web-card-two active-card" plain @mouseenter="openDialogTwo">
             <div class="number">02</div>
-            <div class="web-card-title">Füllen Sie unser Formular aus</div>
+            <div class="web-card-title">Webseite mit Power transformieren:</div>
             <div class="web-card-subtitle">
-                <span>Damit wir wissen, wer</span>
-                <span>Sie sind und was Sie vorhaben,</span>
-                <span>haben wir einige Fragen vorbereitet.</span>
+                <span>Wir nehmen Ihre bestehende Webseite und wandeln sie in ein</span>
+                <span>leistungsstarkes Tool zur Kundengewinnung um.</span>
+                <span>Mit modernem Design und zielgerichteter Funktionalität</span>
+                <span>schaffen wir eine Plattform, die Ihre Zielgruppe effektiv anspricht und überzeugt.</span>
+
             </div>
         </el-card>
 
         <el-card class="web-card-one" plain @mouseenter="openDialogThree">
             <div class="number">03</div>
-            <div class="web-card-title">Hören Sie sich unsere Ideen an</div>
+            <div class="web-card-title">Verkaufspsych  -ologisches Video erstellen:</div>
             <div class="web-card-subtitle">
-                <span>In einem ersten Telefonat</span>
-                <span>besprechen wir erste Details</span>
-                <span>und den weiteren Ablauf.</span>
+                <span>Wir entwickeln ein verkaufspsychologisches Video, das Ihre Botschaft klar und überzeugend vermittelt.</span>
+                <span>Dieses Video dient nicht nur als Werbemittel,</span>
+                <span>sondern hilft auch dabei, potenziellen Kunden oder neuen Mitarbeitern ein tiefes Verständnis Ihrer Firma</span>
+                <span>und deren Werte zu geben.</span>
+
             </div>
         </el-card>
 
         <el-card class="web-card-one" plain @mouseenter="openDialogFour">
             <div class="number">04</div>
-            <div class="web-card-title">Lehnen Sie sich entspannt zurück</div>
+            <div class="web-card-title">LindedIn-Kundenakquise:</div>
             <div class="web-card-subtitle">
-                <span>Profitieren Sie mit dem</span>
-                <span>Start der Zusammenarbeit von</span>
-                <span>der VIERLESS Experience.</span>
+                <span>Zum Abschluss bieten wir Ihnen eine 1:1-Betreuung bei der Akquise neuer Kunden über LinkedIn.</span>
+                <span>Dabei setzen wir all unser Wissen und die Erfahrungen,</span>
+                <span>die wir in Seminaren und durch über 250.000 € an Investitionen gesammelt haben,</span>
+                <span>direkt für Sie um.</span>
+                <span>Wir verkaufen Ihnen nicht einfach nur eine Theorie –</span>
+                <span>wir liefern messbare Ergebnisse, und das schnell.</span>
+
             </div>
         </el-card>
     </div>
@@ -162,7 +173,7 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 100px;
 }
@@ -188,11 +199,17 @@ export default {
 }
 
 .web-card-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem; 
     font-weight: bold;
     color: white;
     margin-top: 20px;
+    text-align: center; 
+    max-width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 1.4;
 }
+
 
 .web-card-subtitle {
     font-size: 0.75rem;
@@ -220,10 +237,9 @@ export default {
         margin-bottom: 20px;
     }
 
-    .web-content{
+    .web-content {
         max-width: 80%;
         margin-left: 10%;
     }
 }
-
 </style>

@@ -2,10 +2,10 @@
 <AppNavbar />
 <el-row justify="center" class="body" style="overflow-x: hidden;">
     <HeroSection />
+    <WebSection />
     <ReferansSection />
     <InformationSection />
     <OurServices />
-    <WebSection />
     <FaqSection />
     <BannerSection />
 </el-row>
