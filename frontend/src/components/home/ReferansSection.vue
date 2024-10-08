@@ -49,7 +49,7 @@
                 </div>
                 <el-card class="box-card">
                     <div class="image-section">
-                        <img src="@/assets/bilet.png" alt="Bilet Image" class="bilet-image" />
+                        <img src="@/assets/sehlenarama.png" alt="Bilet Image" class="bilet-image" />
                     </div>
                 </el-card>
             </div>

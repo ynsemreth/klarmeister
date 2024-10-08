@@ -8,7 +8,7 @@
         </p>
         <div class="video-container">
             <video ref="videoPlayer" controls muted autoplay class="video-player">
-                <source src="@/assets/video.mp4" type="video/mp4" />
+                <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
                 Tarayıcınız video etiketini desteklemiyor.
             </video>
         </div>
