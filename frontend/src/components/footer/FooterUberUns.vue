@@ -78,7 +78,7 @@ import AppNavbar from '@/components/AppNavbar.vue';
 import MainFooter from '@/components/MainFooter.vue';
 
 export default {
-    name: 'FirmDetails',
+    name: 'FooterUberUns',
     components: {
         AppNavbar,
         MainFooter,

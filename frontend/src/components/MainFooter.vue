@@ -4,12 +4,12 @@
         <el-col :span="6" class="footer-col">
             <ul>
                 <h3>KLARMEISTER</h3>
-                <a>
-                    <router-link to="leistungen">Datenschutz</router-link>
-                </a>
-                <a>
-                    <router-link to="uberuns">Impressum</router-link>
-                </a>
+                <li>
+                    <router-link to="datenschutz">Datenschutz</router-link>
+                </li>
+                <li>
+                    <router-link to="impressum">Impressum</router-link>
+                </li>
             </ul>
         </el-col>
 
@@ -27,6 +27,8 @@
 </footer>
 </template>
 
+  
+  
 <style>
 .footer {
     background-color: black;
@@ -44,6 +46,8 @@
 .footer-col {
     margin-bottom: 20px;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 ul {
@@ -76,6 +80,11 @@ ul li a:hover {
     color: #ffffff;
     font-weight: 400;
     transition: color 0.3s ease-in-out;
+}
+
+ul li span {
+    color: #b3b3b3;
+    font-weight: 300;
 }
 
 .footer-img {

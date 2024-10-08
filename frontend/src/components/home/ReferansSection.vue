@@ -7,44 +7,24 @@
     <el-row :gutter="10">
         <el-col :span="14" class="left-section">
             <div class="big-case_left">
-                <div class="big-case_logo-wrapper">
-                    <img src="@/assets/sehlen_logo.png" loading="lazy" alt="Sehlen Studios" class="big-case_logo" />
-                </div>
-
                 <div class="big-case_image-wrapper">
-                    <img src="@/assets/sehlen_site.png" loading="lazy" alt="Sehlen Studio Site" class="big-case_featured-image" />
+                    <img src="@/assets/sehlenref.png" loading="lazy" alt="Sehlen Studio Site" class="big-case_featured-image" />
                 </div>
 
                 <div class="big-case_meta">
                     <h3 class="big-case_title">
-                        Landingpage für Recruiting Marktführer, losgelöst von internen Blockaden.
+                        WEBSITE MIT PRÄZISION: EINFACHER FLUGKAUF, MEHRWERT IM FOKUS
                     </h3>
-                    <div class="case_tags-collection">
-                        <div class="case_tag">
-                            <el-icon>
-                                <Document />
-                            </el-icon>
-                            <div class="case_tag-text">Design System</div>
-                        </div>
-
-                        <div class="case_tag">
-                            <el-icon>
-                                <Refresh />
-                            </el-icon>
-                            <div class="case_tag-text">Figma to Webflow</div>
-                        </div>
-                        <div class="case_tag">
-                            <el-icon>
-                                <MagicStick />
-                            </el-icon>
-                            <div class="case_tag-text">Dynamic Lotties</div>
-                        </div>
-                    </div>
-
+                    <h2 class="big-case-subtitle">
+                        Wir haben für eine Berliner Reiseagentur eine Webseite mit einem 
+                        Mitgliedsbereich und einer Flug-Suchmaschine entwickelt, die Kunden 
+                        den Kaufprozess erleichtert. Bei uns steht Mehrwert im Fokus, nicht
+                        das schnelle Geld – Präzision und Klarheit sind unsere Meisterschaft.
+                    </h2>
                     <div class="big-case_actions">
                         <div class="big-case_actions-open">
                             <el-button type="primary" class="btn_wrapper">
-                                <span class="btn_label">Casestudy ansehen</span>
+                                <span class="btn_label">Webseite entdecken</span>
                             </el-button>
                         </div>
                     </div>
@@ -79,19 +59,9 @@
 </template>
 
 <script>
-import {
-    Document,
-    Refresh,
-    MagicStick
-} from '@element-plus/icons-vue';
 
 export default {
     name: 'ReferansSection',
-    components: {
-        Document,
-        Refresh,
-        MagicStick,
-    },
     data() {
         return {
             isMobile: false,
@@ -173,8 +143,17 @@ export default {
 .big-case_title {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    width: 80%;
+    width: 90%;
     font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.big-case-subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    width: 90%;
     color: white;
     margin-bottom: 15px;
 }

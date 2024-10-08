@@ -1,50 +1,52 @@
 <template>
-    <el-row justify="center" class="body">
-        <el-col :span="24" class="hero-section">
-            <div class="content-and-media">
-                <div class="hero-content">
-                    <h3 class="hero-h3">WIR SIND KLARMEISTER</h3>
-                    <h1 class="hero-title">
-                        Deine Webseite braucht kein Facelift - sie braucht Power
-                    </h1>
-                    <h2 class="hero-subtitle">
-                        Mit uns erhalten Sie eine neue, leistungsstarke Webseite zur Neukunden und 
-                        Mitarbeitergewinnung - und das in nur 3 kurzen Online-Terminen. Der gesamte
-                        Zeitaufwand für Sie beträgt dabei durchschnittlich nur 4 Stunden.
-                    </h2>
-                    <h3 class="hero-text">
-                        Starte jetzt und hol dir die Webseite, die Kunden gewinnt - oder die passenden Mitarbeiter!
-                    </h3>
-                    <div class="hero-button">
-                        <router-link to="/anfrage">
-                            <el-button class="hero-button-btn">
-                                Jetzt Angebot einholen
-                                <el-icon>
-                                    <Right />
-                                </el-icon>
-                            </el-button>
-                        </router-link>
-                        <img src="@/assets/garanti.png" alt="garanti" />
-                    </div>
-                </div>
-
-                <div class="media-container">
-                    <img src="@/assets/laptop.png" class="laptop-image" alt="Laptop">
-
-                    <div class="video-overlay">
-                        <video id="video" autoplay controls muted playsinline class="media-video">
-                            <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
-                            Tarayıcınız video etiketini desteklemiyor.
-                        </video>
-                    </div>
+<el-row justify="center" class="body">
+    <el-col :span="24" class="hero-section">
+        <div class="content-and-media">
+            <div class="hero-content">
+                <h3 class="hero-h3">WIR SIND KLARMEISTER</h3>
+                <h1 class="hero-title">
+                    Deine Webseite braucht kein Facelift - sie braucht Power
+                </h1>
+                <h2 class="hero-subtitle">
+                    Mit uns erhalten Sie eine neue, leistungsstarke Webseite zur Neukunden und
+                    Mitarbeitergewinnung - und das in nur 3 kurzen Online-Terminen. Der gesamte
+                    Zeitaufwand für Sie beträgt dabei durchschnittlich nur 4 Stunden.
+                </h2>
+                <h3 class="hero-text">
+                    Starte jetzt und hol dir die Webseite, die Kunden gewinnt - oder die passenden Mitarbeiter!
+                </h3>
+                <div class="hero-button">
+                    <router-link to="/anfrage">
+                        <el-button class="btn-services">
+                            Jetzt Angebot einholen
+                            <el-icon>
+                                <Right />
+                            </el-icon>
+                        </el-button>
+                    </router-link>
+                    <img src="@/assets/garanti.png" alt="garanti" />
                 </div>
             </div>
-        </el-col>
-    </el-row>
+
+            <div class="media-container">
+                <img src="@/assets/laptop.png" class="laptop-image" alt="Laptop">
+
+                <div class="video-overlay">
+                    <video id="video" autoplay controls muted playsinline class="media-video">
+                        <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </el-col>
+</el-row>
 </template>
 
 <script>
-import { Right } from '@element-plus/icons-vue';
+import {
+    Right
+} from '@element-plus/icons-vue';
 
 export default {
     name: 'HomeSection',
@@ -57,7 +59,7 @@ export default {
 <style>
 .content-and-media {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
     padding: 5%;
@@ -80,10 +82,10 @@ export default {
 
 .video-overlay {
     position: absolute;
-    top: 160px; 
-    left: 110px; 
+    top: 160px;
+    left: 110px;
     width: 380px;
-    height: 260px; 
+    height: 260px;
 }
 
 .media-video {
@@ -135,18 +137,34 @@ export default {
     margin-top: 20px;
 }
 
-.hero-button-btn {
+@keyframes flash {
+
+    0%,
+    100% {
+        background-color: #0def95;
+        box-shadow: none;
+    }
+
+    50% {
+        background-color: #0abf7e;
+        box-shadow: 0 0 15px rgba(13, 239, 149, 0.5), 0 0 30px rgba(13, 239, 149, 0.3);
+    }
+}
+
+.btn-services {
     background-color: #0def95;
     border: none;
     color: black;
     padding: 10px 20px;
-    display: flex;
     align-items: center;
+    animation: flash 1.5s infinite;
     transition: background-color 0.3s;
 }
 
-.hero-button-btn:hover {
-    background-color: #0abf7e;
+.btn-services:hover {
+    animation: none;
+    background-color: #0def95;
+    color: black;
 }
 
 .hero-button img {

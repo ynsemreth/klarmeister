@@ -8,58 +8,104 @@
     <el-collapse class="faq-collapse" accordion>
         <el-collapse-item name="1">
             <template #title>
-                Was kostet eine Webseite von VIERLESS?
+                <div class="collapse-title">
+                    Was kostet eine Website?
+                </div>
                 <el-icon class="header-icon">
                     <info-filled />
                 </el-icon>
             </template>
-            <div>
-                Die Kosten hängen von den individuellen Anforderungen ab. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.
-            </div>
+            <p class="faq-content">
+                Die Kosten für eine Webseite hängen stark von den individuellen Wünschen ab. <br />
+                Dank unseres eigens entwickelten Systems, das auf jahrelanger Erfahrung und <br />
+                Weiterbildungen basiert, bieten wir kostenoptimierte Lösungen. Ob Webseite, <br />
+                LinkedIn-Optimierung oder verkaufspsychologische Videos – wir liefern <br />
+                Effizienz ohne überhöhte Preise.
+            </p>
         </el-collapse-item>
+
         <el-collapse-item name="2">
             <template #title>
-                Wie läuft eine Zusammenarbeit mit VIERLESS ab?
+                <div class="collapse-title">
+                    Was ist der Unterschied zwischen einer Landeseite und einer Webseite?
+                </div>
                 <el-icon class="header-icon">
                     <info-filled />
                 </el-icon>
             </template>
-            <div>
-                Wir führen Sie Schritt für Schritt durch den gesamten Prozess, angefangen bei einem ersten Beratungsgespräch bis zur finalen Veröffentlichung Ihrer Webseite.
-            </div>
+            <p class="faq-content">
+                Eine Landeseite (Landing Page) ist eine spezifische Seite, die oft für <br />
+                Marketingkampagnen genutzt wird, um gezielt eine Handlung zu fördern, <br />
+                z. B. ein Produktkauf oder eine Anmeldung. Eine Webseite hingegen ist <br />
+                eine umfassendere Online-Präsenz mit mehreren Seiten, die verschiedene <br />
+                Informationen und Funktionen bietet.
+            </p>
         </el-collapse-item>
+
         <el-collapse-item name="3">
             <template #title>
-                Wie unterscheidet sich VIERLESS zu anderen Dienstleistern?
+                <div class="collapse-title">
+                    Kann ich meine Domain behalten?
+                </div>
                 <el-icon class="header-icon">
                     <info-filled />
                 </el-icon>
             </template>
-            <div>
-                Unsere Lösungen sind maßgeschneidert, transparent und auf Qualität fokussiert. Keine versteckten Kosten, keine falschen Versprechen.
-            </div>
+            <p class="faq-content">
+                Ja, Sie können Ihre bestehende Domain problemlos behalten. Wir integrieren <br />
+                sie in die neue Webseite, ohne dass Sie auf Ihre gewohnte Adresse verzichten <br />
+                müssen. Unser System sorgt dafür, dass der Übergang reibungslos verläuft <br />
+                und Ihre Domain weiterhin optimal genutzt wird.
+            </p>
         </el-collapse-item>
+
         <el-collapse-item name="4">
             <template #title>
-                Zeit muss ich für eine Zusammenarbeit mit VIERLESS einplanen?
+                <div class="collapse-title-4">
+                    Wie kann ich sicherstellen, dass ich meine E-Mail-Adresse,
+                    alle bestehenden Daten und mein Hosting behalte, wenn ich
+                    die Agentur wechsle oder meine Webseite neu erstellen lasse?
+                </div>
                 <el-icon class="header-icon">
                     <info-filled />
                 </el-icon>
             </template>
-            <div>
-                Die Projektdauer hängt von der Komplexität ab. Die meisten Projekte sind innerhalb von wenigen Wochen abgeschlossen.
-            </div>
+            <p class="faq-content">
+                Sie behalten nicht nur Ihre E-Mail-Adresse und alle bestehenden Daten, <br />
+                sondern entscheiden auch, wo Ihre Webseite gehostet wird. Möchten Sie <br />
+                bei Ihrem aktuellen Hosting-Anbieter bleiben, übertragen wir die Seite dorthin. <br />
+                Alternativ richten wir auch gerne einen neuen Hosting-Anbieter für Sie ein – ganz nach Ihren Wünschen.
+            </p>
+        </el-collapse-item>
+        <el-collapse-item name="5">
+            <template #title>
+                <div class="collapse-title">
+                    Wie gehen Sie mit mobilen und responsiven Designs um?
+                </div>
+                <el-icon class="header-icon">
+                    <info-filled />
+                </el-icon>
+            </template>
+            <p class="faq-content">
+                Für uns ist responsives Design eine der wichtigsten Prioritäten, da heute fast <br />
+                alle Nutzer überwiegend auf dem Telefon surfen. Wir stellen sicher, dass Ihre <br />
+                Webseite auf mobilen Geräten genauso optimal funktioniert wie auf dem Desktop – <br />
+                für höchste Benutzerfreundlichkeit und beste Performance überall.
+            </p>
         </el-collapse-item>
     </el-collapse>
 </el-col>
 </template>
 
-<script lang="ts">
+  
+  
+<script>
 export default {
     name: 'FaqSection',
 };
 </script>
-
+  
+  
 <style scoped>
 .faq-section {
     background-color: black;
@@ -81,7 +127,7 @@ export default {
 }
 
 .faq-subtitle {
-    font-family: 'Poppins', Courier, monospace;
+    font-family: 'Poppins', monospace;
     font-size: 13px;
     color: rgb(54, 189, 54);
     margin-bottom: 10px;
@@ -109,6 +155,9 @@ export default {
     background-color: #222;
     color: #fff;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .el-collapse-item.is-active .el-collapse-item__header {
@@ -116,7 +165,22 @@ export default {
     color: #fff;
 }
 
-.el-collapse-item__content {
+.collapse-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: black;
+}
+
+.collapse-title-4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    font-weight: 600;
+    color: black;
+}
+
+.faq-content {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: #d1d1d1;
@@ -124,6 +188,10 @@ export default {
     padding: 15px;
     border: 2px solid black;
     margin: 0;
+}
+
+.header-icon {
+    margin-left: 10px;
 }
 
 /* Responsive Design */
@@ -148,8 +216,12 @@ export default {
         padding: 10px;
     }
 
-    .el-collapse-item__content {
-        font-size: 10px;
+    .faq-content {
+        font-size: 12px;
+    }
+
+    .collapse-title {
+        font-size: 14px;
     }
 }
 </style>

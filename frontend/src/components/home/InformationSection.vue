@@ -5,20 +5,31 @@
 
 <el-col :span="24" class="information">
     <div class="information-content" :class="{ 'mobile': isMobile }">
-        <h1 class="information-title">Schnauze voll von Luftpumpen</h1>
+        <h1 class="information-title">Genug von Leeren Versprechungen!</h1>
         <h2 class="information-text-title">
             <span class="highlight">Haben Sie auch die Nase voll von leeren Versprechungen?</span>
         </h2>
         <p class="information-text-content">
-            Keine Lust mehr auf Agenturen, die behaupten, Ihre Website innerhalb
-            von 8 Stunden oder gefühlt einem halben Jahr zu erstellen für
-            horrende Summen von 20.000 Euro oder mehr?
+            Sie kennen das: Konzepte, die nichts bewegen, und Agenturen,
+            die Ihnen das Blaue vom Himmel versprechen – und das für viel Geld.
+            Reicht’s Ihnen auch? Schluss mit halben Sachen und falschen Versprechen!
+            Bei uns bekommen Sie keine Standard-Konzepte, sondern Strategien, die Ergebnisse
+            liefern. Ob neue Kunden oder Mitarbeiter – wir machen es schnell, präzise
+            und ohne unnötigen Schnickschnack. Keine Ausreden, nur Klarheit und messbare Erfolge.
         </p>
-        <p class="information-text-content">
-            Bei uns ist das anders. Wir bieten eine transparente und zielführende
-            Lösung, die Ihre Erwartungen übertrifft.
-        </p>
+
+        <div class="button-wrapper">
+            <router-link to="/anfrage">
+                <el-button class="btn-services">
+                    Jetzt durchstarten
+                    <el-icon>
+                        <Right />
+                    </el-icon>
+                </el-button>
+            </router-link>
+        </div>
     </div>
+
     <div class="information-image" v-if="!isMobile">
         <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
     </div>
@@ -99,7 +110,7 @@ export default {
 
 .information-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: px;
     color: #fff;
     text-align: left;
     font-weight: 700;
@@ -132,6 +143,42 @@ export default {
     margin: 2px auto;
 }
 
+.button-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@keyframes flash {
+
+    0%,
+    100% {
+        background-color: #0def95;
+        box-shadow: none;
+    }
+
+    50% {
+        background-color: #0abf7e;
+        box-shadow: 0 0 15px rgba(13, 239, 149, 0.5), 0 0 30px rgba(13, 239, 149, 0.3);
+    }
+}
+
+.btn-services {
+    background-color: #0def95;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    align-items: center;
+    animation: flash 1.5s infinite;
+    transition: background-color 0.3s;
+}
+
+.btn-services:hover {
+    animation: none;
+    background-color: #0def95;
+    color: black;
+}
+
 @media (max-width: 768px) {
     .information {
         padding: 60px 60px;
@@ -159,6 +206,10 @@ export default {
 
     .information-image {
         display: none;
+    }
+
+    .button-wrapper {
+        justify-content: center;
     }
 }
 </style>

@@ -17,12 +17,15 @@
             <i class="fab fa-youtube"></i>
         </a>
     </div>
-
+    
     <div class="banner-section">
         <div class="banner-link">
-            <h3>Jetzt anfragen</h3>
-            <div class="banner-text">
-                Lust auf ein Projekt<br>mit VIERLESS?
+            <h3>Mit Klarheit beginnen, in Meisterschaft vollenden - das ist Klarmeister</h3>
+            <div class="banner-text-1">
+                "Erfolg ist kein Zufall – er ist <br /> das Ergebnis meisterhafter Arbeit."
+            </div>
+            <div class="banner-text-2">
+                Lassen Sie uns gemeinsam Ihre Vorstellung realisieren.
             </div>
             <router-link to="/anfrage">
                 <el-button class="banner-button">Termin vereinbaren</el-button>
@@ -52,7 +55,7 @@ export default {
 .social-media {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
 }
 
 .social-media a {
@@ -60,10 +63,9 @@ export default {
     font-size: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
-    background: linear-gradient(to bottom, #212121, #111111);
+    background: none;
     padding: 8px;
     border-radius: 4px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,9 +107,17 @@ export default {
     margin-bottom: 10px;
 }
 
-.banner-text {
+.banner-text-1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+
+.banner-text-2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
     font-weight: 700;
     color: #d4d4d4;
     margin-bottom: 20px;

@@ -89,7 +89,7 @@ import AppNavbar from '@/components/AppNavbar.vue';
 import MainFooter from '@/components/MainFooter.vue';
 
 export default {
-    name: 'DatenschutzPage',
+    name: 'FooterLeistungen',
     components: {
         AppNavbar,
         MainFooter,

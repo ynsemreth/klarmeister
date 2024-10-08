@@ -96,26 +96,26 @@ export default {
     methods: {
         openDialogOne() {
             if (!this.hasOpenedCardOne) {
-                this.dialogCardOneVisible = true;
-                this.hasOpenedCardOne = true;
+                this.dialogCardOneVisible = false;
+                this.hasOpenedCardOne = false;
             }
         },
         openDialogTwo() {
             if (!this.hasOpenedCardTwo) {
-                this.dialogCardTwoVisible = true;
-                this.hasOpenedCardTwo = true;
+                this.dialogCardTwoVisible = false;
+                this.hasOpenedCardTwo = false;
             }
         },
         openDialogThree() {
             if (!this.hasOpenedCardThree) {
-                this.dialogCardThreeVisible = true;
-                this.hasOpenedCardThree = true;
+                this.dialogCardThreeVisible = false;
+                this.hasOpenedCardThree = false;
             }
         },
         openDialogFour() {
             if (!this.hasOpenedCardFour) {
-                this.dialogCardFourVisible = true;
-                this.hasOpenedCardFour = true;
+                this.dialogCardFourVisible = false;
+                this.hasOpenedCardFour = false;
             }
         },
         handleOneClose() {
@@ -144,6 +144,7 @@ export default {
     background: black;
     position: relative;
     padding: 50px 0;
+    margin-top: 0
 }
 
 .web-content {
