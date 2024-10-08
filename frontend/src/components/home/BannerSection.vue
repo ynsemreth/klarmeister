@@ -47,6 +47,7 @@ export default {
     text-align: center;
     display: flex;
     margin: 0 auto;
+    max-width: 1500px;
     justify-content: center;
     margin-top: 5%;
     margin-bottom: 5%;

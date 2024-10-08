@@ -32,7 +32,7 @@
 
         <el-card class="web-card-one" plain @mouseenter="openDialogThree">
             <div class="number">03</div>
-            <div class="web-card-title">Verkaufspsychologisches Video erstellen:</div>
+            <div class="web-card-title">Verkaufspsy- <br />chologisches Video erstellen:</div>
             <div class="web-card-subtitle">
                 <span>Wir entwickeln ein verkaufspsychologisches Video, das Ihre Botschaft klar und überzeugend vermittelt.</span>
                 <span>Dieses Video dient nicht nur als Werbemittel,</span>
@@ -191,7 +191,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px; 
+    height: 410px; 
     width: 300px;
 }
 

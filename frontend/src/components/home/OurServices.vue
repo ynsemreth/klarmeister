@@ -99,7 +99,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -108,7 +108,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 95%;
+    width: 82%;
     margin-bottom: 40px;
 }
 

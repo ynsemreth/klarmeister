@@ -123,6 +123,24 @@ export default {
     color: #ffffff;
     margin: 0;
     line-height: 1.2;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    position: relative;
+}
+
+.hero-title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px; 
+    background-color: #0def95;
+    transition: width 0.3s ease; 
+}
+
+.hero-title:hover::before{
+    width: 100%;
 }
 
 .hero-subtitle {

@@ -73,7 +73,7 @@ export default {
 .information {
     background-color: #000;
     color: #fff;
-    padding: 120px;
+    padding: 100px;
     max-width: 1500px;
     display: flex;
     justify-content: space-between;
@@ -128,11 +128,12 @@ export default {
 }
 
 .information-text-content {
-    font-family: 'Poppins', Courier, monospace;
-    font-size: 18px;
-    color: #fff;
-    font-weight: 300;
-    line-height: 1.8;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    width: 90%;
+    color: white;
+    margin-bottom: 15px;
     padding-top: 5%;
 }
 
