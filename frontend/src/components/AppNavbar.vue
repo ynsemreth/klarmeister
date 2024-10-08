@@ -9,7 +9,7 @@
     <nav class="nav-links" :class="{ 'active': isMenuOpen }">
         <a href="/">Home</a>
         <a class="angebot-link">
-            <router-link to="anfrege">Zur Anfrage - 1 Minute</router-link>
+            <router-link to="/anfrage">Zur Anfrage - 1 Minute</router-link>
         </a>
     </nav>
 </div>

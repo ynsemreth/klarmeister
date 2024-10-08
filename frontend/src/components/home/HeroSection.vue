@@ -60,19 +60,23 @@ export default {
 .content-and-media {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     padding: 5%;
 }
 
 .hero-content {
     max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .media-container {
     position: relative;
-    width: 600px;
+    width: 1200px;
     height: auto;
+    margin-top: 0;
 }
 
 .laptop-image {
@@ -82,18 +86,16 @@ export default {
 
 .video-overlay {
     position: absolute;
-    top: 160px;
-    left: 110px;
-    width: 380px;
-    height: 260px;
+    top: 210px;
+    left: 133px;
+    width: 460px;
+    height: 290px;
 }
 
 .media-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero-section {
