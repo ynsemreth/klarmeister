@@ -16,18 +16,19 @@
                         WEBSITE MIT PRÄZISION: EINFACHER FLUGKAUF, MEHRWERT IM FOKUS
                     </h3>
                     <h2 class="big-case-subtitle">
-                        Wir haben für eine Berliner Reiseagentur eine Webseite mit einem 
-                        Mitgliedsbereich und einer Flug-Suchmaschine entwickelt, die Kunden 
+                        Wir haben für eine Berliner Reiseagentur eine Webseite mit einem
+                        Mitgliedsbereich und einer Flug-Suchmaschine entwickelt, die Kunden
                         den Kaufprozess erleichtert. Bei uns steht Mehrwert im Fokus, nicht
                         das schnelle Geld – Präzision und Klarheit sind unsere Meisterschaft.
                     </h2>
                     <div class="big-case_actions">
                         <div class="big-case_actions-open">
-                            <el-button type="primary" class="btn_wrapper">
+                            <el-button type="primary" class="btn_wrapper" @click="redirectToWebsite">
                                 <span class="btn_label">Webseite entdecken</span>
                             </el-button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </el-col>
@@ -59,7 +60,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'ReferansSection',
     data() {
@@ -77,7 +77,10 @@ export default {
     methods: {
         checkMobile() {
             this.isMobile = window.innerWidth <= 768;
-        }
+        },
+        redirectToWebsite() {
+            window.location.href = "http://217.160.138.215:8450";
+        },
     }
 };
 </script>
@@ -149,7 +152,7 @@ export default {
     margin-bottom: 15px;
 }
 
-.big-case-subtitle{
+.big-case-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 600;
