@@ -86,10 +86,10 @@ export default {
 
 .video-overlay {
     position: absolute;
-    top: 210px;
-    left: 133px;
-    width: 460px;
-    height: 290px;
+    top: 28.5%;
+    left: 18%;
+    width: 63.5%;
+    height: 40%;
 }
 
 .media-video {
