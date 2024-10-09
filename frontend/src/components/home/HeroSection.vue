@@ -23,18 +23,12 @@
                         </el-icon>
                     </el-button>
                 </router-link>
-                <picture>
-                    <source srcset="@/assets/garanti.webp" type="image/webp">
-                    <img src="@/assets/garanti.png" alt="garanti" />
-                </picture>
+                <img src="@/assets/garanti.png" alt="garanti" />
             </div>
         </div>
 
         <div class="media-container">
-            <picture>
-                <source srcset="@/assets/laptop.webp" type="image/webp" class="laptop-image">
-                <img src="@/assets/laptop.png" alt="Laptop" class="laptop-image">
-            </picture>
+            <img src="@/assets/laptop.png" alt="Laptop" class="laptop-image">
             <div class="video-overlay">
                 <video id="video" autoplay controls muted playsinline loading="lazy" class="media-video">
                     <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
@@ -60,12 +54,11 @@ export default {
 </script>
 
 <style>
-
 .hero-section {
     text-align: left;
     padding: 100px;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 1500px;
 }
 
 .content-and-media {
@@ -80,6 +73,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 50%;
 }
 
 .media-container {
@@ -87,6 +81,7 @@ export default {
     width: 100%;
     height: auto;
     margin-top: 0;
+    flex-basis: 50%;
 }
 
 .laptop-image {
@@ -122,7 +117,8 @@ export default {
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 42px;
+    word-wrap: break-word;
     font-weight: 700;
     color: #ffffff;
     margin: 0;
@@ -149,7 +145,7 @@ export default {
 
 .hero-subtitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     color: #d1d1d1;
     margin: 20px 0;
 }
@@ -207,6 +203,7 @@ export default {
         max-width: 100%;
         text-align: center;
         padding: 0px;
+        margin-bottom: 0px;
     }
 
     .hero-title {

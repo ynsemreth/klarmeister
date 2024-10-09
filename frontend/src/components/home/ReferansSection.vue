@@ -8,10 +8,7 @@
         <el-col :span="14" class="left-section">
             <div class="big-case_left">
                 <div class="big-case_image-wrapper">
-                    <picture>
-                        <source srcset="@/assets/sehlenref.webp" type="image/webp" class="big-case_featured-image">
-                        <img src="@/assets/sehlenref.png" loading="lazy" alt="Sehlen Studio Site" class="big-case_featured-image" />
-                    </picture>
+                    <img src="@/assets/sehlenref.png" loading="lazy" alt="Sehlen Studio Site" class="big-case_featured-image" />
                 </div>
 
                 <div class="big-case_meta">
@@ -39,7 +36,7 @@
         <el-col :span="10" v-if="!isMobile" class="right-section">
             <div class="big-case_right">
                 <div class="big-case_right-content">
-                    <video muted autoplay playsinline loading="lazy"  class="custom-card-player">
+                    <video muted autoplay playsinline loading="lazy" class="custom-card-player">
                         <source src="@/assets/sehlen_video.mp4" type="video/mp4" />
                         Tarayıcınız video etiketini desteklemiyor.
                     </video>
@@ -53,10 +50,7 @@
                 </div>
                 <el-card class="box-card">
                     <div class="image-section">
-                        <picture>
-                            <source srcset="@/assets/sehlenarama.webp" type="image/webp">
-                            <img src="@/assets/sehlenarama.png" alt="Bilet Image" class="bilet-image" />
-                        </picture>
+                        <img src="@/assets/sehlenarama.png" alt="Bilet Image" class="bilet-image" />
                     </div>
                 </el-card>
             </div>

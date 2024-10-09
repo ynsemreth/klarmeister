@@ -31,19 +31,13 @@
     </div>
 
     <div class="information-image" v-if="!isMobile">
-        <picture>
-            <source srcset="@/assets/Klarheitsgarantie.webp" type="image/webp">
-            <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
-        </picture>
+        <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
     </div>
 </el-col>
 
 <el-col :span="24" v-if="isMobile">
     <div class="information-image">
-        <picture>
-            <source srcset="@/assets/Klarheitsgarantie.webp" type="image/webp">
-            <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
-        </picture>
+        <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
     </div>
 </el-col>
 
