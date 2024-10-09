@@ -206,22 +206,24 @@ export default {
     .hero-content {
         max-width: 100%;
         text-align: center;
-        padding: 10px;
+        padding: 0px;
     }
 
     .hero-title {
-        font-size: 28px;
+        font-size: 24px;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 14px;
+        margin: 15px 0;
     }
 
     .hero-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     .hero-h3,
@@ -231,7 +233,8 @@ export default {
 
     .media-container {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
         position: relative;
     }
 
