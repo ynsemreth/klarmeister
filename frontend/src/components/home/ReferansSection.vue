@@ -290,26 +290,18 @@ export default {
         border-radius: 30px;
         max-width: 400px;
         border: 3px solid transparent;
-        transition: border-color 0.8s ease, background-color 0.8s ease;
-        flex-direction: column;
-        padding: 20px;
     }
 
-    .big-case_logo-wrapper {
-        justify-content: center;
-        margin-bottom: 10px;
-        margin-left: 70%;
-    }
-
-    .big-case_logo {
-        width: 100px;
-        height: auto;
+    .left-section {
+        width: 100%; 
+        text-align: center;
+        padding: 0;
     }
 
     .big-case_image-wrapper {
         justify-content: center;
         margin-bottom: 10px;
-
+        text-align: center;
     }
 
     .big-case_featured-image {
@@ -325,39 +317,43 @@ export default {
         width: 100%;
         font-weight: 600;
         color: white;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         text-align: center;
         margin-left: 35%;
     }
 
-    .case_tags-collection {
-        margin: 0 auto;
-        gap: 5px;
-        margin-left: 60%;
-        max-width: 100px;
-        max-height: 40px;
+    .big-case-subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        width: 100%;
+        color: white;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-left: 35%;
     }
 
     .btn_wrapper {
-        padding: 5px 10px;
-        font-size: 8px;
-        margin-top: 10px;
-        margin-left: 56%;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        margin-top: 20px;
+        margin-left: 36%;
     }
 
-    .big-case_right-title {
+    .right-section {
         display: none;
     }
 
     .custom-card-player {
         width: 100%;
+        height: auto;
+        border-radius: 10px;
     }
 
     .box-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+        display: none; /* Sağ kartı da gizliyoruz */
     }
 }
+
 </style>

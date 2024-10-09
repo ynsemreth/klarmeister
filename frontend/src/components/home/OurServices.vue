@@ -3,17 +3,17 @@
     <div class="services_title-group">
         <div class="left-section">
             <h1 class="services-title">
-                Nachfolgend zeigen wir Ihnen, wie wir Ihre Webseite 
-                mit Handlungsbedarf in eine leistungsstarke Power-Webseite 
-                verwandeln – und das in nur 3 Zoom-Calls und mit einem 
+                Nachfolgend zeigen wir Ihnen, wie wir Ihre Webseite
+                mit Handlungsbedarf in eine leistungsstarke Power-Webseite
+                verwandeln – und das in nur 3 Zoom-Calls und mit einem
                 Zeitaufwand von durchschnittlich 4 Stunden.
             </h1>
         </div>
 
         <div class="right-section">
             <h3 class="services-subtitle">
-                Mit unserem erfahrenen Expertenteam und einem 
-                klaren System verwandeln wir Ihre Webseite in eine 
+                Mit unserem erfahrenen Expertenteam und einem
+                klaren System verwandeln wir Ihre Webseite in eine
                 powervolle Kundenmaschine – schnell, präzise und mit
                 minimalem Zeitaufwand. Das ist Klarheit mit Meisterschaft.
             </h3>
@@ -276,26 +276,59 @@
 @media (max-width: 768px) {
     .services_title-group {
         flex-direction: column;
-        max-width: 100%;
-        margin-left: 20%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .services-title {
-        font-size: 20px;
-        text-align: left;
-        max-width: 300px;
-        margin: 0;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+        margin-left: 20px;
     }
 
     .services-subtitle {
-        text-align: left;
-        font-size: 10px;
-        margin: 0;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 15px;
     }
 
     .btn-services {
-        width: 80%;
-        font-size: 8px;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .services-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card1,
+    .card2 {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .card-list {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .card-list .el-card {
+        width: 100%;
     }
 }
 </style>
