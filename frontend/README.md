@@ -26,5 +26,9 @@ npm run lint
 
     cvEW8wvTVQ
 
+    pm2 delete 0
+
+    pm2 start npx --name "klarmeister" -- serve -s dist
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -61,6 +61,7 @@ export default defineComponent({
 
 .logo img {
     height: 40px;
+    margin-top: 10px;
 }
 
 .nav-links {

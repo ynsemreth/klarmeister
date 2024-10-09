@@ -1,46 +1,49 @@
 <template>
-<el-row justify="center" class="body">
-    <el-col :span="24" class="hero-section">
-        <div class="content-and-media">
-            <div class="hero-content">
-                <h3 class="hero-h3">WIR SIND KLARMEISTER</h3>
-                <h1 class="hero-title">
-                    Deine Webseite braucht kein Facelift - sie braucht Power
-                </h1>
-                <h2 class="hero-subtitle">
-                    Mit uns erhalten Sie eine neue, leistungsstarke Webseite zur Neukunden und
-                    Mitarbeitergewinnung - und das in nur 3 kurzen Online-Terminen. Der gesamte
-                    Zeitaufwand für Sie beträgt dabei durchschnittlich nur 4 Stunden.
-                </h2>
-                <h3 class="hero-text">
-                    Starte jetzt und hol dir die Webseite, die Kunden gewinnt - oder die passenden Mitarbeiter!
-                </h3>
-                <div class="hero-button">
-                    <router-link to="/anfrage">
-                        <el-button class="btn-services">
-                            Jetzt Angebot einholen
-                            <el-icon>
-                                <Right />
-                            </el-icon>
-                        </el-button>
-                    </router-link>
+<el-col :span="24" class="hero-section">
+    <div class="content-and-media">
+        <div class="hero-content">
+            <h3 class="hero-h3">WIR SIND KLARMEISTER</h3>
+            <h1 class="hero-title">
+                Deine Webseite braucht kein Facelift - sie braucht Power
+            </h1>
+            <h2 class="hero-subtitle">
+                Mit uns erhalten Sie eine neue, leistungsstarke Webseite zur Neukunden und
+                Mitarbeitergewinnung - und das in nur 3 kurzen Online-Terminen. Der gesamte
+                Zeitaufwand für Sie beträgt dabei durchschnittlich nur 4 Stunden.
+            </h2>
+            <h3 class="hero-text">
+                Starte jetzt und hol dir die Webseite, die Kunden gewinnt - oder die passenden Mitarbeiter!
+            </h3>
+            <div class="hero-button">
+                <router-link to="/anfrage">
+                    <el-button class="btn-services">
+                        Jetzt Angebot einholen
+                        <el-icon>
+                            <Right />
+                        </el-icon>
+                    </el-button>
+                </router-link>
+                <picture>
+                    <source srcset="@/assets/garanti.webp" type="image/webp">
                     <img src="@/assets/garanti.png" alt="garanti" />
-                </div>
-            </div>
-
-            <div class="media-container">
-                <img src="@/assets/laptop.png" class="laptop-image" alt="Laptop">
-
-                <div class="video-overlay">
-                    <video id="video" autoplay controls muted playsinline class="media-video">
-                        <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
-                        Tarayıcınız video etiketini desteklemiyor.
-                    </video>
-                </div>
+                </picture>
             </div>
         </div>
-    </el-col>
-</el-row>
+
+        <div class="media-container">
+            <picture>
+                <source srcset="@/assets/laptop.webp" type="image/webp" class="laptop-image">
+                <img src="@/assets/laptop.png" alt="Laptop" class="laptop-image">
+            </picture>
+            <div class="video-overlay">
+                <video id="video" autoplay controls muted playsinline loading="lazy" class="media-video">
+                    <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+    </div>
+</el-col>
 </template>
 
 <script>
@@ -57,12 +60,19 @@ export default {
 </script>
 
 <style>
+
+.hero-section {
+    text-align: left;
+    padding: 100px;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
 .content-and-media {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding: 5%;
 }
 
 .hero-content {
@@ -74,7 +84,7 @@ export default {
 
 .media-container {
     position: relative;
-    width: 1200px;
+    width: 100%;
     height: auto;
     margin-top: 0;
 }
@@ -96,12 +106,6 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.hero-section {
-    text-align: left;
-    background: linear-gradient(to bottom, #053c05, #000000);
-    padding: 20px;
 }
 
 .hero-h3 {
@@ -128,18 +132,18 @@ export default {
     position: relative;
 }
 
-.hero-title::before{
+.hero-title::before {
     content: "";
     position: absolute;
     left: 0;
     bottom: -5px;
     width: 0;
-    height: 2px; 
+    height: 2px;
     background-color: #0def95;
-    transition: width 0.3s ease; 
+    transition: width 0.3s ease;
 }
 
-.hero-title:hover::before{
+.hero-title:hover::before {
     width: 100%;
 }
 
@@ -190,5 +194,63 @@ export default {
 .hero-button img {
     max-width: 50px;
     margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .content-and-media {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .hero-h3,
+    .hero-text {
+        font-size: 11px;
+    }
+
+    .media-container {
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .laptop-image {
+        width: 100%;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 28.5%;
+        left: 18%;
+        width: 63.7%;
+        height: 41%;
+    }
+
+    .media-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 </style>

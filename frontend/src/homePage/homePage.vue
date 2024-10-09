@@ -45,7 +45,7 @@ export default defineComponent({
 
 <style>
 .body {
-    background: black;
+    background: linear-gradient(to bottom, #053c05, #000000);
 }
 
 .el-row {

@@ -71,7 +71,6 @@ export default {
 
 <style>
 .information {
-    background-color: #000;
     color: #fff;
     padding: 100px;
     max-width: 1500px;

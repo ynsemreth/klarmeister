@@ -140,7 +140,6 @@ export default {
 <style scoped>
 .web-section {
     text-align: center;
-    background: black;
     position: relative;
     padding: 50px 0;
 }
