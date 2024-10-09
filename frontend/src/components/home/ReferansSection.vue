@@ -352,7 +352,7 @@ export default {
     }
 
     .box-card {
-        display: none; /* Sağ kartı da gizliyoruz */
+        display: none; 
     }
 }
 
