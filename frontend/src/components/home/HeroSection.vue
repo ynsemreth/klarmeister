@@ -82,6 +82,7 @@ export default {
     height: auto;
     margin-top: 0;
     flex-basis: 100%; 
+    height: auto;
 }
 
 .laptop-image {

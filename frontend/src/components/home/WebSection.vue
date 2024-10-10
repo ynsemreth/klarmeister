@@ -101,7 +101,28 @@ export default {
 @media (max-width: 768px) {
     .card-wrapper {
         grid-template-columns: 1fr;
+    }
 
+    .card__background {
+        object-fit: fit;
+        width: 100%;
+        height: calc(100% - 3rem);
+        margin-top: 3rem;
+        transition: transform 500ms ease-in-out;
+    }
+}
+
+@keyframes flash-card {
+
+    0%,
+    100% {
+        background-color: white;
+        box-shadow: none;
+    }
+
+    75% {
+        background-color: white;
+        box-shadow: 0 0 15px rgba(48, 12, 12, 0.5), 0 0 30px rgba(62, 69, 66, 0.3);
     }
 }
 
@@ -114,13 +135,14 @@ export default {
     border-radius: 0.625rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
     transition: transform 500ms ease-in-out;
+    animation: flash-card 1.5s infinite;
     position: relative;
 }
 
 .card__background {
     object-fit: cover;
     width: 100%;
-    height: calc(100% - 3rem); 
+    height: calc(100% - 3rem);
     margin-top: 3rem;
     transition: transform 500ms ease-in-out;
 }
