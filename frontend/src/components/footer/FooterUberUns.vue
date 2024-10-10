@@ -106,7 +106,7 @@ export default {
 .uber-h3-title {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    color: rgb(54, 189, 54);
+    color: black;
     text-align: center;
 }
 
