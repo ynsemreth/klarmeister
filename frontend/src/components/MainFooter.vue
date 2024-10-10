@@ -31,7 +31,6 @@
   
 <style>
 .footer {
-    background-color: black;
     color: #e0e0e0;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;

@@ -1,143 +1,73 @@
 <template>
 <el-col :span="24" class="web-section">
     <div class="web-content">
-        <h3 class="web-subtitle">DIE KLARMEISTER EXPERIENCE</h3>
         <h1 class="web-title">
             In 4 Schritten zur Neukunden - und <br /> Mitarbeitergewinnung auf Knopfdruck:
         </h1>
     </div>
-    <div class="web-card">
-        <el-card class="web-card-one" plain @mouseenter="openDialogOne">
-            <div class="number">01</div>
-            <div class="web-card-title">Klarheit schaffen:</div>
-            <div class="web-card-subtitle">
-                <span>Zunächst analysieren wir die Situation Ihres Unternehmens.</span>
-                <span>Wir identifizieren Ihre Ziele, Ihre Zielgruppe und welche</span>
-                <span>Bereiche Ihrer Strategie verstärkt werden müssen.</span>
-                <span>Egal ob es um die Gewinnung neuer Kunden oder Mitarbeiter</span>
-                <span>geht – wir schaffen Klarheit über Ihre Bedürfnisse und richten die Strategie danach aus.</span>
+    <div class="card-wrapper">
+        <!-- Kart 01 -->
+        <article class="card">
+            <img class="card__background" src="@/assets/analysis-meeting.jpg" alt="Klarheit schaffen" />
+            <h2 class="card__title">Klarheit schaffen</h2>
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <p class="card__description">
+                        Zunächst analysieren wir die Situation Ihres Unternehmens. Wir identifizieren Ihre Ziele, Ihre Zielgruppe und welche Bereiche Ihrer Strategie verstärkt werden müssen. Egal ob es um die Gewinnung neuer Kunden oder Mitarbeiter geht – wir schaffen Klarheit über Ihre Bedürfnisse und richten die Strategie danach aus.
+                    </p>
+                </div>
             </div>
-        </el-card>
+        </article>
 
-        <el-card class="web-card-two active-card" plain @mouseenter="openDialogTwo">
-            <div class="number">02</div>
-            <div class="web-card-title">Webseite mit Power transformieren:</div>
-            <div class="web-card-subtitle">
-                <span>Wir nehmen Ihre bestehende Webseite und wandeln sie in ein</span>
-                <span>leistungsstarkes Tool zur Kundengewinnung um.</span>
-                <span>Mit modernem Design und zielgerichteter Funktionalität</span>
-                <span>schaffen wir eine Plattform, die Ihre Zielgruppe effektiv anspricht und überzeugt.</span>
+        <!-- Kart 02 -->
+        <article class="card">
+            <img class="card__background" src="@/assets/web-design.jpg" alt="Webseite mit Power" />
+            <h2 class="card__title">Webseite mit Power transformieren</h2>
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <p class="card__description">
+                        Wir nehmen Ihre bestehende Webseite und wandeln sie in ein leistungsstarkes Tool zur Kundengewinnung um. Mit modernem Design und zielgerichteter Funktionalität schaffen wir eine Plattform, die Ihre Zielgruppe effektiv anspricht und überzeugt.
+                    </p>
+                </div>
             </div>
-        </el-card>
+        </article>
 
-        <el-card class="web-card-one" plain @mouseenter="openDialogThree">
-            <div class="number">03</div>
-            <div class="web-card-title">Verkaufspsy- <br />chologisches Video erstellen:</div>
-            <div class="web-card-subtitle">
-                <span>Wir entwickeln ein verkaufspsychologisches Video, das Ihre Botschaft klar und überzeugend vermittelt.</span>
-                <span>Dieses Video dient nicht nur als Werbemittel,</span>
-                <span>sondern hilft auch dabei, potenziellen Kunden oder neuen Mitarbeitern ein tiefes Verständnis Ihrer Firma</span>
-                <span>und deren Werte zu geben.</span>
+        <!-- Kart 03 -->
+        <article class="card">
+            <img class="card__background" src="@/assets/video-production.jpg" alt="Verkaufspsychologisches Video" />
+            <h2 class="card__title">Verkaufspsychologisches Video erstellen</h2>
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <p class="card__description">
+                        Wir entwickeln ein verkaufspsychologisches Video, das Ihre Botschaft klar und überzeugend vermittelt. Dieses Video dient nicht nur als Werbemittel, sondern hilft auch dabei, potenziellen Kunden oder neuen Mitarbeitern ein tiefes Verständnis Ihrer Firma und deren Werte zu geben.
+                    </p>
+                </div>
             </div>
-        </el-card>
+        </article>
 
-        <el-card class="web-card-one" plain @mouseenter="openDialogFour">
-            <div class="number">04</div>
-            <div class="web-card-title">LindedIn-Kundenakquise:</div>
-            <div class="web-card-subtitle">
-                <span>Zum Abschluss bieten wir Ihnen eine 1:1-Betreuung bei der Akquise neuer Kunden über LinkedIn.</span>
-                <span>Dabei setzen wir all unser Wissen und die Erfahrungen,</span>
-                <span>die wir in Seminaren und durch über 250.000 € an Investitionen gesammelt haben,</span>
-                <span>direkt für Sie um.</span>
-                <span>Wir verkaufen Ihnen nicht einfach nur eine Theorie –</span>
-                <span>wir liefern messbare Ergebnisse, und das schnell.</span>
+        <!-- Kart 04 -->
+        <article class="card">
+            <img class="card__background" src="@/assets/linkedin-networking.jpg" alt="LinkedIn-Kundenakquise" />
+            <h2 class="card__title">LinkedIn-Kundenakquise</h2>
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <p class="card__description">
+                        Zum Abschluss bieten wir Ihnen eine 1:1-Betreuung bei der Akquise neuer Kunden über LinkedIn. Dabei setzen wir all unser Wissen und die Erfahrungen, die wir in Seminaren und durch über 250.000 € an Investitionen gesammelt haben, direkt für Sie um. Wir liefern messbare Ergebnisse, und das schnell.
+                    </p>
+                </div>
             </div>
-        </el-card>
+        </article>
     </div>
 </el-col>
-
-<el-row>
-    <card-one-dialog v-model="dialogCardOneVisible" @close="handleOneClose" />
-    <card-two-dialog v-model="dialogCardTwoVisible" @close="handleTwoClose" />
-    <card-three-dialog v-model="dialogCardThreeVisible" @close="handleThreeClose" />
-    <card-four-dialog v-model="dialogCardFourVisible" @close="handleFourClose" />
-</el-row>
 </template>
 
-    
-    
 <script>
-import CardOneDialog from "@/components/cards/CardOneDialog.vue";
-import CardTwoDialog from "@/components/cards/CardTwoDialog.vue";
-import CardThreeDialog from "@/components/cards/CardThreeDialog.vue";
-import CardFourDialog from "@/components/cards/CardFourDialog.vue";
 export default {
-    name: 'WebSection',
-    components: {
-        CardOneDialog,
-        CardTwoDialog,
-        CardThreeDialog,
-        CardFourDialog,
-    },
-    data() {
-        return {
-            dialogCardOneVisible: false,
-            dialogCardTwoVisible: false,
-            dialogCardThreeVisible: false,
-            dialogCardFourVisible: false,
-            hasOpenedCardOne: false,
-            hasOpenedCardTwo: false,
-            hasOpenedCardThree: false,
-            hasOpenedCardFour: false,
-        };
-    },
-    methods: {
-        openDialogOne() {
-            if (!this.hasOpenedCardOne) {
-                this.dialogCardOneVisible = false;
-                this.hasOpenedCardOne = false;
-            }
-        },
-        openDialogTwo() {
-            if (!this.hasOpenedCardTwo) {
-                this.dialogCardTwoVisible = false;
-                this.hasOpenedCardTwo = false;
-            }
-        },
-        openDialogThree() {
-            if (!this.hasOpenedCardThree) {
-                this.dialogCardThreeVisible = false;
-                this.hasOpenedCardThree = false;
-            }
-        },
-        openDialogFour() {
-            if (!this.hasOpenedCardFour) {
-                this.dialogCardFourVisible = false;
-                this.hasOpenedCardFour = false;
-            }
-        },
-        handleOneClose() {
-            this.dialogCardOneVisible = false,
-                this.hasOpenedCardOne = false
-        },
-        handleTwoClose() {
-            this.dialogCardTwoVisible = false;
-            this.hasOpenedCardTwo = false;
-        },
-        handleThreeClose() {
-            this.dialogCardThreeVisible = false;
-            this.hasOpenedCardThree = false;
-        },
-        handleFourClose() {
-            this.dialogCardFourVisible = false;
-            this.hasOpenedCardFour = false;
-        },
-    },
+    name: 'WebSection'
 };
 </script>
-    
-    
-<style scoped>
+
+<style>
 .web-section {
     text-align: center;
     position: relative;
@@ -153,95 +83,96 @@ export default {
 
 .web-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    color: #ffffff;
+    color: black;
+    margin-bottom: 40px;
 }
 
-.web-subtitle {
-    font-family: 'Poppins', Courier, monospace;
-    font-size: 13px;
-    color: rgb(54, 189, 54);
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.web-card {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1400px;
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    width: 40%;
     margin: 0 auto;
-    padding: 0 100px;
 }
 
-.web-card-one,
-.web-card-two {
-    flex: 1;
+@media (max-width: 768px) {
+    .card-wrapper {
+        grid-template-columns: 1fr;
+
+    }
+}
+
+.card {
+    width: 100%;
+    max-width: 20rem;
+    background: white;
+    height: 25rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+    transition: transform 500ms ease-in-out;
+    position: relative;
+}
+
+.card__background {
+    object-fit: cover;
+    width: 100%;
+    height: calc(100% - 3rem); 
+    margin-top: 3rem;
+    transition: transform 500ms ease-in-out;
+}
+
+.card__title {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to bottom, #212121, #111111);
-    color: white;
-    border-radius: 16px;
-    border: 5px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    padding: 20px;
+    font-size: 1rem;
+    color: black;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: opacity 500ms ease-in-out;
+}
+
+.card__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 410px; 
-    width: 300px;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-.web-card-two {
-    background: linear-gradient(to bottom, #23573f, #193427);
-    color: green;
-}
-
-.web-card-title {
-    font-size: 1rem; 
-    font-weight: bold;
-    color: white;
-    margin-top: 20px;
-    text-align: left; 
-    max-width: 250px;
-    margin-left: 10px;
-    margin-right: 10px;
-    line-height: 1.4;
-    flex-grow: 1; 
-}
-
-.web-card-subtitle {
-    font-size: 0.75rem;
-    color: #d1d1d1;
+.card__description {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
     line-height: 1.5;
-    margin-top: 20px;
-    text-align: left;
-    flex-grow: 1; 
+    color: white;
+    opacity: 0;
+    transition: opacity 500ms ease-out;
 }
 
-.web-card .number {
-    text-align: left;
-}
-
-@media (max-width: 1024px) {
-    .web-card {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
+@media (any-hover: hover) {
+    .card:hover .card__background {
+        transform: scale(1.2);
     }
 
-    .web-card-one,
-    .web-card-two {
-        width: 80%;
-        max-width: 100%;
-        margin-bottom: 20px;
+    .card:hover .card__content {
+        opacity: 1;
     }
 
-    .web-content {
-        max-width: 80%;
-        margin-left: 10%;
+    .card:hover .card__title {
+        opacity: 0;
+    }
+
+    .card:hover .card__description {
+        opacity: 1;
     }
 }
 </style>

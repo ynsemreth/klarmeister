@@ -30,7 +30,7 @@
         <div class="media-container">
             <img src="@/assets/laptop.png" alt="Laptop" class="laptop-image">
             <div class="video-overlay">
-                <video id="video" autoplay controls muted playsinline loading="lazy" class="media-video">
+                <video id="video" autoplay controls loading="lazy" class="media-video">
                     <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
                     Tarayıcınız video etiketini desteklemiyor.
                 </video>
@@ -56,7 +56,6 @@ export default {
 <style>
 .hero-section {
     text-align: left;
-    padding: 100px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -79,9 +78,10 @@ export default {
 .media-container {
     position: relative;
     width: 100%;
+    max-width: none; 
     height: auto;
     margin-top: 0;
-    flex-basis: 50%;
+    flex-basis: 100%; 
 }
 
 .laptop-image {
@@ -106,21 +106,24 @@ export default {
 .hero-h3 {
     font-family: 'Poppins', monospace;
     font-size: 13px;
-    color: #36bd36;
+    color: white;
+    text-align: center;
 }
 
 .hero-text {
     font-family: 'Poppins', monospace;
     font-size: 13px;
-    color: #d1d1d1;
+    color: black;
 }
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 42px;
+    font-size: 50px;
     word-wrap: break-word;
-    font-weight: 700;
-    color: #ffffff;
+    font-style: italic;
+    font: bold;
+    font-weight: 1500;
+    color: black;
     margin: 0;
     line-height: 1.2;
     display: inline-block;
@@ -135,7 +138,7 @@ export default {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background-color: #0def95;
+    background-color: black;
     transition: width 0.3s ease;
 }
 
@@ -146,7 +149,7 @@ export default {
 .hero-subtitle {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    color: #d1d1d1;
+    color: black;
     margin: 20px 0;
 }
 
@@ -161,12 +164,12 @@ export default {
 
     0%,
     100% {
-        background-color: #0def95;
+        background-color: black;
         box-shadow: none;
     }
 
     50% {
-        background-color: #0abf7e;
+        background-color: black;
         box-shadow: 0 0 15px rgba(13, 239, 149, 0.5), 0 0 30px rgba(13, 239, 149, 0.3);
     }
 }
@@ -174,6 +177,7 @@ export default {
 .btn-services {
     background-color: #0def95;
     border: none;
+    height: 50px;
     color: black;
     padding: 10px 20px;
     align-items: center;
@@ -188,7 +192,8 @@ export default {
 }
 
 .hero-button img {
-    max-width: 50px;
+    max-width: 100px;
+    max-height: 60px;
     margin-left: 10px;
 }
 
@@ -202,7 +207,7 @@ export default {
     .hero-content {
         max-width: 100%;
         text-align: center;
-        padding: 0px;
+        padding: 50px;
         margin-bottom: 0px;
     }
 

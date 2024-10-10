@@ -41,7 +41,7 @@
 
         <el-card class="card2">
             <h3 class="service-card-title">Feedback-Schleifen</h3>
-            <div class="text">
+            <div class="text-feed">
                 Wir erstellen die Inhalte, das Konzept und das Design Ihrer neuen Webseite.
                 In durchschnittlich 2 Zoom-Calls präsentieren wir Ihnen die Texte und Designs.
                 Alle Änderungswünsche, die Sie haben, notieren wir und setzen sie um.
@@ -173,8 +173,8 @@
 
 .card1,
 .card2 {
-    width: 320px;
-    height: 340px;
+    width: 420px;
+    height: 400px;
     background: linear-gradient(to bottom, #212121, #111111);
     color: white;
     border-radius: 16px;
@@ -208,6 +208,13 @@
     color: #d4d4d4;
 }
 
+.services-card .text-feed {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 100;
+    color: #d4d4d4;
+}
+
 .card1 .img-wrapper {
     margin-top: 20px;
     position: relative;
@@ -223,7 +230,7 @@
 .card2 .card-li {
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 100;
     color: #ffffff;
     padding-left: 0;
@@ -238,10 +245,6 @@
     margin: 5px 0;
 }
 
-.card2 .card-li li el-icon {
-    margin-right: 8px;
-}
-
 .card-list {
     display: flex;
     flex-direction: column;
@@ -250,7 +253,7 @@
 
 .card-list .el-card {
     width: 320px;
-    height: 150px;
+    height: 180px;
     background: linear-gradient(to bottom, #212121, #111111);
     border-radius: 16px;
     border: 5px solid rgba(255, 255, 255, 0.1);
@@ -268,7 +271,7 @@
 
 .card-list .text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 100;
     color: #d4d4d4;
 }

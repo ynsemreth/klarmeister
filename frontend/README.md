@@ -32,3 +32,10 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+.color1 {color: #ffa4c7;}
+.color2 {color: #ffbf91;}
+.color3 {color: #005c9a;}
+.color4 {color: #00938a;}
+.color5 {color: #52c885;}

@@ -218,7 +218,7 @@ export default defineComponent({
             emailjs.send(serviceID, templateID, this.form, userID)
                 .then(() => {
                     ElMessage({
-                        message: 'Ihr Angebot wurde übermittelt.',
+                        message: 'Ihr Anfrage wurde übermittelt.',
                         type: 'success',
                     });
                     this.resetForm();

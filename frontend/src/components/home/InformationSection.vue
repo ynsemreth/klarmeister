@@ -121,7 +121,7 @@ export default {
     font-size: 20px;
     color: #fff;
     font-weight: 100;
-    background: linear-gradient(to right, #135b13, #000000);
+    background: linear-gradient(to right, #135b13, #52c885);
     padding: 10px 20px;
     border-radius: 10px;
 }

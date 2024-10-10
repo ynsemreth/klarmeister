@@ -1,13 +1,20 @@
 <template>
 <div class="navbar">
     <div class="logo">
-        <img src="@/assets/logo.png" alt="Logo" />
+        <router-link to="/"><img src="@/assets/logo_name.png" alt="Logo" /></router-link>
     </div>
     <el-icon class="menu-icon" @click="toggleMenu">
         <Menu />
     </el-icon>
     <nav class="nav-links" :class="{ 'active': isMenuOpen }">
-        <a href="/">Home</a>
+        <a href="tel:+4929334099980" target="_blank" class="phone">
+            <i class="fas fa-phone fa-2x"></i>
+        </a>
+
+        <a href="https://wa.me/4929334099980" target="_blank" class="whatsapp">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+        <a href="/">Startseite</a>
         <a class="angebot-link">
             <router-link to="/anfrage">Zur Anfrage - 1 Minute</router-link>
         </a>
@@ -15,8 +22,6 @@
 </div>
 </template>
 
-  
-  
 <script lang="ts">
 import {
     Menu
@@ -28,7 +33,7 @@ import {
 export default defineComponent({
     name: 'AppNavbar',
     components: {
-        Menu,
+        Menu
     },
     data() {
         return {
@@ -42,8 +47,7 @@ export default defineComponent({
     },
 });
 </script>
-  
-  
+
 <style>
 .navbar {
     background: transparent;
@@ -60,7 +64,8 @@ export default defineComponent({
 }
 
 .logo img {
-    height: 40px;
+    height: 100px;
+    width: 200px;
     margin-top: 10px;
 }
 
@@ -74,7 +79,16 @@ export default defineComponent({
     text-decoration: none;
     margin: 0 15px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
     position: relative;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
 }
 
 .nav-links a:not(.angebot-link)::after {

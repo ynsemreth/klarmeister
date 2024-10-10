@@ -23,7 +23,7 @@ html, body {
 
 #app {
     min-height: 100vh;
-    background: linear-gradient(to bottom, #053c05, #000000);
+    background: linear-gradient(to bottom, #52c885, #000000);
     margin: 0 auto;
     width: 100%;
     overflow-x: hidden;

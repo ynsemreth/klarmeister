@@ -108,7 +108,6 @@ export default {
   
 <style scoped>
 .faq-section {
-    background-color: black;
     padding: 50px 20px;
     color: white;
     text-align: center;

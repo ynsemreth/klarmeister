@@ -1,6 +1,6 @@
 <template>
 <el-col style="text-align: center; font-size: 13px; font-family: 'Poppins', Courier, monospace; color: rgb(54, 189, 54); margin-bottom: 3%;">
-    <h3>REFERENZ</h3>
+    <h3>Unsere Referenz</h3>
 </el-col>
 
 <el-col :span="24" class="new-section">

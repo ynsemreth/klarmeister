@@ -100,6 +100,7 @@ export default {
 <style scoped>
 .container {
     max-width: 1200px;
+    height: auto;
     margin: 20px auto;
     padding: 0 15px;
     display: flex;
