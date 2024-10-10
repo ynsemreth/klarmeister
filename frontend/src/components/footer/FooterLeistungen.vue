@@ -130,6 +130,7 @@ export default {
     border: 5px solid rgba(255, 255, 255, 0.1);
     color: white;
     padding: 20px;
+    height: auto;
     font-family: 'Poppins', sans-serif;
 }
 
