@@ -8,7 +8,7 @@
     <div class="card-wrapper">
         <!-- Kart 01 -->
         <article class="card">
-            <img class="card__background" src="@/assets/analysis-meeting.jpg" alt="Klarheit schaffen" />
+            <img class="card__background" src="@/assets/analysis-meeting.png" alt="Klarheit schaffen" />
             <h2 class="card__title">Klarheit schaffen</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -21,7 +21,7 @@
 
         <!-- Kart 02 -->
         <article class="card">
-            <img class="card__background" src="@/assets/web-design.jpg" alt="Webseite mit Power" />
+            <img class="card__background" src="@/assets/web-design.png" alt="Webseite mit Power" />
             <h2 class="card__title">Webseite mit Power transformieren</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -34,7 +34,7 @@
 
         <!-- Kart 03 -->
         <article class="card">
-            <img class="card__background" src="@/assets/video-production.jpg" alt="Verkaufspsychologisches Video" />
+            <img class="card__background" src="@/assets/video-production.png" alt="Verkaufspsychologisches Video" />
             <h2 class="card__title">Verkaufspsychologisches Video erstellen</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -47,7 +47,7 @@
 
         <!-- Kart 04 -->
         <article class="card">
-            <img class="card__background" src="@/assets/linkedin-networking.jpg" alt="LinkedIn-Kundenakquise" />
+            <img class="card__background" src="@/assets/linkedin-networking.png" alt="LinkedIn-Kundenakquise" />
             <h2 class="card__title">LinkedIn-Kundenakquise</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
