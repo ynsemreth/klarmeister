@@ -172,6 +172,33 @@ export default {
     margin-left: 10px;
 }
 
+@media (min-width: 1024px) {
+
+    .video-overlay {
+        top: 28.8%;
+        left: 17.4%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content-and-media {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 75%;
+    }
+
+    iframe {
+        width: 400px !important;
+        height: 250px !important;
+    }
+}
+
 @media (max-width: 768px) {
     .content-and-media {
         flex-direction: column;
@@ -222,6 +249,34 @@ export default {
     iframe {
         width: 275px !important;
         height: 180px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 18px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+    }
+
+    .hero-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        width: 90%;
+    }
+
+    iframe {
+        width: 240px !important;
+        height: 160px !important;
     }
 }
 </style>
