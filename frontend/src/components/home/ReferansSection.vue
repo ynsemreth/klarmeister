@@ -8,49 +8,35 @@
         <el-col :span="14" class="left-section">
             <div class="big-case_left">
                 <div class="big-case_image-wrapper">
-                    <img src="@/assets/sehlenref.png" loading="lazy" alt="Sehlen Studio Site" class="big-case_featured-image" />
+                    <img v-lazy="sehlenRefImage" alt="Sehlen Studio Site" class="big-case_featured-image" />
                 </div>
-
                 <div class="big-case_meta">
                     <h3 class="big-case_title">
                         WEBSITE MIT PRÄZISION: EINFACHER FLUGKAUF, MEHRWERT IM FOKUS
                     </h3>
                     <h2 class="big-case-subtitle">
-                        Wir haben für eine Berliner Reiseagentur eine Webseite mit einem
-                        Mitgliedsbereich und einer Flug-Suchmaschine entwickelt, die Kunden
-                        den Kaufprozess erleichtert. Bei uns steht Mehrwert im Fokus, nicht
-                        das schnelle Geld – Präzision und Klarheit sind unsere Meisterschaft.
+                        Wir haben für eine Berliner Reiseagentur eine Webseite mit einem Mitgliedsbereich und einer Flug-Suchmaschine entwickelt, die Kunden den Kaufprozess erleichtert. Bei uns steht Mehrwert im Fokus, nicht das schnelle Geld – Präzision und Klarheit sind unsere Meisterschaft.
                     </h2>
                     <div class="big-case_actions">
-                        <div class="big-case_actions-open">
-                            <el-button type="primary" class="btn_wrapper" @click="redirectToWebsite">
-                                <span class="btn_label">Webseite entdecken</span>
-                            </el-button>
-                        </div>
+                        <el-button type="primary" class="btn_wrapper" @click="redirectToWebsite">
+                            <span class="btn_label">Webseite entdecken</span>
+                        </el-button>
                     </div>
-
                 </div>
             </div>
         </el-col>
 
         <el-col :span="10" v-if="!isMobile" class="right-section">
             <div class="big-case_right">
-                <div class="big-case_right-content">
-                    <video muted autoplay playsinline loading="lazy" class="custom-card-player">
-                        <source src="@/assets/sehlen_video.mp4" type="video/mp4" />
-                        Tarayıcınız video etiketini desteklemiyor.
-                    </video>
-
-                    <div class="big-case_right-text">
-                        <h3 class="big-case_right-title">Sehlen Tourismus</h3>
-                        <div class="big-case_right-text-details">
-                            <span class="big-case_right-description">Dies ist das Einführungsvideo der Website</span>
-                        </div>
+                <div class="big-case_right-text">
+                    <h3 class="big-case_right-title">Sehlen Tourismus</h3>
+                    <div class="big-case_right-text-details">
+                        <span class="big-case_right-description">Dies ist das Einführungsvideo der Website</span>
                     </div>
                 </div>
                 <el-card class="box-card">
                     <div class="image-section">
-                        <img src="@/assets/sehlenarama.png" alt="Bilet Image" class="bilet-image" />
+                        <img v-lazy="sehlenAramaImage" alt="Bilet Image" class="bilet-image" />
                     </div>
                 </el-card>
             </div>
@@ -59,30 +45,41 @@
 </el-col>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {
+    defineComponent,
+    ref,
+    onMounted
+} from 'vue';
+import sehlenRefImage from '@/assets/sehlenref.png';
+import sehlenAramaImage from '@/assets/sehlenarama.png';
+
+export default defineComponent({
     name: 'ReferansSection',
-    data() {
+    setup() {
+        const isMobile = ref(false);
+
+        const checkMobile = () => {
+            isMobile.value = window.innerWidth <= 768;
+        };
+
+        const redirectToWebsite = () => {
+            window.location.href = 'http://217.160.138.215:8450';
+        };
+
+        onMounted(() => {
+            checkMobile();
+            window.addEventListener('resize', checkMobile);
+        });
+
         return {
-            isMobile: false,
+            isMobile,
+            redirectToWebsite,
+            sehlenRefImage,
+            sehlenAramaImage,
         };
     },
-    mounted() {
-        this.checkMobile();
-        window.addEventListener('resize', this.checkMobile);
-    },
-    beforeUnmount() {
-        window.removeEventListener('resize', this.checkMobile);
-    },
-    methods: {
-        checkMobile() {
-            this.isMobile = window.innerWidth <= 768;
-        },
-        redirectToWebsite() {
-            window.location.href = "http://217.160.138.215:8450";
-        },
-    }
-};
+});
 </script>
 
 <style>

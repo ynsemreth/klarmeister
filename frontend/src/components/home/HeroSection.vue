@@ -23,43 +23,98 @@
                         </el-icon>
                     </el-button>
                 </router-link>
-                <img src="@/assets/garanti.png" alt="garanti" />
+                <img v-lazy="garantiImage" alt="garanti" />
             </div>
         </div>
-
         <div class="media-container">
-            <img src="@/assets/laptop.png" rel="preload" alt="Laptop" class="laptop-image" />
-            <div class="video-overlay">
-                <iframe src="https://fast.wistia.net/embed/iframe/s9z0owf208?seo=true&videoFoam=false" title="klarmeistervideo" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="520" height="320">
-                </iframe>
-            </div>
+            <img v-lazy="laptopImage" alt="Laptop" class="laptop-image" />
+            <div ref="videoContainer" class="video-placeholder"></div>
         </div>
     </div>
 </el-col>
 </template>
 
-    
-    
-<script>
+<script lang="ts">
+import {
+    defineComponent,
+    ref,
+    onMounted,
+} from 'vue';
 import {
     Right
 } from '@element-plus/icons-vue';
 
-export default {
+import laptopImage from '@/assets/laptop.png';
+import garantiImage from '@/assets/garanti.png';
+
+export default defineComponent({
     name: 'HomeSection',
     components: {
-        Right
+        Right,
     },
-    mounted() {
-        const script = document.createElement('script');
-        script.src = "https://fast.wistia.net/assets/external/E-v1.js";
-        script.async = true;
-        document.body.appendChild(script);
-    }
-};
+    setup() {
+        const videoContainer = ref < HTMLElement | null > (null);
+
+        onMounted(() => {
+            const script = document.createElement('script');
+            script.src = 'https://fast.wistia.net/assets/external/E-v1.js';
+            script.async = true;
+            document.body.appendChild(script);
+
+            if ('IntersectionObserver' in window && videoContainer.value) {
+                const observer = new IntersectionObserver(
+                    (entries, observerInstance) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && videoContainer.value) {
+                                // İframe'i oluştur ve ekle
+                                const iframe = document.createElement('iframe');
+                                iframe.src = 'https://fast.wistia.net/embed/iframe/s9z0owf208?seo=true&videoFoam=false';
+                                iframe.title = 'klarmeistervideo';
+                                iframe.allow = 'autoplay; fullscreen';
+                                iframe.setAttribute('allowTransparency', 'true'); // setAttribute kullanıldı
+                                iframe.frameBorder = '0';
+                                iframe.scrolling = 'no';
+                                iframe.className = 'wistia_embed';
+                                iframe.name = 'wistia_embed';
+                                iframe.width = '520';
+                                iframe.height = '320';
+
+                                videoContainer.value.appendChild(iframe);
+                                observerInstance.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: '0px 0px 200px 0px',
+                    }
+                );
+
+                observer.observe(videoContainer.value);
+            } else if (videoContainer.value) {
+                // Intersection Observer desteklenmiyorsa iframe'i hemen yükle
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://fast.wistia.net/embed/iframe/s9z0owf208?seo=true&videoFoam=false';
+                iframe.title = 'klarmeistervideo';
+                iframe.allow = 'autoplay; fullscreen';
+                iframe.setAttribute('allowTransparency', 'true');
+                iframe.frameBorder = '0';
+                iframe.scrolling = 'no';
+                iframe.className = 'wistia_embed';
+                iframe.name = 'wistia_embed';
+                iframe.width = '520';
+                iframe.height = '320';
+
+                videoContainer.value.appendChild(iframe);
+            }
+        });
+        return {
+            videoContainer,
+            laptopImage,
+            garantiImage,
+        };
+    },
+});
 </script>
-    
-    
+
 <style>
 .hero-section {
     text-align: left;
@@ -89,12 +144,16 @@ export default {
 .laptop-image {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-.video-overlay {
+.video-placeholder {
     position: absolute;
-    top: 28.8%;
+    top: 29%;
     left: 17.4%;
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
 }
 
 .hero-h3 {
@@ -117,9 +176,8 @@ export default {
     font-size: 50px;
     word-wrap: break-word;
     font-style: italic;
-    font: bold;
+    font-weight: bold;
     margin-top: 20px;
-    font-weight: 1500;
     color: black;
     margin: 0;
     line-height: 1.2;
@@ -172,34 +230,7 @@ export default {
     margin-left: 10px;
 }
 
-@media (min-width: 1024px) {
-
-    .video-overlay {
-        top: 28.8%;
-        left: 17.4%;
-    }
-}
-
 @media (max-width: 1024px) {
-    .content-and-media {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .video-overlay {
-        position: absolute;
-        top: 30%;
-        left: 10%;
-        width: 75%;
-    }
-
-    iframe {
-        width: 400px !important;
-        height: 250px !important;
-    }
-}
-
-@media (max-width: 768px) {
     .content-and-media {
         flex-direction: column;
         align-items: center;
@@ -233,41 +264,25 @@ export default {
         font-size: 11px;
     }
 
-    .media-container {
-        width: 100%;
-        position: relative;
+    .video-placeholder {
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
     }
+}
 
-    .video-overlay {
-        position: absolute;
+@media (max-width: 768px) {
+    .video-placeholder {
         top: 27%;
         left: 18%;
         width: 65%;
         height: 50%;
     }
-
-    iframe {
-        width: 275px !important;
-        height: 180px !important;
-    }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 18px;
-    }
-
-    .hero-subtitle {
-        font-size: 12px;
-    }
-
-    .hero-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .video-overlay {
+    .video-placeholder {
         position: absolute;
         top: 25%;
         left: 5%;

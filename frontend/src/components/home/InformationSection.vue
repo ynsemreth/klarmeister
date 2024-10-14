@@ -31,13 +31,13 @@
     </div>
 
     <div class="information-image" v-if="!isMobile">
-        <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
+        <img v-lazy="klarheitsgarantieImage" alt="Frustrated Man" class="info-image" />
     </div>
 </el-col>
 
 <el-col :span="24" v-if="isMobile">
     <div class="information-image">
-        <img src="@/assets/Klarheitsgarantie.png" alt="Frustrated Man" class="info-image" />
+        <img v-lazy="klarheitsgarantieImage" alt="Frustrated Man" class="info-image" />
     </div>
 </el-col>
 
@@ -46,27 +46,47 @@
 </el-col>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {
+    defineComponent,
+    ref,
+    onMounted,
+    onUnmounted
+} from 'vue';
+import {
+    Right
+} from '@element-plus/icons-vue';
+
+// Görseli import edin
+import klarheitsgarantieImage from '@/assets/Klarheitsgarantie.png';
+
+export default defineComponent({
     name: 'InformationSection',
-    data() {
+    components: {
+        Right,
+    },
+    setup() {
+        const isMobile = ref(false);
+
+        const checkMobile = () => {
+            isMobile.value = window.innerWidth <= 768;
+        };
+
+        onMounted(() => {
+            checkMobile();
+            window.addEventListener('resize', checkMobile);
+        });
+
+        onUnmounted(() => {
+            window.removeEventListener('resize', checkMobile);
+        });
+
         return {
-            isMobile: false,
+            isMobile,
+            klarheitsgarantieImage,
         };
     },
-    mounted() {
-        this.checkMobile();
-        window.addEventListener('resize', this.checkMobile);
-    },
-    beforeUnmount() {
-        window.removeEventListener('resize', this.checkMobile);
-    },
-    methods: {
-        checkMobile() {
-            this.isMobile = window.innerWidth <= 768;
-        },
-    },
-};
+});
 </script>
 
 <style>
@@ -109,7 +129,7 @@ export default {
 
 .information-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: px;
+    font-size: 32px;
     color: #fff;
     text-align: left;
     font-weight: 700;
@@ -181,31 +201,37 @@ export default {
 
 @media (max-width: 768px) {
     .information {
-        padding: 60px 60px;
+        padding: 60px 20px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .information-content {
-        color: #fff;
         max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0;
         margin-top: 10px;
+        text-align: center;
     }
 
     .information-title {
-        font-size: 20px;
+        font-size: 24px;
+        text-align: center;
     }
 
     .information-text-title {
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .information-text-content {
         font-size: 14px;
+        width: 100%;
+        text-align: center;
     }
 
     .information-image {
-        display: none;
+        display: flex;
+        max-width: 80%;
+        margin-top: 20px;
     }
 
     .button-wrapper {

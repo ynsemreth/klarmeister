@@ -18,7 +18,8 @@
                 minimalem Zeitaufwand. Das ist Klarheit mit Meisterschaft.
             </h3>
             <router-link to="/anfrage">
-                <el-button class="btn-services">Jetzt Angebot einholen
+                <el-button class="btn-services">
+                    Jetzt Angebot einholen
                     <el-icon>
                         <Right />
                     </el-icon>
@@ -35,7 +36,7 @@
                 <br />Ihr Zeitaufwand: ca. 2 Std
             </div>
             <div class="img-wrapper">
-                <img src="@/assets/figma.png" alt="webdesign" />
+                <img v-lazy="figmaImage" alt="webdesign" />
             </div>
         </el-card>
 
@@ -92,7 +93,42 @@
 </el-col>
 </template>
 
-<style>
+  
+  
+<script lang="ts">
+import {
+    defineComponent
+} from 'vue';
+import {
+    Right,
+    Key,
+    SwitchFilled,
+    Paperclip,
+    Platform
+} from '@element-plus/icons-vue';
+
+// Görselleri import edin
+import figmaImage from '@/assets/figma.png';
+
+export default defineComponent({
+    name: 'OurServices',
+    components: {
+        Right,
+        Key,
+        SwitchFilled,
+        Paperclip,
+        Platform,
+    },
+    setup() {
+        return {
+            figmaImage,
+        };
+    },
+});
+</script>
+  
+  
+<style scoped>
 .our_services {
     position: relative;
     text-align: left;
@@ -156,6 +192,8 @@
     align-items: center;
     animation: flash 1.5s infinite;
     transition: background-color 0.3s;
+    display: flex;
+    cursor: pointer;
 }
 
 .btn-services:hover {
@@ -187,13 +225,7 @@
     text-align: left;
 }
 
-.card1 .service-card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
+.card1 .service-card-title,
 .card2 .service-card-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
@@ -218,7 +250,6 @@
 .card1 .img-wrapper {
     margin-top: 20px;
     position: relative;
-    left: -0px;
 }
 
 .card1 .img-wrapper img {
@@ -245,6 +276,10 @@
     margin: 5px 0;
 }
 
+.card2 .card-li li .el-icon {
+    margin-right: 8px;
+}
+
 .card-list {
     display: flex;
     flex-direction: column;
@@ -259,6 +294,7 @@
     border: 5px solid rgba(255, 255, 255, 0.1);
     color: white;
     transition: transform 0.3s ease-in-out;
+    padding: 20px;
 }
 
 .card-list .service-card-title {
@@ -282,7 +318,6 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        
     }
 
     .left-section,
@@ -296,15 +331,15 @@
         font-size: 18px;
         text-align: center;
         margin-bottom: 15px;
-        margin-left: 20px;
+        margin-left: 0;
     }
 
     .services-subtitle {
         font-size: 14px;
         text-align: center;
         margin-bottom: 20px;
-        margin-left: 10px;
-        margin-right: 15px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .btn-services {

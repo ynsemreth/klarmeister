@@ -8,7 +8,7 @@
     <div class="card-wrapper">
         <!-- Kart 01 -->
         <article class="card">
-            <img class="card__background" src="@/assets/analysis-meeting.png" alt="Klarheit schaffen" />
+            <img class="card__background" v-lazy="analysisMeetingImage" alt="Klarheit schaffen" />
             <h2 class="card__title">Klarheit schaffen</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -21,7 +21,7 @@
 
         <!-- Kart 02 -->
         <article class="card">
-            <img class="card__background" src="@/assets/web-design.png" alt="Webseite mit Power" />
+            <img class="card__background" v-lazy="webDesignImage" alt="Webseite mit Power" />
             <h2 class="card__title">Webseite mit Power transformieren</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -34,7 +34,7 @@
 
         <!-- Kart 03 -->
         <article class="card">
-            <img class="card__background" src="@/assets/video-production.png" alt="Verkaufspsychologisches Video" />
+            <img class="card__background" v-lazy="videoProductionImage" alt="Verkaufspsychologisches Video" />
             <h2 class="card__title">Verkaufspsychologisches Video erstellen</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -47,7 +47,7 @@
 
         <!-- Kart 04 -->
         <article class="card">
-            <img class="card__background" src="@/assets/linkedin-networking.png" alt="LinkedIn-Kundenakquise" />
+            <img class="card__background" v-lazy="linkedinNetworkingImage" alt="LinkedIn-Kundenakquise" />
             <h2 class="card__title">LinkedIn-Kundenakquise</h2>
             <div class="card__content | flow">
                 <div class="card__content--container | flow">
@@ -61,10 +61,28 @@
 </el-col>
 </template>
 
-<script>
-export default {
-    name: 'WebSection'
-};
+<script lang="ts">
+import {
+    defineComponent
+} from 'vue';
+
+// Görselleri import edin
+import analysisMeetingImage from '@/assets/analysis-meeting.png';
+import webDesignImage from '@/assets/web-design.png';
+import videoProductionImage from '@/assets/video-production.png';
+import linkedinNetworkingImage from '@/assets/linkedin-networking.png';
+
+export default defineComponent({
+    name: 'WebSection',
+    setup() {
+        return {
+            analysisMeetingImage,
+            webDesignImage,
+            videoProductionImage,
+            linkedinNetworkingImage,
+        };
+    },
+});
 </script>
 
 <style>
@@ -91,125 +109,24 @@ export default {
 
 .card-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
     justify-items: center;
-    width: 40rem;
     margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-
-    .web-title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        padding: 20px;
-        color: black;
-    }
-
-    .card-wrapper {
-        grid-template-columns: 1fr;
-        width: 80%;
-        gap: 1.5rem;
-    }
-
-    .card {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 1.5rem;
-    }
-
-    .card__background {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-        margin-top: 0;
-    }
-
-    .card__content {
-        opacity: 1;
-        position: relative;
-        background: none;
-    }
-
-    .card__description {
-        opacity: 0;
-        color: white;
-    }
-
-    .card__title {
-        font-size: 1.2rem;
-        color: black;
-        position: static;
-        margin-bottom: 0.5rem;
-    }
-
-    .card:hover .card__background {
-        transform: none;
-    }
-
-    .card:hover .card__title {
-        opacity: 0;
-    }
-
-    .card:hover .card__content {
-        opacity: 1;
-    }
-
-    .card:hover .card__description {
-        opacity: 1;
-    }
-
-    .hero-content {
-        padding: 20px;
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-        margin: 15px 0;
-    }
-
-    .media-container {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .media-video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@keyframes flash-card {
-
-    0%,
-    100% {
-        background-color: white;
-        box-shadow: none;
-    }
-
-    75% {
-        background-color: white;
-        box-shadow: 0 0 15px rgba(48, 12, 12, 0.5), 0 0 30px rgba(62, 69, 66, 0.3);
-    }
+    align-items: center;
+    margin-left: 270px;
 }
 
 .card {
-    width: 100%;
-    max-width: 20rem;
     background: white;
-    height: 25rem;
-    overflow: hidden;
     border-radius: 0.625rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
-    transition: transform 500ms ease-in-out;
-    animation: flash-card 1.5s infinite;
+    overflow: hidden;
     position: relative;
+    transition: transform 500ms ease-in-out;
+    width: 100%;
+    max-width: 20rem;
+    height: 25rem;
 }
 
 .card__background {
@@ -217,7 +134,6 @@ export default {
     width: 100%;
     height: calc(100% - 3rem);
     margin-top: 3rem;
-    transition: transform 500ms ease-in-out;
 }
 
 .card__title {
@@ -227,21 +143,20 @@ export default {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    transition: opacity 500ms ease-in-out;
 }
 
 .card__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    padding: 1rem;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
-    opacity: 0;
-    transition: opacity 500ms ease-out;
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 500ms ease-out;
 }
 
 .card__description {
@@ -249,25 +164,40 @@ export default {
     font-size: 1rem;
     line-height: 1.5;
     color: white;
-    opacity: 0;
-    transition: opacity 500ms ease-out;
 }
 
 @media (any-hover: hover) {
-    .card:hover .card__background {
-        transform: scale(1.2);
-    }
-
     .card:hover .card__content {
         opacity: 1;
     }
+}
 
-    .card:hover .card__title {
-        opacity: 0;
+@media (max-width: 768px) {
+    .web-title {
+        font-size: 20px;
+        padding: 20px;
     }
 
-    .card:hover .card__description {
-        opacity: 1;
+    .card-wrapper {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .card {
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .web-title,
+    .card__title {
+        font-size: 18px;
+    }
+
+    .card__description {
+        font-size: 14px;
     }
 }
 </style>

@@ -103,10 +103,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .faq-section {
     padding: 50px 20px;
-    color: black;
     text-align: center;
     border-radius: 20px;
 }
@@ -125,7 +124,7 @@ export default {
 .faq-subtitle {
     font-family: 'Poppins', monospace;
     font-size: 13px;
-    color: rgb(54, 189, 54);
+    color: #36bd36;
     margin-bottom: 10px;
 }
 
@@ -133,23 +132,25 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #000000;
+    /* Set background color for collapse */
     border-radius: 10px;
-    border: 1px solid #333;
+    border: none;
     padding: 15px;
 }
 
 .faq-collapse .el-collapse-item {
-    background-color: #222;
-    border-radius: 5px;
+    background-color: black;
+    /* Collapse item background */
+    border: none;
     margin-bottom: 10px;
-    overflow: hidden;
 }
 
 .el-collapse-item__header {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: #333;
-    color: black;
+    background-color: black;
+    /* Header background */
+    color: white;
     transition: background-color 0.3s ease;
     display: flex;
     justify-content: space-between;
@@ -157,27 +158,28 @@ export default {
     flex-wrap: wrap;
 }
 
-.el-collapse-item.is-active .el-collapse-item__header {
-    background-color: #193427;
-    color: black;
+.el-collapse-item.is-active .el-collapse-item__header,
+.el-collapse-item__wrap {
+    background-color: black;
+    /* Active state background */
 }
 
 .collapse-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: black;
+    color: white;
 }
 
 .faq-content {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    color: #d1d1d1;
-    padding: 15px;
-    background-color: #000;
-    border-radius: 5px;
-    margin: 0;
+    color: white;
+    background-color: black;
+    /* Content background */
     line-height: 1.6;
+    padding: 10px;
+    /* Add padding to content for better readability */
 }
 
 .header-icon {
@@ -190,23 +192,19 @@ export default {
 @media (max-width: 768px) {
     .faq-title {
         font-size: 22px;
-        /* Reduced */
     }
 
     .faq-subtitle {
         font-size: 11px;
-        /* Reduced */
     }
 
     .el-collapse-item__header {
         font-size: 14px;
         min-height: 60px;
-        /* Added */
     }
 
     .faq-collapse .el-collapse-item {
         padding: 10px;
-        /* Adjusted */
     }
 
     .faq-collapse {
@@ -216,13 +214,11 @@ export default {
     .faq-content {
         font-size: 14px;
         line-height: 1.5;
-        /* Adjusted */
     }
 
     .collapse-title {
         font-size: 14px;
         line-height: 1.2;
-        /* Adjusted */
     }
 }
 </style>
