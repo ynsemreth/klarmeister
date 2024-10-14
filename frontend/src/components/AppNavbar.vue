@@ -51,7 +51,7 @@ export default defineComponent({
 <style>
 .navbar {
     background: transparent;
-    color: #fff;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,7 +75,7 @@ export default defineComponent({
 }
 
 .nav-links a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 0 15px;
     font-size: 14px;

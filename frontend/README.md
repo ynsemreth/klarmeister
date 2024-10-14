@@ -30,6 +30,9 @@ npm run lint
 
     pm2 start npx --name "klarmeister" -- serve -s dist
 
+    npx critical --inline --base dist --html dist/index.html --css dist/css/app.326f8fc5.css --target dist/index.html
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 

@@ -28,18 +28,18 @@
         </div>
 
         <div class="media-container">
-            <img src="@/assets/laptop.png" alt="Laptop" class="laptop-image">
+            <img src="@/assets/laptop.png" rel="preload" alt="Laptop" class="laptop-image" />
             <div class="video-overlay">
-                <video id="video" autoplay controls loading="lazy" class="media-video">
-                    <source src="@/assets/klarmeistervideo.mp4" type="video/mp4" />
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
+                <iframe src="https://fast.wistia.net/embed/iframe/s9z0owf208?seo=true&videoFoam=false" title="klarmeistervideo" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="520" height="320">
+                </iframe>
             </div>
         </div>
     </div>
 </el-col>
 </template>
 
+    
+    
 <script>
 import {
     Right
@@ -49,10 +49,17 @@ export default {
     name: 'HomeSection',
     components: {
         Right
+    },
+    mounted() {
+        const script = document.createElement('script');
+        script.src = "https://fast.wistia.net/assets/external/E-v1.js";
+        script.async = true;
+        document.body.appendChild(script);
     }
 };
 </script>
-
+    
+    
 <style>
 .hero-section {
     text-align: left;
@@ -64,7 +71,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
 }
 
 .hero-content {
@@ -78,11 +84,6 @@ export default {
 .media-container {
     position: relative;
     width: 100%;
-    max-width: none; 
-    height: auto;
-    margin-top: 0;
-    flex-basis: 100%; 
-    height: auto;
 }
 
 .laptop-image {
@@ -92,21 +93,14 @@ export default {
 
 .video-overlay {
     position: absolute;
-    top: 28.5%;
-    left: 18%;
-    width: 63.5%;
-    height: 40%;
-}
-
-.media-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    top: 28.8%;
+    left: 17.4%;
 }
 
 .hero-h3 {
     font-family: 'Poppins', monospace;
     font-size: 13px;
+    margin-top: 20px;
     color: white;
     text-align: center;
 }
@@ -114,6 +108,7 @@ export default {
 .hero-text {
     font-family: 'Poppins', monospace;
     font-size: 13px;
+    margin-top: 20px;
     color: black;
 }
 
@@ -123,6 +118,7 @@ export default {
     word-wrap: break-word;
     font-style: italic;
     font: bold;
+    margin-top: 20px;
     font-weight: 1500;
     color: black;
     margin: 0;
@@ -161,20 +157,6 @@ export default {
     margin-top: 20px;
 }
 
-@keyframes flash {
-
-    0%,
-    100% {
-        background-color: black;
-        box-shadow: none;
-    }
-
-    50% {
-        background-color: black;
-        box-shadow: 0 0 15px rgba(13, 239, 149, 0.5), 0 0 30px rgba(13, 239, 149, 0.3);
-    }
-}
-
 .btn-services {
     background-color: #0def95;
     border: none;
@@ -182,14 +164,6 @@ export default {
     color: black;
     padding: 10px 20px;
     align-items: center;
-    animation: flash 1.5s infinite;
-    transition: background-color 0.3s;
-}
-
-.btn-services:hover {
-    animation: none;
-    background-color: #0def95;
-    color: black;
 }
 
 .hero-button img {
@@ -202,14 +176,12 @@ export default {
     .content-and-media {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
     .hero-content {
         max-width: 100%;
         text-align: center;
         padding: 50px;
-        margin-bottom: 0px;
     }
 
     .hero-title {
@@ -236,27 +208,20 @@ export default {
 
     .media-container {
         width: 100%;
-        margin-top: 0px;
-        margin-bottom: 0px;
         position: relative;
-    }
-
-    .laptop-image {
-        width: 100%;
     }
 
     .video-overlay {
         position: absolute;
-        top: 28.5%;
+        top: 27%;
         left: 18%;
-        width: 63.7%;
-        height: 41%;
+        width: 65%;
+        height: 50%;
     }
 
-    .media-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    iframe {
+        width: 275px !important;
+        height: 180px !important;
     }
 }
 </style>

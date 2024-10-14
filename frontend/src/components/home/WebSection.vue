@@ -99,16 +99,89 @@ export default {
 }
 
 @media (max-width: 768px) {
+
+    .web-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 20px;
+        color: black;
+    }
+
     .card-wrapper {
         grid-template-columns: 1fr;
+        width: 80%;
+        gap: 1.5rem;
+    }
+
+    .card {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1.5rem;
     }
 
     .card__background {
-        object-fit: fit;
+        object-fit: cover;
         width: 100%;
-        height: calc(100% - 3rem);
-        margin-top: 3rem;
-        transition: transform 500ms ease-in-out;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .card__content {
+        opacity: 1;
+        position: relative;
+        background: none;
+    }
+
+    .card__description {
+        opacity: 0;
+        color: white;
+    }
+
+    .card__title {
+        font-size: 1.2rem;
+        color: black;
+        position: static;
+        margin-bottom: 0.5rem;
+    }
+
+    .card:hover .card__background {
+        transform: none;
+    }
+
+    .card:hover .card__title {
+        opacity: 0;
+    }
+
+    .card:hover .card__content {
+        opacity: 1;
+    }
+
+    .card:hover .card__description {
+        opacity: 1;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+
+    .media-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .media-video {
+        width: 100%;
+        height: auto;
     }
 }
 
