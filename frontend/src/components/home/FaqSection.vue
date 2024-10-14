@@ -16,10 +16,10 @@
                 </el-icon>
             </template>
             <p class="faq-content">
-                Die Kosten für eine Webseite hängen stark von den individuellen Wünschen ab. <br />
-                Dank unseres eigens entwickelten Systems, das auf jahrelanger Erfahrung und <br />
-                Weiterbildungen basiert, bieten wir kostenoptimierte Lösungen. Ob Webseite, <br />
-                LinkedIn-Optimierung oder verkaufspsychologische Videos – wir liefern <br />
+                Die Kosten für eine Webseite hängen stark von den individuellen Wünschen ab.
+                Dank unseres eigens entwickelten Systems, das auf jahrelanger Erfahrung und
+                Weiterbildungen basiert, bieten wir kostenoptimierte Lösungen. Ob Webseite,
+                LinkedIn-Optimierung oder verkaufspsychologische Videos – wir liefern
                 Effizienz ohne überhöhte Preise.
             </p>
         </el-collapse-item>
@@ -34,10 +34,10 @@
                 </el-icon>
             </template>
             <p class="faq-content">
-                Eine Landeseite (Landing Page) ist eine spezifische Seite, die oft für <br />
-                Marketingkampagnen genutzt wird, um gezielt eine Handlung zu fördern, <br />
-                z. B. ein Produktkauf oder eine Anmeldung. Eine Webseite hingegen ist <br />
-                eine umfassendere Online-Präsenz mit mehreren Seiten, die verschiedene <br />
+                Eine Landeseite (Landing Page) ist eine spezifische Seite, die oft für
+                Marketingkampagnen genutzt wird, um gezielt eine Handlung zu fördern,
+                z. B. ein Produktkauf oder eine Anmeldung. Eine Webseite hingegen ist
+                eine umfassendere Online-Präsenz mit mehreren Seiten, die verschiedene
                 Informationen und Funktionen bietet.
             </p>
         </el-collapse-item>
@@ -52,31 +52,31 @@
                 </el-icon>
             </template>
             <p class="faq-content">
-                Ja, Sie können Ihre bestehende Domain problemlos behalten. Wir integrieren <br />
-                sie in die neue Webseite, ohne dass Sie auf Ihre gewohnte Adresse verzichten <br />
-                müssen. Unser System sorgt dafür, dass der Übergang reibungslos verläuft <br />
+                Ja, Sie können Ihre bestehende Domain problemlos behalten. Wir integrieren
+                sie in die neue Webseite, ohne dass Sie auf Ihre gewohnte Adresse verzichten
+                müssen. Unser System sorgt dafür, dass der Übergang reibungslos verläuft
                 und Ihre Domain weiterhin optimal genutzt wird.
             </p>
         </el-collapse-item>
 
         <el-collapse-item name="4">
             <template #title>
-                <div class="collapse-title-4">
-                    Wie kann ich sicherstellen, dass ich meine E-Mail-Adresse,
-                    alle bestehenden Daten und mein Hosting behalte, wenn ich
-                    die Agentur wechsle oder meine Webseite neu erstellen lasse?
+                <div class="collapse-title">
+                    Wie kann ich meine E-Mail, Daten und Hosting behalten, wenn ich die Agentur wechsle?
                 </div>
                 <el-icon class="header-icon">
                     <info-filled />
                 </el-icon>
             </template>
             <p class="faq-content">
-                Sie behalten nicht nur Ihre E-Mail-Adresse und alle bestehenden Daten, <br />
-                sondern entscheiden auch, wo Ihre Webseite gehostet wird. Möchten Sie <br />
-                bei Ihrem aktuellen Hosting-Anbieter bleiben, übertragen wir die Seite dorthin. <br />
-                Alternativ richten wir auch gerne einen neuen Hosting-Anbieter für Sie ein – ganz nach Ihren Wünschen.
+                Sie behalten nicht nur Ihre E-Mail-Adresse und alle bestehenden Daten,
+                sondern entscheiden auch, wo Ihre Webseite gehostet wird. Möchten Sie
+                bei Ihrem aktuellen Hosting-Anbieter bleiben, übertragen wir die Seite dorthin.
+                Alternativ richten wir auch gerne einen neuen Hosting-Anbieter für Sie ein –
+                ganz nach Ihren Wünschen.
             </p>
         </el-collapse-item>
+
         <el-collapse-item name="5">
             <template #title>
                 <div class="collapse-title">
@@ -87,9 +87,9 @@
                 </el-icon>
             </template>
             <p class="faq-content">
-                Für uns ist responsives Design eine der wichtigsten Prioritäten, da heute fast <br />
-                alle Nutzer überwiegend auf dem Telefon surfen. Wir stellen sicher, dass Ihre <br />
-                Webseite auf mobilen Geräten genauso optimal funktioniert wie auf dem Desktop – <br />
+                Für uns ist responsives Design eine der wichtigsten Prioritäten, da heute fast
+                alle Nutzer überwiegend auf dem Telefon surfen. Wir stellen sicher, dass Ihre
+                Webseite auf mobilen Geräten genauso optimal funktioniert wie auf dem Desktop –
                 für höchste Benutzerfreundlichkeit und beste Performance überall.
             </p>
         </el-collapse-item>
@@ -97,19 +97,16 @@
 </el-col>
 </template>
 
-  
-  
 <script>
 export default {
     name: 'FaqSection',
 };
 </script>
-  
-  
+
 <style scoped>
 .faq-section {
     padding: 50px 20px;
-    color: white;
+    color: black;
     text-align: center;
     border-radius: 20px;
 }
@@ -133,7 +130,7 @@ export default {
 }
 
 .faq-collapse {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: #000000;
     border-radius: 10px;
@@ -151,30 +148,23 @@ export default {
 .el-collapse-item__header {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: #222;
-    color: #fff;
+    background-color: #333;
+    color: black;
     transition: background-color 0.3s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .el-collapse-item.is-active .el-collapse-item__header {
     background-color: #193427;
-    color: #fff;
+    color: black;
 }
 
 .collapse-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-
-    color: black;
-}
-
-.collapse-title-4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 7px;
+    font-size: 16px;
     font-weight: 600;
     color: black;
 }
@@ -183,32 +173,40 @@ export default {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: #d1d1d1;
-    background-color: #000;
     padding: 15px;
-    border: 2px solid black;
+    background-color: #000;
+    border-radius: 5px;
     margin: 0;
+    line-height: 1.6;
 }
 
 .header-icon {
-    margin-left: 10px;
+    font-size: 16px;
+    color: #36bd36;
+    margin-top: 5px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .faq-title {
-        font-size: 20px;
+        font-size: 22px;
+        /* Reduced */
     }
 
     .faq-subtitle {
-        font-size: 12px;
+        font-size: 11px;
+        /* Reduced */
     }
 
     .el-collapse-item__header {
         font-size: 14px;
+        min-height: 60px;
+        /* Added */
     }
 
     .faq-collapse .el-collapse-item {
-        padding: 8px;
+        padding: 10px;
+        /* Adjusted */
     }
 
     .faq-collapse {
@@ -216,11 +214,15 @@ export default {
     }
 
     .faq-content {
-        font-size: 12px;
+        font-size: 14px;
+        line-height: 1.5;
+        /* Adjusted */
     }
 
     .collapse-title {
         font-size: 14px;
+        line-height: 1.2;
+        /* Adjusted */
     }
 }
 </style>
